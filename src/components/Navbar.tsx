@@ -100,35 +100,35 @@ const Navbar = memo(
     }, []);
 
     return (
-      <header className="bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-white/20 sticky top-0 z-50">
+      <header className="bg-black/80 backdrop-blur-xl shadow-2xl border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent">
-                  AL-KALAM BOOKS
+              <div className="flex-shrink-0 group cursor-pointer">
+                <h1 className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-white via-purple-400 to-pink-400 bg-clip-text text-transparent tracking-tight">
+                  LENZRO LUXE
                 </h1>
-                <p className="text-xs text-slate-300 hidden sm:block">
-                  Dukaan Online
+                <p className="text-[10px] text-purple-300/80 hidden sm:block tracking-[0.3em] uppercase font-light">
+                  Redefine Elegance
                 </p>
               </div>
             </div>
 
             {/* Desktop Search */}
-            <div className="hidden md:flex flex-1 max-w-md mx-8">
+            <div className="hidden md:flex flex-1 max-w-lg mx-8">
               <div className="relative w-full">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-purple-400/60 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder="Search products... / Raadi alaabta..."
+                  placeholder="Search luxury collections..."
                   value={searchTerm}
                   onChange={handleSearchChange}
                   onFocus={() => setShowSearchSuggestions(true)}
                   onBlur={() =>
                     setTimeout(() => setShowSearchSuggestions(false), 200)
                   }
-                  className="w-full pl-10 pr-4 py-2 bg-white/10 border border-white/20 text-white placeholder-slate-400 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-sm"
+                  className="w-full pl-12 pr-6 py-3 bg-white/5 border border-white/10 text-white placeholder-purple-300/40 rounded-full focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 focus:bg-white/10 text-sm transition-all duration-300"
                 />
 
                 {/* Search Suggestions */}
@@ -151,19 +151,21 @@ const Navbar = memo(
             </div>
 
             {/* Desktop Actions */}
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-6">
               {/* Cart */}
               <button
                 onClick={onCartClick}
-                className="relative p-2 text-slate-300 hover:text-purple-300 transition-colors"
+                className="relative p-3 text-white/90 hover:text-white transition-all duration-300 group"
                 aria-label={`Shopping cart with ${cart.totalItems} items`}
               >
-                <ShoppingCart className="w-6 h-6" />
-                {cart.totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium shadow-lg">
-                    {cart.totalItems > 99 ? "99+" : cart.totalItems}
-                  </span>
-                )}
+                <div className="relative">
+                  <ShoppingCart className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                  {cart.totalItems > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-gradient-to-br from-purple-500 to-pink-500 text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center font-bold shadow-lg shadow-purple-500/50 animate-pulse">
+                      {cart.totalItems > 99 ? "99+" : cart.totalItems}
+                    </span>
+                  )}
+                </div>
               </button>
 
               {/* User Menu */}
@@ -231,9 +233,9 @@ const Navbar = memo(
                 ) : (
                   <button
                     onClick={onAuthClick}
-                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-colors flex items-center space-x-2 shadow-lg"
+                    className="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white px-6 py-3 rounded-full hover:shadow-xl hover:shadow-purple-500/50 transition-all duration-300 flex items-center space-x-2 font-medium group"
                   >
-                    <User className="w-4 h-4" />
+                    <User className="w-5 h-5 group-hover:scale-110 transition-transform" />
                     <span>Sign In</span>
                   </button>
                 )}
@@ -273,8 +275,8 @@ const Navbar = memo(
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-slate-800 border-t border-white/20">
-            <div className="px-4 py-4 space-y-4">
+          <div className="md:hidden bg-black/90 backdrop-blur-xl border-t border-white/10">
+            <div className="px-4 py-6 space-y-4">
               {/* Cart */}
               <button
                 onClick={() => {

@@ -332,7 +332,7 @@ export default function SaleForm({
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Receipt - AL KALAM BOOKSHOP</title>
+<title>Receipt - LENZRO LUXE</title>
 <style>
   @page { size: A4; margin: 10mm; }
   html, body { height: 100%; }
@@ -362,7 +362,7 @@ export default function SaleForm({
 </head>
 <body>
   <div class="header">
-    <h1>AL KALAM BOOKSHOP</h1>
+    <h1>LENZRO LUXE</h1>
     <div class="sub">Quality Educational Materials & Supplies</div>
     <div class="sub">Tel: +254 722 740 432 Email: galiyowabi@gmail.com</div>
     <div class="title">Sales Receipt</div>
@@ -555,7 +555,7 @@ export default function SaleForm({
             <div className="bg-white text-black rounded-lg border border-gray-300 p-4 sm:p-5 shadow-sm">
               <div className="text-center space-y-1">
                 <h1 className="text-xl sm:text-2xl font-extrabold tracking-wide">
-                  AL KALAM BOOKSHOP
+                  LENZRO LUXE
                 </h1>
                 <p className="text-xs text-gray-700">
                   Quality Educational Materials & Supplies

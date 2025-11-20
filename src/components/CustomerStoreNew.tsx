@@ -9,6 +9,7 @@ import { ProductSkeleton } from "./LoadingSkeletons";
 import { useDebounceValue } from "../hooks/usePerformance";
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSectionNew";
+import TrendingStyles from "./TrendingStyles";
 import CartSidebar from "./CartSidebar";
 import AuthModal from "./AuthModal";
 import ProductQuickView from "./ProductQuickView";
@@ -216,16 +217,17 @@ export default function CustomerStore({
   const categories = useMemo(
     () => [
       "all",
-      "Books",
-      "Backpacks",
-      "Bottles",
-      "Electronics",
-      "Pens",
-      "Notebooks",
-      "Pencils",
-      "Erasers",
-      "Markers",
-      "Other",
+      "Men's Fashion",
+      "Women's Fashion",
+      "Kids Fashion",
+      "Accessories",
+      "Shoes",
+      "Bags",
+      "Jewelry",
+      "Watches",
+      "Sportswear",
+      "Formal Wear",
+      "Casual Wear",
     ],
     []
   );
@@ -407,26 +409,25 @@ export default function CustomerStore({
         onQuickView={handleQuickViewMain}
       />
 
+      {/* Trending Styles Section */}
+      <TrendingStyles onExplore={handleShopNowClick} />
+
       {/* Products Section */}
       <section
         id="products-section"
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
       >
-        {/* Section Header */},
+        {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 text-purple-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <Package className="w-4 h-4" />
-            <span>Premium Collection</span>
+            <span>Premium Fashion Collection</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-transparent bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text mb-4">
-            Our Products
+          <h2 className="text-4xl sm:text-5xl font-black text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text mb-4">
+            Our Collections
           </h2>
-          <p className="text-xl text-purple-300 mb-2 font-somali">
-            Alaabteenna
-          </p>
           <p className="text-slate-300 max-w-2xl mx-auto">
-            Discover our carefully curated collection of books, stationery, and
-            electronics. Quality guaranteed, prices unmatched.
+            Discover our carefully curated collection of premium fashion items. Quality guaranteed, style unmatched.
           </p>
         </div>
         {/* Category Filter */}
@@ -563,7 +564,7 @@ export default function CustomerStore({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">AL-KALAM BOOKS</h3>
+              <h3 className="text-xl font-bold mb-4">LENZRO LUXE</h3>
               <p className="text-slate-300">
                 Your trusted partner for books, stationery, and more. Quality
                 products, fast delivery, best prices.
@@ -603,12 +604,12 @@ export default function CustomerStore({
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Categories</h4>
+              <h4 className="font-semibold mb-4">Collections</h4>
               <div className="grid grid-cols-2 gap-2 text-slate-300">
-                <p>📚 Books</p>
-                <p>🎒 Backpacks</p>
-                <p>🖊️ Stationery</p>
-                <p>📱 Electronics</p>
+                <p>👔 Men's Fashion</p>
+                <p>👗 Women's Style</p>
+                <p>👶 Kids Collection</p>
+                <p>👜 Accessories</p>
               </div>
             </div>
           </div>
@@ -616,7 +617,7 @@ export default function CustomerStore({
           <div className="border-t border-slate-700 mt-8 pt-8">
             <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-sm">
               <p className="text-slate-400 text-center sm:text-left">
-                &copy; {new Date().getFullYear()} AL-KALAM BOOKS. All rights
+                &copy; {new Date().getFullYear()} LENZRO LUXE. All rights
                 reserved.
               </p>
               <div className="flex items-center gap-2">
@@ -625,7 +626,7 @@ export default function CustomerStore({
                   href="https://lenzro.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-purple-600/30 to-blue-600/30 hover:from-purple-600/40 hover:to-blue-600/40 border border-purple-500/40 hover:border-purple-400/60 rounded-lg transition-all hover:scale-105 font-bold text-purple-300 hover:text-purple-200 shadow-xl"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-purple-600/30 to-pink-600/30 hover:from-purple-600/40 hover:to-pink-600/40 border border-purple-500/40 hover:border-purple-400/60 rounded-lg transition-all hover:scale-105 font-bold text-purple-300 hover:text-purple-200 shadow-xl"
                 >
                   <span className="text-lg">⚡</span>
                   <span>Lenzro</span>

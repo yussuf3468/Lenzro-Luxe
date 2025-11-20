@@ -224,10 +224,10 @@ export default function Layout({
                   </div>
                   <div>
                     <h1 className="text-lg font-black text-white">
-                      AL-KALAM BOOKS
+                      LENZRO LUXE
                     </h1>
                     <p className="text-xs text-purple-300 font-medium">
-                      Bookshop & Cyber
+                      Premium Fashion
                     </p>
                   </div>
                 </div>

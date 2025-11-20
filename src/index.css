@@ -49,6 +49,19 @@
     }
   }
 
+  @keyframes moveGrid {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    100% {
+      transform: translateX(100px) translateY(100px);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s infinite;
+  }
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
@@ -639,6 +652,92 @@ html {
   .mobile-overlay.show {
     opacity: 1;
     pointer-events: auto;
+  }
+}
+
+/* Fashion-Specific Styling */
+@layer utilities {
+  /* Luxury fashion gradients */
+  .fashion-gradient-purple {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .fashion-gradient-pink {
+    background: linear-gradient(135deg, #f857a6 0%, #ff5858 100%);
+  }
+
+  .fashion-gradient-gold {
+    background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+  }
+
+  .fashion-gradient-dark {
+    background: linear-gradient(135deg, #434343 0%, #000000 100%);
+  }
+
+  /* Fashion card hover effects */
+  .fashion-card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fashion-card-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+  }
+
+  .fashion-card-hover:hover::before {
+    left: 100%;
+  }
+
+  .fashion-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.25);
+  }
+
+  /* Luxury text effects */
+  .luxury-text {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .elegant-text {
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 1.8;
+  }
+
+  /* Size badge styling */
+  .size-badge {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-white/20 text-sm font-semibold transition-all duration-300;
+  }
+
+  .size-badge:hover {
+    @apply border-purple-500 bg-purple-500/20 scale-110;
+  }
+
+  .size-badge.selected {
+    @apply border-purple-500 bg-purple-500 text-white scale-110;
+  }
+
+  /* Color swatch styling */
+  .color-swatch {
+    @apply w-8 h-8 rounded-full border-2 border-white/30 cursor-pointer transition-all duration-300;
+  }
+
+  .color-swatch:hover {
+    @apply scale-125 border-white;
+  }
+
+  .color-swatch.selected {
+    @apply scale-125 border-purple-500 ring-2 ring-purple-500 ring-offset-2 ring-offset-slate-900;
   }
 }
 

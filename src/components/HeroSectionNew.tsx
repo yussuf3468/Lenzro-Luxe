@@ -1,5 +1,5 @@
 import { memo, useCallback } from "react";
-import { ShoppingBag, Star, Truck, Shield, Phone, MapPin } from "lucide-react";
+import { Star, Truck, Shield, ArrowRight, Sparkles } from "lucide-react";
 import FeaturedProducts from "./FeaturedProducts";
 import type { Product } from "../types";
 
@@ -24,324 +24,227 @@ const HeroSection = memo(
 
     return (
       <>
-        {/* Mobile-First Extraordinary Hero Section */}
-        <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
-          {/* Subtle Background Elements */}
-          <div className="absolute inset-0">
-            {/* Gentle geometric shapes */}
-            <div className="absolute top-10 left-4 sm:left-10 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full blur-2xl opacity-60"></div>
-            <div className="absolute top-40 right-4 sm:right-20 w-40 h-40 sm:w-64 sm:h-64 bg-gradient-to-r from-blue-500/20 to-pink-500/20 rounded-full blur-2xl opacity-50"></div>
-            <div className="absolute bottom-20 left-8 sm:left-32 w-36 h-36 sm:w-56 sm:h-56 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-2xl opacity-40"></div>
-
-            {/* Arabic pattern overlay */}
-            <div className="absolute inset-0 opacity-[0.03]">
-              <div
-                className="w-full h-full bg-repeat"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.4'%3E%3Cpath d='M30 0l15 15-15 15L15 15z'/%3E%3C/g%3E%3C/svg%3E")`,
-                  backgroundSize: "60px 60px",
-                }}
-              ></div>
-            </div>
+        {/* Professional Fashion Hero Section */}
+        <section className="relative h-screen overflow-hidden bg-black">
+          {/* Professional Fashion Video Background */}
+          <div className="absolute inset-0 w-full h-full">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-70"
+            >
+              <source 
+                src="https://videos.pexels.com/video-files/3373353/3373353-uhd_2560_1440_25fps.mp4" 
+                type="video/mp4" 
+              />
+            </video>
+            
+            {/* Elegant Gradient Overlays */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-transparent to-pink-900/30"></div>
           </div>
 
-          {/* Main Content Container */}
-          <div className="relative z-10 min-h-screen flex items-center">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                {/* Left Column - Content (Mobile First) */}
-                <div className="text-center lg:text-left space-y-6 sm:space-y-8 order-2 lg:order-1">
-                  {/* Trust Badge with Trilingual Support */}
-                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-xl rounded-full border border-blue-500/30 shadow-lg">
+          {/* Main Content - Two Column Layout */}
+          <div className="relative z-10 h-full flex items-center pt-20 pb-32">
+            <div className="container mx-auto px-6 lg:px-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                {/* Left Column - Compact Headline & CTAs */}
+                <div className="space-y-8">
+                  {/* Premium Badge */}
+                  <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg">
                     <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                    <span className="text-sm font-medium text-slate-300">
-                      Loved by many students
-                    </span>
-                    <span className="hidden sm:inline text-sm text-slate-400 font-somali">
-                      • Waxaa jecel arday badan
-                    </span>
+                    <span className="text-sm font-semibold text-white tracking-widest">NEW COLLECTION 2025</span>
                   </div>
 
-                  {/* Main Heading with Trilingual Touch */}
-                  <div className="space-y-4">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
-                      <span className="block">AL-KALAM</span>
-                      <span className="block bg-gradient-to-r from-purple-400 via-blue-400 to-pink-400 bg-clip-text text-transparent">
-                        BOOKS
-                      </span>
-                      <span className="block text-xl sm:text-2xl lg:text-3xl font-normal text-slate-300 mt-2">
-                        Educational Store •{" "}
-                        <span className="font-somali">Dukaanka Buugaagta</span>
-                      </span>
-                    </h1>
+                  {/* Elegant Headline */}
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+                    Where Fashion
+                    <br />
+                    <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent">
+                      Meets Elegance
+                    </span>
+                  </h1>
 
-                    <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                      Your complete educational partner, from books to
-                      electronics.
-                      <span className="block mt-2 text-sm sm:text-base text-purple-300 font-medium">
-                        📚 Books • ✏️ Stationery • 💻 Electronics • 🎒
-                        Accessories
-                        <span className="text-xs text-slate-400 font-somali block mt-1">
-                          Buugaag • Qalabyo qoraal • Elektaroonik • Alaabta
-                        </span>
-                      </span>
-                    </p>
-                  </div>
+                  <p className="text-lg text-slate-300 max-w-md leading-relaxed">
+                    Discover premium fashion pieces curated for the modern trendsetter. Elevate your style with our exclusive collection.
+                  </p>
 
-                  {/* Action Buttons - Mobile Optimized */}
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  {/* Call to Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
                     <button
                       onClick={handleShopNowClick}
-                      className="group relative bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:from-purple-700 hover:via-blue-700 hover:to-pink-700 transition-all duration-300 font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 active:scale-95 overflow-hidden"
+                      className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold text-base uppercase tracking-wider shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="relative flex items-center justify-center space-x-2">
-                        <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" />
-                        <span>
-                          Shop Now •{" "}
-                          <span className="font-somali">Bilow Gadashada</span>
-                        </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
+                      <div className="relative flex items-center justify-center gap-3">
+                        <span>Shop Now</span>
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </button>
 
                     <button
                       onClick={scrollToProducts}
-                      className="group bg-white/10 backdrop-blur-xl text-slate-300 px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-white/20 transition-all duration-300 font-semibold text-base sm:text-lg border border-white/20 hover:border-purple-500/30 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+                      className="group px-8 py-4 bg-white/10 backdrop-blur-xl text-white rounded-xl border-2 border-white/30 hover:border-white font-bold text-base uppercase tracking-wider hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95"
                     >
-                      <span className="group-hover:text-purple-300 transition-colors duration-300">
-                        Browse Products •{" "}
-                        <span className="font-somali">Daawan Alaabta</span>
-                      </span>
+                      <div className="flex items-center justify-center gap-3">
+                        <Sparkles className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                        <span>New Arrivals</span>
+                      </div>
                     </button>
                   </div>
 
-                  {/* Contact Info - Mobile Friendly */}
-                  <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-slate-300">
-                    <div className="flex items-center space-x-2 whitespace-nowrap">
-                      <Phone className="w-4 h-4 text-purple-400" />
-                      <span className="font-medium">+254 722 740 432</span>
+                  {/* Trust Indicators */}
+                  <div className="flex flex-wrap gap-6 pt-6">
+                    <div className="flex items-center gap-2 text-sm text-white/80">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500/30 to-green-500/30 backdrop-blur-xl border border-emerald-400/50 flex items-center justify-center">
+                        <Truck className="w-5 h-5 text-emerald-300" />
+                      </div>
+                      <span className="font-medium">Free Delivery</span>
                     </div>
-                    <div className="hidden sm:block w-1 h-1 bg-slate-400 rounded-full"></div>
-                    <span className="text-center">
-                      <span className="text-center">Badeeco tayo leh</span>
-                    </span>
+                    <div className="flex items-center gap-2 text-sm text-white/80">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-500/30 backdrop-blur-xl border border-blue-400/50 flex items-center justify-center">
+                        <Shield className="w-5 h-5 text-blue-300" />
+                      </div>
+                      <span className="font-medium">100% Authentic</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-white/80">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/30 to-pink-500/30 backdrop-blur-xl border border-purple-400/50 flex items-center justify-center">
+                        <Star className="w-5 h-5 text-purple-300" />
+                      </div>
+                      <span className="font-medium">Premium Quality</span>
+                    </div>
                   </div>
+                </div>
 
-                  {/* Address with Arabic */}
-                  <div className="text-center lg:text-left">
-                    <div className="inline-flex items-start space-x-2 bg-white/10 backdrop-blur-xl text-slate-300 px-4 py-3 rounded-xl text-sm border border-white/20 shadow-sm max-w-sm">
-                      <MapPin className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <div className="font-somali">
-                          Juja B Tower, Muratina Street, Eastleigh, Nairobi
-                        </div>
-                        <div className="text-xs text-slate-500 mt-1 font-arabic text-accent-lang">
-                          شرق لي، القسم الأول، نيروبي
-                        </div>
+                {/* Right Column - Product Showcase Grid */}
+                <div className="hidden lg:block">
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Product Showcase Items */}
+                    <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20"></div>
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                      <img 
+                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=400&fit=crop" 
+                        alt="Fashion showcase 1"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="text-white font-bold text-lg">Premium Collection</div>
+                        <div className="text-white/70 text-sm">Women's Fashion</div>
+                      </div>
+                    </div>
+
+                    <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
+                      <div className="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-rose-600/20"></div>
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                      <img 
+                        src="https://images.unsplash.com/photo-1445384763658-0400939829cd?w=400&h=400&fit=crop" 
+                        alt="Fashion showcase 2"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="text-white font-bold text-lg">Exclusive Pieces</div>
+                        <div className="text-white/70 text-sm">New Arrivals</div>
+                      </div>
+                    </div>
+
+                    <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                      <img 
+                        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=400&fit=crop" 
+                        alt="Fashion showcase 3"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="text-white font-bold text-lg">Designer Selection</div>
+                        <div className="text-white/70 text-sm">Accessories</div>
+                      </div>
+                    </div>
+
+                    <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
+                      <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-orange-600/20"></div>
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                      <img 
+                        src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=400&h=400&fit=crop" 
+                        alt="Fashion showcase 4"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <div className="text-white font-bold text-lg">Trending Now</div>
+                        <div className="text-white/70 text-sm">Best Sellers</div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Right Column - Product Showcase (Mobile First) */}
-                <div className="relative order-1 lg:order-2">
-                  {/* Clean Product Showcase Card */}
-                  <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-white/10 backdrop-blur-xl border border-white/20">
-                    {/* Header */}
-                    <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 text-center">
-                      <h3 className="text-lg font-bold">Featured Categories</h3>
-                      <p className="text-sm opacity-90 font-somali">
-                        Qeybaha Muhiimka ah
-                      </p>
-                    </div>
-
-                    {/* Product Grid - Mobile Optimized */}
-                    <div className="p-4 sm:p-6 grid grid-cols-2 gap-3 sm:gap-4">
-                      {/* Textbooks */}
-                      <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-xl p-3 sm:p-4 text-center group hover:shadow-lg transition-all duration-300 border border-blue-500/30 hover:scale-105 backdrop-blur-sm">
-                        <div className="text-2xl sm:text-3xl mb-2">📚</div>
-                        <div className="text-sm font-semibold text-white mb-1">
-                          Textbooks
-                        </div>
-                        <div className="text-xs text-blue-300 font-somali">
-                          Buugaag Waxbarasho
-                        </div>
-                        <div className="text-xs text-slate-400 mt-1">
-                          1000+ Books
-                        </div>
-                      </div>
-
-                      {/* Stationery */}
-                      <div className="bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl p-3 sm:p-4 text-center group hover:shadow-lg transition-all duration-300 border border-purple-500/30 hover:scale-105 backdrop-blur-sm">
-                        <div className="text-2xl sm:text-3xl mb-2">✏️</div>
-                        <div className="text-sm font-semibold text-white mb-1">
-                          Stationery
-                        </div>
-                        <div className="text-xs text-purple-300 font-somali">
-                          Alaabta Qoraalka
-                        </div>
-                        <div className="text-xs text-slate-400 mt-1">
-                          500+ Items
-                        </div>
-                      </div>
-
-                      {/* Electronics */}
-                      <div className="bg-gradient-to-br from-indigo-500/20 to-indigo-600/20 rounded-xl p-3 sm:p-4 text-center group hover:shadow-lg transition-all duration-300 border border-indigo-500/30 hover:scale-105 backdrop-blur-sm">
-                        <div className="text-2xl sm:text-3xl mb-2">💻</div>
-                        <div className="text-sm font-semibold text-white mb-1">
-                          Electronics
-                        </div>
-                        <div className="text-xs text-indigo-300 font-somali">
-                          Qalabka Elektarooniga
-                        </div>
-                        <div className="text-xs text-slate-400 mt-1">
-                          200+ Devices
-                        </div>
-                      </div>
-
-                      {/* Accessories */}
-                      <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-600/20 rounded-xl p-3 sm:p-4 text-center group hover:shadow-lg transition-all duration-300 border border-emerald-500/30 hover:scale-105 backdrop-blur-sm">
-                        <div className="text-2xl sm:text-3xl mb-2">🎒</div>
-                        <div className="text-sm font-semibold text-white mb-1">
-                          Accessories
-                        </div>
-                        <div className="text-xs text-emerald-300 font-somali">
-                          Alaabta Dheeriga
-                        </div>
-                        <div className="text-xs text-slate-400 mt-1">
-                          300+ Items
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Bottom CTA */}
-                    <div className="bg-gradient-to-r from-white/5 to-purple-500/10 p-4 border-t border-white/20">
-                      <div className="text-center">
-                        <div className="text-sm font-medium text-white mb-1">
-                          Special Offer
-                        </div>
-                        <div className="text-xs text-purple-300 font-somali">
-                          Bixinta Gaarka ah
-                        </div>
-                        <div className="text-xs text-slate-400 font-arabic">
-                          عرض خاص
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Floating badges - Mobile Friendly */}
-                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white px-2 py-1 sm:px-3 sm:py-2 rounded-full text-xs font-bold shadow-xl">
-                    <div className="text-center">
-                      <div>✨ Best Quality</div>
-                      <div className="text-[9px] sm:text-[10px] opacity-90 font-somali">
-                        Tayada Fiican
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute -bottom-3 -left-3 bg-gradient-to-r from-purple-500 to-blue-600 text-white px-2 py-1 sm:px-3 sm:py-2 rounded-full text-xs font-bold shadow-xl">
-                    <div className="text-center">
-                      <div>🚚 Fast Delivery</div>
-                      <div className="text-[9px] sm:text-[10px] opacity-90 font-somali">
-                        Gaadiid Degdeg
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Stats Section - Mobile Optimized */}
-              <div className="mt-12 lg:mt-16 grid grid-cols-3 gap-4 sm:gap-8">
-                <div className="text-center bg-white/10 backdrop-blur-xl rounded-xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg">
-                  <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-2">
-                    10K+
-                  </div>
-                  <div className="text-xs sm:text-sm text-slate-300">
-                    Books Available
-                  </div>
-                  <div className="text-[10px] sm:text-xs text-slate-400 font-somali">
-                    Buugaag Diyaar
-                  </div>
-                </div>
-                <div className="text-center bg-white/10 backdrop-blur-xl rounded-xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg">
-                  <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-2">
-                    5K+
-                  </div>
-                  <div className="text-xs sm:text-sm text-slate-300">
-                    Happy Students
-                  </div>
-                  <div className="text-[10px] sm:text-xs text-slate-400 font-somali">
-                    Ardayda Farxada
-                  </div>
-                </div>
-                <div className="text-center bg-white/10 backdrop-blur-xl rounded-xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-lg">
-                  <div className="text-2xl sm:text-3xl font-bold text-emerald-400 mb-2">
-                    24/7
-                  </div>
-                  <div className="text-xs sm:text-sm text-slate-300 font-somali">
-                    Taageero
-                  </div>
-                  <div className="text-[10px] sm:text-xs text-slate-400">
-                    Support
-                  </div>
-                </div>
               </div>
             </div>
           </div>
 
-          {/* Features Section - Aligned with Customer Store */}
-          <div className="relative bg-white/5 backdrop-blur-sm border-t border-white/20">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                <div className="text-center group">
-                  <div className="bg-gradient-to-r from-purple-500 to-blue-600 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <Truck className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+          {/* Bottom Features Bar */}
+          <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/60 backdrop-blur-xl border-t border-white/10">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
+                <button 
+                  onClick={scrollToProducts}
+                  className="group py-5 px-4 hover:bg-white/5 transition-all duration-300 text-center"
+                >
+                  <div className="text-sm font-semibold text-white mb-1 group-hover:text-purple-400 transition-colors">
+                    Men's
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
-                    Fast Delivery •{" "}
-                    <span className="font-somali font-normal">
-                      Gaadiid Degdeg
-                    </span>
-                  </h3>
-                  <p className="text-sm text-slate-300">
-                    Same day delivery within Nairobi. Free shipping on orders
-                    over KES 2,000
-                  </p>
-                </div>
+                  <div className="text-xs text-slate-400">
+                    Shop Collection
+                  </div>
+                </button>
 
-                <div className="text-center group">
-                  <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <button 
+                  onClick={scrollToProducts}
+                  className="group py-5 px-4 hover:bg-white/5 transition-all duration-300 text-center"
+                >
+                  <div className="text-sm font-semibold text-white mb-1 group-hover:text-pink-400 transition-colors">
+                    Women's
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
-                    Quality Guaranteed •{" "}
-                    <span className="font-somali font-normal">
-                      Tayada La Damaanad Qaado
-                    </span>
-                  </h3>
-                  <p className="text-sm text-slate-300">
-                    All products are genuine and come with warranty. 100%
-                    satisfaction guaranteed
-                  </p>
-                </div>
+                  <div className="text-xs text-slate-400">
+                    Shop Collection
+                  </div>
+                </button>
 
-                <div className="text-center group">
-                  <div className="bg-gradient-to-r from-purple-500 to-pink-600 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <Star className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                <button 
+                  onClick={scrollToProducts}
+                  className="group py-5 px-4 hover:bg-white/5 transition-all duration-300 text-center"
+                >
+                  <div className="text-sm font-semibold text-white mb-1 group-hover:text-rose-400 transition-colors">
+                    Accessories
                   </div>
-                  <h3 className="text-base sm:text-lg font-semibold text-white mb-2">
-                    Best Prices •{" "}
-                    <span className="font-somali font-normal">
-                      Qiimaha Ugu Fiican
-                    </span>
-                  </h3>
-                  <p className="text-sm text-slate-300">
-                    Competitive prices on all items. Price match guarantee
-                    available
-                  </p>
-                </div>
+                  <div className="text-xs text-slate-400">
+                    Shop Collection
+                  </div>
+                </button>
+
+                <button 
+                  onClick={scrollToProducts}
+                  className="group py-5 px-4 hover:bg-white/5 transition-all duration-300 text-center"
+                >
+                  <div className="text-sm font-semibold text-white mb-1 group-hover:text-amber-400 transition-colors flex items-center justify-center gap-2">
+                    <Sparkles className="w-4 h-4" />
+                    Exclusive
+                  </div>
+                  <div className="text-xs text-slate-400">
+                    Limited Edition
+                  </div>
+                </button>
               </div>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5">
+              <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
             </div>
           </div>
         </section>
@@ -351,7 +254,7 @@ const HeroSection = memo(
           id="products-section"
           className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
         >
-          <div className="mt-8 sm:mt-16 lg:mt-20">
+          <div className="py-16">
             <FeaturedProducts
               onAddToCart={onAddToCart}
               onQuickView={onQuickView}

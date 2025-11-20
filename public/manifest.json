@@ -1,7 +1,7 @@
 {
-  "name": "Lenzro ERP",
-  "short_name": "Lenzro ERP",
-  "description": "Lenzro ERP — Inventory, sales, orders, and financial management system",
+  "name": "Lenzro Luxe",
+  "short_name": "Lenzro Luxe",
+  "description": "Lenzro Luxe — Premium fashion & clothing brand with exclusive collections",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f8fafc",
@@ -21,7 +21,7 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "productivity", "utilities"],
+  "categories": ["shopping", "lifestyle", "fashion"],
   "lang": "en",
   "scope": "/",
   "prefer_related_applications": false

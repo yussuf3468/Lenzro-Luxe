@@ -1,24 +1,21 @@
-# Hassan Financial System 💼
+# Lenzro Luxe ✨
 
-A comprehensive financial management system for Hassan Muse BookShop & Cyber Café with a modern dark glassmorphic UI and collapsible sidebar navigation.
+A premium fashion & clothing e-commerce platform with a stunning modern dark glassmorphic UI, featuring exclusive collections for men, women, and kids.
 
 ## ✨ Features
 
 ### 📊 Core Functionality
 
-- **Inventory Management** - Track products, stock levels, and reorder alerts
-- **Sales Management** - Process sales, manage orders, and track revenue
-- **Cyber Services** - Track income from cyber café services (photocopy, printing, scanning, editing, etc.)
-- **Financial Tracking**
-  - Initial Investment tracking
-  - Automatic dividend calculation for investors
-  - Debt Management with payment schedules
-  - Expense Management and categorization
-  - Comprehensive financial reports
-- **Customer Portal** - Modern e-commerce interface for customers
-- **Order Management** - Track orders from placement to delivery
-- **User Authentication** - Secure login and role-based access
-- **User Activity Dashboard** - Monitor staff activities and system usage
+- **Fashion Collections** - Curated clothing collections for Men, Women, Kids & Accessories
+- **Product Catalog** - Browse premium clothing with detailed size, color & material info
+- **Smart Shopping** - Advanced filters, wishlist, and personalized recommendations
+- **Size Guide & Fit** - Comprehensive size charts and fit recommendations
+- **Style Inspiration** - Lookbook gallery, outfit suggestions & trending styles
+- **Shopping Cart & Checkout** - Seamless shopping experience with secure payments
+- **Order Tracking** - Real-time order status from placement to delivery
+- **Customer Accounts** - Save favorites, track orders, and manage preferences
+- **Admin Dashboard** - Comprehensive inventory, sales, and analytics management
+- **Staff Portal** - Efficient order processing and customer service tools
 
 ### 🎨 Modern Dark Glassmorphic UI
 

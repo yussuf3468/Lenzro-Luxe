@@ -13,6 +13,14 @@ export interface Product {
   description: string | null;
   created_at: string;
   updated_at: string;
+  // Fashion-specific properties
+  sizes?: string[]; // e.g., ['S', 'M', 'L', 'XL', 'XXL']
+  colors?: string[]; // e.g., ['Black', 'White', 'Navy']
+  material?: string; // e.g., 'Cotton', '100% Polyester'
+  brand?: string; // e.g., 'Lenzro Luxe'
+  fit?: string; // e.g., 'Slim Fit', 'Regular Fit'
+  gender?: 'Men' | 'Women' | 'Kids' | 'Unisex';
+  style?: string; // e.g., 'Casual', 'Formal', 'Sport'
 }
 
 export interface Sale {
