@@ -18,6 +18,7 @@ import {
   ChevronLeft,
   CreditCard,
   TrendingUp,
+  RotateCcw,
 } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 import { usePendingOrdersCount } from "../hooks/useSupabaseQuery";
@@ -85,6 +86,12 @@ export default function Layout({
       label: "Iibka",
       icon: ShoppingCart,
       color: "from-emerald-600 to-teal-600",
+    },
+    {
+      id: "returns",
+      label: "Soo Celinta",
+      icon: RotateCcw,
+      color: "from-rose-600 to-red-600",
     },
     {
       id: "search",
@@ -224,10 +231,10 @@ export default function Layout({
                   </div>
                   <div>
                     <h1 className="text-lg font-black text-white">
-                      LENZRO LUXE
+                      AL-KALAM BOOKS
                     </h1>
                     <p className="text-xs text-purple-300 font-medium">
-                      Premium Fashion
+                      Bookshop & Cyber
                     </p>
                   </div>
                 </div>
