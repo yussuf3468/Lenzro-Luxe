@@ -25,7 +25,7 @@ const HeroSection = memo(
     return (
       <>
         {/* Professional Fashion Hero Section */}
-        <section className="relative h-screen overflow-hidden bg-black">
+        <section className="relative min-h-screen overflow-hidden bg-black">
           {/* Professional Fashion Video Background */}
           <div className="absolute inset-0 w-full h-full">
             <video
@@ -47,7 +47,7 @@ const HeroSection = memo(
           </div>
 
           {/* Main Content - Two Column Layout */}
-          <div className="relative z-10 h-full flex items-center pt-20 pb-16 sm:pb-24 md:pb-32 overflow-hidden">
+          <div className="relative z-10 min-h-screen flex items-center py-24 sm:py-28 md:py-32 lg:py-20 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
                 {/* Left Column - Compact Headline & CTAs */}

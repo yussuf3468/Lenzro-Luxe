@@ -513,24 +513,8 @@ export default function CustomerStore({
           </div>
         ) : (
           <>
-            {/* Mobile: Horizontal Carousel */}
-            <div className="block sm:hidden overflow-x-auto scrollbar-hide -mx-4 px-4">
-              <div className="flex gap-4 pb-4">
-                {paginatedProducts.map((product, index) => (
-                  <div key={product.id} className="flex-shrink-0 w-[85vw] max-w-[320px]">
-                    <ProductCard
-                      product={product}
-                      onAddToCart={handleAddToCart}
-                      onQuickView={handleQuickViewMain}
-                      index={index}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Tablet & Desktop: Grid */}
-            <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
+            {/* Mobile: Vertical Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
               {paginatedProducts.map((product, index) => (
                 <ProductCard
                   key={product.id}
@@ -566,7 +550,9 @@ export default function CustomerStore({
                     1
                   </button>
                   {currentPage > 4 && (
-                    <span className="flex-shrink-0 text-slate-400 px-2">...</span>
+                    <span className="flex-shrink-0 text-slate-400 px-2">
+                      ...
+                    </span>
                   )}
                 </>
               )}
@@ -579,7 +565,10 @@ export default function CustomerStore({
                 })
                 .map((page) => {
                   // Skip if already shown
-                  if ((page === 1 && currentPage > 3) || (page === totalPages && currentPage < totalPages - 2)) {
+                  if (
+                    (page === 1 && currentPage > 3) ||
+                    (page === totalPages && currentPage < totalPages - 2)
+                  ) {
                     return null;
                   }
                   return (
@@ -601,7 +590,9 @@ export default function CustomerStore({
               {currentPage < totalPages - 2 && (
                 <>
                   {currentPage < totalPages - 3 && (
-                    <span className="flex-shrink-0 text-slate-400 px-2">...</span>
+                    <span className="flex-shrink-0 text-slate-400 px-2">
+                      ...
+                    </span>
                   )}
                   <button
                     onClick={() => setCurrentPage(totalPages)}
