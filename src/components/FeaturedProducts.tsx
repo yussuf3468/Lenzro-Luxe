@@ -226,30 +226,14 @@ const FeaturedProducts = memo(
           <div className="bg-white/10 backdrop-blur-xl rounded-lg shadow border border-white/20 p-4 sm:p-6">
             <div className="animate-pulse">
               <div className="h-8 bg-white/20 rounded mb-4" />
-              {/* Mobile: Horizontal Carousel */}
-              <div className="block sm:hidden overflow-x-auto scrollbar-hide -mx-4 px-4">
-                <div className="flex gap-4 pb-4">
-                  {[...Array(8)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="flex-shrink-0 w-[280px] bg-white/10 backdrop-blur-xl rounded shadow border border-white/20 p-4"
-                    >
-                      <div className="h-32 bg-white/20 rounded mb-3" />
-                      <div className="h-4 bg-white/20 rounded mb-2" />
-                      <div className="h-6 bg-white/20 rounded" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Tablet & Desktop: Grid */}
-              <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {/* Loading Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {[...Array(8)].map((_, i) => (
                   <div
                     key={i}
                     className="bg-white/10 backdrop-blur-xl rounded shadow border border-white/20 p-4"
                   >
-                    <div className="h-32 bg-white/20 rounded mb-3" />
+                    <div className="h-48 bg-white/20 rounded mb-3" />
                     <div className="h-4 bg-white/20 rounded mb-2" />
                     <div className="h-6 bg-white/20 rounded" />
                   </div>
@@ -262,9 +246,9 @@ const FeaturedProducts = memo(
     }
 
     return (
-      <div className="py-12 sm:py-16 lg:py-20">
-        <div className="bg-gradient-to-br from-black/40 via-purple-950/20 to-black/40 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/10 p-6 sm:p-8 lg:p-12">
-          <div className="mb-8 lg:mb-12">
+      <div className="py-8 sm:py-12 md:py-16 lg:py-20">
+        <div className="bg-gradient-to-br from-black/40 via-purple-950/20 to-black/40 backdrop-blur-2xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/10 p-4 sm:p-6 md:p-8 lg:p-12">
+          <div className="mb-6 sm:mb-8 lg:mb-12">
             <div className="block lg:hidden text-center">
               <div className="flex items-center justify-center space-x-3 mb-6">
                 <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl p-3 rounded-full border border-purple-400/30">
@@ -306,36 +290,19 @@ const FeaturedProducts = memo(
             </div>
           </div>
 
-          {/* Mobile: Horizontal Carousel */}
-          <div className="block sm:hidden">
-            <div className="overflow-x-auto scrollbar-hide -mx-4 px-4">
-              <div className="flex gap-4 pb-4">
-                {featuredProducts.map((product: Product, index: number) => (
-                  <div key={product.id} className="flex-shrink-0 w-[280px]">
-                    <FeaturedProductCard product={product} index={index} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Tablet & Desktop: Grid */}
-          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {/* Mobile & Tablet: Vertical Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
             {featuredProducts.map((product: Product, index: number) => (
-              <FeaturedProductCard
-                key={product.id}
-                product={product}
-                index={index}
-              />
+              <FeaturedProductCard key={product.id} product={product} index={index} />
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-8 sm:mt-10 md:mt-12 text-center">
             <button
               onClick={handleViewAllProducts}
-              className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white font-bold py-4 px-10 rounded-full hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 border border-white/20"
+              className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white font-bold py-3 sm:py-4 px-8 sm:px-10 rounded-full hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 border border-white/20"
             >
-              <span className="text-sm uppercase tracking-wider">
+              <span className="text-xs sm:text-sm uppercase tracking-wider">
                 Explore All Collections
               </span>
             </button>

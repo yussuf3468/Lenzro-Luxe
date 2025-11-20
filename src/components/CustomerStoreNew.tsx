@@ -415,27 +415,27 @@ export default function CustomerStore({
       {/* Products Section */}
       <section
         id="products-section"
-        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16"
       >
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 text-purple-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            <Package className="w-4 h-4" />
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 text-purple-300 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+            <Package className="w-3 h-3 sm:w-4 sm:h-4" />
             <span>Premium Fashion Collection</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text mb-3 sm:mb-4">
             Our Collections
           </h2>
-          <p className="text-slate-300 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto px-4">
             Discover our carefully curated collection of premium fashion items.
             Quality guaranteed, style unmatched.
           </p>
         </div>
         {/* Category Filter */}
-        <div className="mb-12">
+        <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
           {/* Mobile Filter Design */}
           <div className="block lg:hidden">
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg border border-white/20 p-4 mb-6">
+            <div className="bg-white/10 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-lg border border-white/20 p-3 sm:p-4 mb-4 sm:mb-6">
               <div className="flex items-center mb-4">
                 <Filter className="w-5 h-5 text-purple-300 mr-2 flex-shrink-0" />
                 <span className="text-lg font-bold text-white">
