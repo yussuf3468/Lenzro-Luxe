@@ -1,3 +1,4 @@
+# Logs
 logs
 *.log
 npm-debug.log*
@@ -6,26 +7,37 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies / Build output
+node_modules/
+dist/
+dist-ssr/
 *.local
 
+# IDE folders
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-.env
 
-# Security - Keep sensitive files out of git
+# Environment files
+.env
+.env.*      # also ignore .env.production .env.local etc.
+
+# Security / Sensitive files
 setup-staff-accounts.js
 AUTHENTICATION_SETUP.md
 *.secrets
 *.credentials
 staff-credentials.txt
 passwords.txt
+
+# Database backups
+Al-kalam-database-backup/
+
+# GitHub or repository meta folders (be careful)
+github/
