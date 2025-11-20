@@ -116,9 +116,9 @@ const Navbar = memo(
             </div>
 
             {/* Desktop Search */}
-            <div className="hidden md:flex flex-1 max-w-lg mx-8">
+            <div className="hidden md:flex flex-1 max-w-xs lg:max-w-lg mx-4 lg:mx-8">
               <div className="relative w-full">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-purple-400/60 w-5 h-5" />
+                <Search className="absolute left-3 lg:left-4 top-1/2 transform -translate-y-1/2 text-purple-400/60 w-4 h-4 lg:w-5 lg:h-5" />
                 <input
                   type="text"
                   placeholder="Search luxury collections..."
@@ -128,7 +128,7 @@ const Navbar = memo(
                   onBlur={() =>
                     setTimeout(() => setShowSearchSuggestions(false), 200)
                   }
-                  className="w-full pl-12 pr-6 py-3 bg-white/5 border border-white/10 text-white placeholder-purple-300/40 rounded-full focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 focus:bg-white/10 text-sm transition-all duration-300"
+                  className="w-full pl-10 lg:pl-12 pr-4 lg:pr-6 py-2.5 lg:py-3 bg-white/5 border border-white/10 text-white placeholder-purple-300/40 rounded-full focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 focus:bg-white/10 text-sm transition-all duration-300"
                 />
 
                 {/* Search Suggestions */}

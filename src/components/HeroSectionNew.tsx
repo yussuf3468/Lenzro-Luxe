@@ -47,21 +47,21 @@ const HeroSection = memo(
           </div>
 
           {/* Main Content - Two Column Layout */}
-          <div className="relative z-10 h-full flex items-center pt-20 pb-32 overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="relative z-10 h-full flex items-center pt-20 pb-16 sm:pb-24 md:pb-32 overflow-hidden">
+            <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
                 {/* Left Column - Compact Headline & CTAs */}
-                <div className="space-y-8">
+                <div className="space-y-6 sm:space-y-8">
                   {/* Premium Badge */}
-                  <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg">
-                    <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                    <span className="text-sm font-semibold text-white tracking-widest">
+                  <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg">
+                    <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 fill-amber-400" />
+                    <span className="text-xs sm:text-sm font-semibold text-white tracking-widest">
                       NEW COLLECTION 2025
                     </span>
                   </div>
 
                   {/* Elegant Headline */}
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight">
                     Where Fashion
                     <br />
                     <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent">
@@ -69,31 +69,31 @@ const HeroSection = memo(
                     </span>
                   </h1>
 
-                  <p className="text-lg text-slate-300 max-w-md leading-relaxed">
+                  <p className="text-base sm:text-lg text-slate-300 max-w-md leading-relaxed">
                     Discover premium fashion pieces curated for the modern
                     trendsetter. Elevate your style with our exclusive
                     collection.
                   </p>
 
                   {/* Call to Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                     <button
                       onClick={handleShopNowClick}
-                      className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold text-base uppercase tracking-wider shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
+                      className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
-                      <div className="relative flex items-center justify-center gap-3">
+                      <div className="relative flex items-center justify-center gap-2 sm:gap-3">
                         <span>Shop Now</span>
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </button>
 
                     <button
                       onClick={scrollToProducts}
-                      className="group px-8 py-4 bg-white/10 backdrop-blur-xl text-white rounded-xl border-2 border-white/30 hover:border-white font-bold text-base uppercase tracking-wider hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95"
+                      className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-xl text-white rounded-xl border-2 border-white/30 hover:border-white font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95"
                     >
-                      <div className="flex items-center justify-center gap-3">
-                        <Sparkles className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+                      <div className="flex items-center justify-center gap-2 sm:gap-3">
+                        <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-180 transition-transform duration-500" />
                         <span>New Arrivals</span>
                       </div>
                     </button>

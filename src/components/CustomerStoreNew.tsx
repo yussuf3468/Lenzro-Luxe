@@ -65,18 +65,18 @@ const ProductCard = memo(
     return (
       <div
         data-product-id={product.id}
-        className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-400 overflow-hidden group border border-white/20 ring-highlight-target"
+        className="bg-gradient-to-br from-slate-900/90 via-purple-950/40 to-slate-900/90 backdrop-blur-xl rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-400 overflow-hidden group border border-white/20 ring-highlight-target"
       >
         {/* Product Image */}
         <div
-          className="relative overflow-hidden cursor-pointer bg-gradient-to-br from-white/5 to-white/10"
+          className="relative overflow-hidden cursor-pointer bg-gradient-to-br from-purple-950/20 to-pink-950/20"
           onClick={handleQuickView}
         >
           <OptimizedImage
             src={product.image_url}
             alt={product.name}
-            className="w-full h-48 sm:h-52 md:h-56 object-contain p-2 sm:p-3 group-hover:scale-105 transition-transform duration-700 ease-out"
-            fallbackClassName="w-full h-48 sm:h-52 md:h-56"
+            className="w-full h-56 sm:h-60 md:h-64 object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+            fallbackClassName="w-full h-56 sm:h-60 md:h-64"
             onClick={handleQuickView}
             priority={index < 3}
             preload={index < 6}
@@ -84,13 +84,13 @@ const ProductCard = memo(
           />
 
           {/* Elegant Quick View Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-purple-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 handleQuickView();
               }}
-              className="bg-white/95 backdrop-blur-md text-slate-900 px-6 py-2.5 rounded-full font-medium text-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-400 shadow-lg hover:shadow-xl border border-white/30"
+              className="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white px-8 py-3 rounded-full font-semibold text-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-400 shadow-lg shadow-purple-500/50 hover:shadow-xl border border-white/20"
             >
               Quick View
             </button>
@@ -99,42 +99,42 @@ const ProductCard = memo(
           {/* Refined Wishlist Button */}
           <button
             onClick={toggleLike}
-            className={`absolute top-4 right-4 w-10 h-10 rounded-full backdrop-blur-md transition-all duration-300 flex items-center justify-center ${
+            className={`absolute top-4 right-4 w-11 h-11 rounded-full backdrop-blur-md transition-all duration-300 flex items-center justify-center shadow-lg ${
               isLiked
-                ? "bg-rose-500/90 text-white shadow-lg shadow-rose-500/25"
-                : "bg-white/80 text-slate-400 hover:bg-white/95 hover:text-rose-500 hover:shadow-md"
+                ? "bg-gradient-to-br from-rose-500 to-pink-600 text-white shadow-rose-500/50 scale-110"
+                : "bg-white/90 text-slate-600 hover:bg-white hover:text-rose-500 hover:scale-110"
             }`}
           >
-            <Heart className={`w-4 h-4 ${isLiked ? "fill-current" : ""}`} />
+            <Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
           </button>
 
           {/* Minimal Featured Badge */}
           {product.featured && (
-            <div className="absolute top-4 left-4 bg-amber-400/95 backdrop-blur-sm text-amber-900 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center space-x-1.5 shadow-sm">
-              <Star className="w-3 h-3 fill-current" />
+            <div className="absolute top-4 left-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full text-xs font-bold flex items-center space-x-1.5 shadow-lg shadow-amber-500/30">
+              <Star className="w-3.5 h-3.5 fill-current" />
               <span>Featured</span>
             </div>
           )}
 
           {/* Subtle Low Stock Warning */}
           {product.quantity_in_stock <= product.reorder_level && (
-            <div className="absolute bottom-4 left-4 bg-orange-500/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-medium shadow-sm">
+            <div className="absolute bottom-4 left-4 bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg shadow-orange-500/30">
               Only {product.quantity_in_stock} left
             </div>
           )}
         </div>
 
         {/* Elegant Product Info */}
-        <div className="p-6">
+        <div className="p-5 sm:p-6">
           {/* Category Tag */}
           <div className="mb-3">
-            <span className="text-xs font-medium text-purple-300 uppercase tracking-wide">
+            <span className="text-xs font-bold text-purple-300 uppercase tracking-wider bg-purple-950/30 px-3 py-1 rounded-full border border-purple-500/30">
               {product.category}
             </span>
           </div>
 
           {/* Product Name */}
-          <h3 className="font-semibold text-white text-lg mb-3 line-clamp-2 leading-tight group-hover:text-purple-200 transition-colors duration-300">
+          <h3 className="font-bold text-white text-lg sm:text-xl mb-3 line-clamp-2 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-300 group-hover:to-pink-300 transition-all duration-300">
             {product.name}
           </h3>
 
@@ -146,13 +146,13 @@ const ProductCard = memo(
           )}
 
           {/* Price & Stock Info */}
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-5">
             <div className="flex flex-col">
-              <p className="text-2xl font-light text-white mb-1">
+              <p className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-rose-300 mb-1">
                 KES {product.selling_price.toLocaleString()}
               </p>
               <p className="text-xs text-slate-400 flex items-center">
-                <Package className="w-3 h-3 mr-1.5" />
+                <Package className="w-3.5 h-3.5 mr-1.5" />
                 {product.quantity_in_stock} in stock
               </p>
             </div>
@@ -162,16 +162,16 @@ const ProductCard = memo(
           <button
             onClick={handleAddToCart}
             disabled={product.quantity_in_stock === 0 || isAddingToCart}
-            className={`w-full py-3.5 px-4 rounded-xl font-medium text-sm transition-all duration-300 flex items-center justify-center space-x-2 ${
+            className={`w-full py-4 px-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg ${
               product.quantity_in_stock === 0
-                ? "bg-white/10 text-slate-400 cursor-not-allowed border border-white/20"
+                ? "bg-slate-700/50 text-slate-400 cursor-not-allowed border border-white/10"
                 : isAddingToCart
-                ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/25"
-                : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 hover:shadow-lg hover:shadow-purple-500/25 active:from-purple-800 active:to-blue-800"
+                ? "bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-emerald-500/50 scale-105"
+                : "bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white hover:from-purple-700 hover:via-pink-700 hover:to-rose-700 hover:shadow-xl hover:shadow-purple-500/50 active:scale-95"
             }`}
           >
             <ShoppingCart
-              className={`w-4 h-4 ${isAddingToCart ? "animate-pulse" : ""}`}
+              className={`w-5 h-5 ${isAddingToCart ? "animate-pulse" : ""}`}
             />
             <span>
               {product.quantity_in_stock === 0
@@ -437,25 +437,27 @@ export default function CustomerStore({
           <div className="block lg:hidden">
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl shadow-lg border border-white/20 p-4 mb-6">
               <div className="flex items-center mb-4">
-                <Filter className="w-5 h-5 text-purple-300 mr-2" />
+                <Filter className="w-5 h-5 text-purple-300 mr-2 flex-shrink-0" />
                 <span className="text-lg font-bold text-white">
                   Filter by Category
                 </span>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => handleCategoryChange(category)}
-                    className={`px-3 py-2 rounded-xl text-sm font-bold transition-all duration-300 ${
-                      selectedCategory === category
-                        ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg transform scale-105"
-                        : "bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white hover:scale-105 border border-white/20"
-                    }`}
-                  >
-                    {category === "all" ? "All" : category}
-                  </button>
-                ))}
+              <div className="overflow-x-auto scrollbar-hide -mx-2 px-2">
+                <div className="flex gap-2 pb-2">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => handleCategoryChange(category)}
+                      className={`flex-shrink-0 px-4 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap ${
+                        selectedCategory === category
+                          ? "bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white shadow-lg shadow-purple-500/50"
+                          : "bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white border border-white/20"
+                      }`}
+                    >
+                      {category === "all" ? "All Products" : category}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -515,7 +517,7 @@ export default function CustomerStore({
             <div className="block sm:hidden overflow-x-auto scrollbar-hide -mx-4 px-4">
               <div className="flex gap-4 pb-4">
                 {paginatedProducts.map((product, index) => (
-                  <div key={product.id} className="flex-shrink-0 w-[280px]">
+                  <div key={product.id} className="flex-shrink-0 w-[85vw] max-w-[320px]">
                     <ProductCard
                       product={product}
                       onAddToCart={handleAddToCart}
@@ -528,7 +530,7 @@ export default function CustomerStore({
             </div>
 
             {/* Tablet & Desktop: Grid */}
-            <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
               {paginatedProducts.map((product, index) => (
                 <ProductCard
                   key={product.id}
@@ -547,26 +549,67 @@ export default function CustomerStore({
             <button
               onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
               disabled={currentPage === 1}
-              className="w-full sm:w-auto px-4 py-2 border border-white/20 bg-white/10 backdrop-blur-xl rounded-lg text-white hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-medium"
+              className="w-full sm:w-auto min-w-[100px] px-5 py-3 border border-white/20 bg-white/10 backdrop-blur-xl rounded-xl text-white hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-semibold shadow-lg"
             >
               Previous
             </button>
 
-            <div className="flex flex-wrap justify-center gap-2 max-w-full overflow-x-auto scrollbar-hide">
-              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                (page) => (
+            {/* Smart Pagination - Shows limited pages */}
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide max-w-full px-2">
+              {/* First page */}
+              {currentPage > 3 && (
+                <>
                   <button
-                    key={page}
-                    onClick={() => setCurrentPage(page)}
-                    className={`flex-shrink-0 px-3 py-2 rounded-lg transition-all font-medium ${
-                      page === currentPage
-                        ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg"
-                        : "bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white"
-                    }`}
+                    onClick={() => setCurrentPage(1)}
+                    className="flex-shrink-0 min-w-[44px] h-11 px-4 py-2 rounded-xl transition-all font-semibold bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white shadow-md"
                   >
-                    {page}
+                    1
                   </button>
-                )
+                  {currentPage > 4 && (
+                    <span className="flex-shrink-0 text-slate-400 px-2">...</span>
+                  )}
+                </>
+              )}
+
+              {/* Pages around current */}
+              {Array.from({ length: totalPages }, (_, i) => i + 1)
+                .filter((page) => {
+                  const distance = Math.abs(page - currentPage);
+                  return distance <= 2 || page === 1 || page === totalPages;
+                })
+                .map((page) => {
+                  // Skip if already shown
+                  if ((page === 1 && currentPage > 3) || (page === totalPages && currentPage < totalPages - 2)) {
+                    return null;
+                  }
+                  return (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page)}
+                      className={`flex-shrink-0 min-w-[44px] h-11 px-4 py-2 rounded-xl transition-all font-semibold shadow-md ${
+                        page === currentPage
+                          ? "bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white shadow-lg shadow-purple-500/50 scale-110"
+                          : "bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white hover:scale-105"
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  );
+                })}
+
+              {/* Last page */}
+              {currentPage < totalPages - 2 && (
+                <>
+                  {currentPage < totalPages - 3 && (
+                    <span className="flex-shrink-0 text-slate-400 px-2">...</span>
+                  )}
+                  <button
+                    onClick={() => setCurrentPage(totalPages)}
+                    className="flex-shrink-0 min-w-[44px] h-11 px-4 py-2 rounded-xl transition-all font-semibold bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white shadow-md"
+                  >
+                    {totalPages}
+                  </button>
+                </>
               )}
             </div>
 
@@ -575,7 +618,7 @@ export default function CustomerStore({
                 setCurrentPage(Math.min(totalPages, currentPage + 1))
               }
               disabled={currentPage === totalPages}
-              className="w-full sm:w-auto px-4 py-2 border border-white/20 bg-white/10 backdrop-blur-xl rounded-lg text-white hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-medium"
+              className="w-full sm:w-auto min-w-[100px] px-5 py-3 border border-white/20 bg-white/10 backdrop-blur-xl rounded-xl text-white hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all font-semibold shadow-lg"
             >
               Next
             </button>
