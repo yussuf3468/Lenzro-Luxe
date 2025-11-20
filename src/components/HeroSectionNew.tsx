@@ -47,7 +47,7 @@ const HeroSection = memo(
           </div>
 
           {/* Main Content - Two Column Layout */}
-          <div className="relative z-10 min-h-screen flex items-center pt-20 pb-8 sm:pt-24 sm:pb-16 md:py-28 lg:py-20 overflow-hidden">
+          <div className="relative z-10 min-h-screen flex items-center pt-24 pb-12 sm:py-28 md:py-32 lg:py-20 overflow-hidden">
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
                 {/* Left Column - Compact Headline & CTAs */}
@@ -250,11 +250,11 @@ const HeroSection = memo(
           </div>
 
           {/* Scroll Indicator */}
-          <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+          {/* <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
             <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5">
               <div className="w-1 h-2 bg-white/60 rounded-full animate-pulse"></div>
             </div>
-          </div>
+          </div> */}
         </section>
 
         {/* Featured Products Section */}

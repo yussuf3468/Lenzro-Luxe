@@ -293,7 +293,11 @@ const FeaturedProducts = memo(
           {/* Mobile & Tablet: Vertical Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
             {featuredProducts.map((product: Product, index: number) => (
-              <FeaturedProductCard key={product.id} product={product} index={index} />
+              <FeaturedProductCard
+                key={product.id}
+                product={product}
+                index={index}
+              />
             ))}
           </div>
 
