@@ -35,28 +35,29 @@ const HeroSection = memo(
               playsInline
               className="absolute inset-0 w-full h-full object-cover opacity-70"
             >
-              <source 
-                src="https://videos.pexels.com/video-files/3373353/3373353-uhd_2560_1440_25fps.mp4" 
-                type="video/mp4" 
+              <source
+                src="https://videos.pexels.com/video-files/3373353/3373353-uhd_2560_1440_25fps.mp4"
+                type="video/mp4"
               />
             </video>
-            
+
             {/* Elegant Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-transparent to-pink-900/30"></div>
           </div>
 
           {/* Main Content - Two Column Layout */}
-          <div className="relative z-10 h-full flex items-center pt-20 pb-32">
-            <div className="container mx-auto px-6 lg:px-12">
+          <div className="relative z-10 h-full flex items-center pt-20 pb-32 overflow-hidden">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
                 {/* Left Column - Compact Headline & CTAs */}
                 <div className="space-y-8">
                   {/* Premium Badge */}
                   <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 shadow-lg">
                     <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                    <span className="text-sm font-semibold text-white tracking-widest">NEW COLLECTION 2025</span>
+                    <span className="text-sm font-semibold text-white tracking-widest">
+                      NEW COLLECTION 2025
+                    </span>
                   </div>
 
                   {/* Elegant Headline */}
@@ -69,7 +70,9 @@ const HeroSection = memo(
                   </h1>
 
                   <p className="text-lg text-slate-300 max-w-md leading-relaxed">
-                    Discover premium fashion pieces curated for the modern trendsetter. Elevate your style with our exclusive collection.
+                    Discover premium fashion pieces curated for the modern
+                    trendsetter. Elevate your style with our exclusive
+                    collection.
                   </p>
 
                   {/* Call to Action Buttons */}
@@ -126,41 +129,51 @@ const HeroSection = memo(
                     <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
                       <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20"></div>
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                      <img 
-                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=400&fit=crop" 
+                      <img
+                        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=400&fit=crop"
                         alt="Fashion showcase 1"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute bottom-4 left-4 right-4">
-                        <div className="text-white font-bold text-lg">Premium Collection</div>
-                        <div className="text-white/70 text-sm">Women's Fashion</div>
+                        <div className="text-white font-bold text-lg">
+                          Premium Collection
+                        </div>
+                        <div className="text-white/70 text-sm">
+                          Women's Fashion
+                        </div>
                       </div>
                     </div>
 
                     <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
                       <div className="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-rose-600/20"></div>
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                      <img 
-                        src="https://images.unsplash.com/photo-1445384763658-0400939829cd?w=400&h=400&fit=crop" 
+                      <img
+                        src="https://images.unsplash.com/photo-1445384763658-0400939829cd?w=400&h=400&fit=crop"
                         alt="Fashion showcase 2"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute bottom-4 left-4 right-4">
-                        <div className="text-white font-bold text-lg">Exclusive Pieces</div>
-                        <div className="text-white/70 text-sm">New Arrivals</div>
+                        <div className="text-white font-bold text-lg">
+                          Exclusive Pieces
+                        </div>
+                        <div className="text-white/70 text-sm">
+                          New Arrivals
+                        </div>
                       </div>
                     </div>
 
                     <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                      <img 
-                        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=400&fit=crop" 
+                      <img
+                        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=400&fit=crop"
                         alt="Fashion showcase 3"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute bottom-4 left-4 right-4">
-                        <div className="text-white font-bold text-lg">Designer Selection</div>
+                        <div className="text-white font-bold text-lg">
+                          Designer Selection
+                        </div>
                         <div className="text-white/70 text-sm">Accessories</div>
                       </div>
                     </div>
@@ -168,19 +181,22 @@ const HeroSection = memo(
                     <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
                       <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-orange-600/20"></div>
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                      <img 
-                        src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=400&h=400&fit=crop" 
+                      <img
+                        src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=400&h=400&fit=crop"
                         alt="Fashion showcase 4"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute bottom-4 left-4 right-4">
-                        <div className="text-white font-bold text-lg">Trending Now</div>
-                        <div className="text-white/70 text-sm">Best Sellers</div>
+                        <div className="text-white font-bold text-lg">
+                          Trending Now
+                        </div>
+                        <div className="text-white/70 text-sm">
+                          Best Sellers
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -189,43 +205,37 @@ const HeroSection = memo(
           <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/60 backdrop-blur-xl border-t border-white/10">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
-                <button 
+                <button
                   onClick={scrollToProducts}
                   className="group py-5 px-4 hover:bg-white/5 transition-all duration-300 text-center"
                 >
                   <div className="text-sm font-semibold text-white mb-1 group-hover:text-purple-400 transition-colors">
                     Men's
                   </div>
-                  <div className="text-xs text-slate-400">
-                    Shop Collection
-                  </div>
+                  <div className="text-xs text-slate-400">Shop Collection</div>
                 </button>
 
-                <button 
+                <button
                   onClick={scrollToProducts}
                   className="group py-5 px-4 hover:bg-white/5 transition-all duration-300 text-center"
                 >
                   <div className="text-sm font-semibold text-white mb-1 group-hover:text-pink-400 transition-colors">
                     Women's
                   </div>
-                  <div className="text-xs text-slate-400">
-                    Shop Collection
-                  </div>
+                  <div className="text-xs text-slate-400">Shop Collection</div>
                 </button>
 
-                <button 
+                <button
                   onClick={scrollToProducts}
                   className="group py-5 px-4 hover:bg-white/5 transition-all duration-300 text-center"
                 >
                   <div className="text-sm font-semibold text-white mb-1 group-hover:text-rose-400 transition-colors">
                     Accessories
                   </div>
-                  <div className="text-xs text-slate-400">
-                    Shop Collection
-                  </div>
+                  <div className="text-xs text-slate-400">Shop Collection</div>
                 </button>
 
-                <button 
+                <button
                   onClick={scrollToProducts}
                   className="group py-5 px-4 hover:bg-white/5 transition-all duration-300 text-center"
                 >
@@ -233,9 +243,7 @@ const HeroSection = memo(
                     <Sparkles className="w-4 h-4" />
                     Exclusive
                   </div>
-                  <div className="text-xs text-slate-400">
-                    Limited Edition
-                  </div>
+                  <div className="text-xs text-slate-400">Limited Edition</div>
                 </button>
               </div>
             </div>

@@ -1,0 +1,17 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="45" fill="url(#gradient)"/>
+  <path d="M56 45H79V101H113V124H56V45Z" fill="white" stroke="white" stroke-width="2"/>
+  <circle cx="129" cy="51" r="11" fill="#FCD34D"/>
+  <circle cx="129" cy="51" r="11" fill="url(#sparkle)" opacity="0.5"/>
+  <defs>
+    <linearGradient id="gradient" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="0.5" stop-color="#EC4899"/>
+      <stop offset="1" stop-color="#F43F5E"/>
+    </linearGradient>
+    <radialGradient id="sparkle" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#FEF3C7"/>
+      <stop offset="1" stop-color="#FCD34D"/>
+    </radialGradient>
+  </defs>
+</svg>

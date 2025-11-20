@@ -69,7 +69,10 @@ export default function Dashboard() {
         (sum, s) => sum + s.total_sale,
         0
       );
-      const dailyProfit = dailySalesRecords.reduce((sum, s) => sum + s.profit, 0);
+      const dailyProfit = dailySalesRecords.reduce(
+        (sum, s) => sum + s.profit,
+        0
+      );
 
       setStats({
         totalSales,
@@ -130,7 +133,8 @@ export default function Dashboard() {
               </h1>
             </div>
             <p className="text-xs md:text-sm text-slate-200 font-medium max-w-3xl mx-auto">
-              ✨ Welcome to LENZRO LUXE Dashboard — Manage your fashion inventory, sales, and staff with real-time data insights!
+              ✨ Welcome to LENZRO LUXE Dashboard — Manage your fashion
+              inventory, sales, and staff with real-time data insights!
             </p>
 
             <div className="flex items-center justify-center space-x-2 text-emerald-400">

@@ -43,7 +43,13 @@ interface ReceiptData {
   total_profit: number; // INTERNAL ONLY (not rendered on customer receipt)
 }
 
-const paymentMethods = ["Cash", "Mpesa", "Till Number", "Card", "Bank Transfer"];
+const paymentMethods = [
+  "Cash",
+  "Mpesa",
+  "Till Number",
+  "Card",
+  "Bank Transfer",
+];
 const staffMembers = ["Mohamed", "Najib", "Isse", "Timo", "Samira"];
 
 export default function SaleForm({
@@ -664,7 +670,8 @@ export default function SaleForm({
               </div>
 
               <div className="mt-4 text-center text-[10px] text-gray-600">
-                Thank you for your purchase! Please keep this receipt for your records.
+                Thank you for your purchase! Please keep this receipt for your
+                records.
               </div>
             </div>
 
@@ -701,7 +708,9 @@ export default function SaleForm({
             {/* Line Items */}
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                <h4 className="text-base sm:text-lg font-bold text-white">Products</h4>
+                <h4 className="text-base sm:text-lg font-bold text-white">
+                  Products
+                </h4>
                 <div className="flex w-full sm:w-auto space-x-3">
                   <button
                     type="button"

@@ -34,10 +34,4 @@ AUTHENTICATION_SETUP.md
 *.secrets
 *.credentials
 staff-credentials.txt
-passwords.txt
 
-# Database backups
-Al-kalam-database-backup/
-
-# GitHub or repository meta folders (be careful)
-github/

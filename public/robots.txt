@@ -1,3 +1,21 @@
 User-agent: *
 Allow: /
-Sitemap: https://finance.lenzro.com/sitemap.xml
+
+# Disallow admin and authentication pages
+Disallow: /admin
+Disallow: /login
+Disallow: /auth
+
+# Sitemap
+Sitemap: https://lenzroluxe.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all image indexing
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow all shopping bots
+User-agent: Googlebot-Shopping
+Allow: /

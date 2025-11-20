@@ -115,8 +115,8 @@ const TrendingStyles = memo(({ onExplore }: TrendingStylesProps) => {
               New Season Collection
             </h3>
             <p className="text-lg text-slate-300 mb-6 max-w-2xl mx-auto">
-              Get up to <span className="text-pink-400 font-bold">50% OFF</span> on
-              selected items from our latest collection
+              Get up to <span className="text-pink-400 font-bold">50% OFF</span>{" "}
+              on selected items from our latest collection
             </p>
 
             <button

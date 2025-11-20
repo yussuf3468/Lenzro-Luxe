@@ -17,12 +17,7 @@
     fill="#64748b"
     font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif"
   >
-    <text
-      x="50%"
-      y="48%"
-      font-size="22"
-      text-anchor="middle"
-    >LENZRO LUXE</text>
+    <text x="50%" y="48%" font-size="22" text-anchor="middle">LENZRO LUXE</text>
     <text
       x="50%"
       y="58%"

@@ -15,7 +15,7 @@ export default function ProductCard({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <div
       className="group relative bg-gradient-to-br from-black/40 via-purple-950/20 to-black/40 backdrop-blur-2xl rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden border border-white/10 hover:border-purple-400/30 p-4"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -33,16 +33,21 @@ export default function ProductCard({
       </button>
 
       {/* Product Image */}
-      <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-white/5 to-white/10 mb-4 h-48 cursor-pointer" onClick={() => onQuickView(product)}>
+      <div
+        className="relative overflow-hidden rounded-xl bg-gradient-to-br from-white/5 to-white/10 mb-4 h-48 cursor-pointer"
+        onClick={() => onQuickView(product)}
+      >
         <img
           src={product.image_url}
           alt={product.name}
           className="w-full h-full object-contain p-3 transition-transform duration-700 group-hover:scale-110"
         />
         {/* Quick View Overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-purple-950/40 to-transparent flex items-center justify-center transition-opacity duration-300 ${
-          isHovered ? "opacity-100" : "opacity-0"
-        }`}>
+        <div
+          className={`absolute inset-0 bg-gradient-to-t from-black/80 via-purple-950/40 to-transparent flex items-center justify-center transition-opacity duration-300 ${
+            isHovered ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <button
             onClick={() => onQuickView(product)}
             className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full font-semibold text-sm shadow-2xl shadow-purple-500/50 flex items-center space-x-2 hover:scale-105 transition-transform"

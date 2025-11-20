@@ -19,7 +19,7 @@ export interface Product {
   material?: string; // e.g., 'Cotton', '100% Polyester'
   brand?: string; // e.g., 'Lenzro Luxe'
   fit?: string; // e.g., 'Slim Fit', 'Regular Fit'
-  gender?: 'Men' | 'Women' | 'Kids' | 'Unisex';
+  gender?: "Men" | "Women" | "Kids" | "Unisex";
   style?: string; // e.g., 'Casual', 'Formal', 'Sport'
 }
 

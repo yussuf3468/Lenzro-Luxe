@@ -427,7 +427,8 @@ export default function CustomerStore({
             Our Collections
           </h2>
           <p className="text-slate-300 max-w-2xl mx-auto">
-            Discover our carefully curated collection of premium fashion items. Quality guaranteed, style unmatched.
+            Discover our carefully curated collection of premium fashion items.
+            Quality guaranteed, style unmatched.
           </p>
         </div>
         {/* Category Filter */}
@@ -505,17 +506,36 @@ export default function CustomerStore({
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {paginatedProducts.map((product, index) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onAddToCart={handleAddToCart}
-                onQuickView={handleQuickViewMain}
-                index={index}
-              />
-            ))}
-          </div>
+          <>
+            {/* Mobile: Horizontal Carousel */}
+            <div className="block sm:hidden overflow-x-auto scrollbar-hide -mx-4 px-4">
+              <div className="flex gap-4 pb-4">
+                {paginatedProducts.map((product, index) => (
+                  <div key={product.id} className="flex-shrink-0 w-[280px]">
+                    <ProductCard
+                      product={product}
+                      onAddToCart={handleAddToCart}
+                      onQuickView={handleQuickViewMain}
+                      index={index}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Tablet & Desktop: Grid */}
+            <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {paginatedProducts.map((product, index) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onAddToCart={handleAddToCart}
+                  onQuickView={handleQuickViewMain}
+                  index={index}
+                />
+              ))}
+            </div>
+          </>
         )}
         {/* Pagination */}
         {totalPages > 1 && (
