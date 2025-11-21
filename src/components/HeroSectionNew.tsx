@@ -120,6 +120,34 @@ const HeroSection = memo(
                       <span className="font-medium">Premium Quality</span>
                     </div>
                   </div>
+
+                  {/* Mobile Showcase Banner (fills remaining space) */}
+                  <div className="block lg:hidden pt-2">
+                    <div className="relative w-full rounded-2xl overflow-hidden group shadow-xl shadow-purple-500/20 border border-white/10 bg-gradient-to-br from-purple-900/40 via-pink-900/30 to-rose-900/40">
+                      {/* Decorative Image */}
+                      <img
+                        src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
+                        alt="Editorial fashion banner"
+                        loading="lazy"
+                        className="w-full h-40 object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
+                      />
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                      {/* Text overlay */}
+                      <div className="absolute bottom-3 left-4 right-4">
+                        <p className="text-[11px] uppercase tracking-wider font-semibold text-purple-300 mb-1">Limited Capsule</p>
+                        <h3 className="text-white font-bold text-lg leading-snug">
+                          Nightfall Luxury Drop
+                        </h3>
+                        <button
+                          onClick={scrollToProducts}
+                          className="mt-2 inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all"
+                        >
+                          Explore Collection <ArrowRight className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Right Column - Product Showcase Grid */}
