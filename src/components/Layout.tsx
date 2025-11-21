@@ -21,6 +21,8 @@ import {
   RotateCcw,
 } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
+import { translations } from "../utils/translations";
+import { useLanguage } from "../contexts/LanguageContext";
 import { usePendingOrdersCount } from "../hooks/useSupabaseQuery";
 
 interface LayoutProps {
@@ -35,6 +37,7 @@ export default function Layout({
   onTabChange,
 }: LayoutProps) {
   const { user, signOut } = useAuth();
+  const { language, setLanguage } = useLanguage();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDesktopSidebarCollapsed, setIsDesktopSidebarCollapsed] =
     useState(true);
@@ -53,7 +56,7 @@ export default function Layout({
       ? [
           {
             id: "dashboard",
-            label: "Dashboard",
+            label: translations.navigation.dashboard,
             icon: LayoutDashboard,
             color: "from-purple-600 to-pink-600",
           },
@@ -63,7 +66,7 @@ export default function Layout({
       ? [
           {
             id: "staff-dashboard",
-            label: "My Sales",
+            label: translations.navigation.mySales,
             icon: TrendingUp,
             color: "from-emerald-600 to-cyan-600",
           },
@@ -71,7 +74,7 @@ export default function Layout({
       : []),
     {
       id: "inventory",
-      label: "Inventory",
+      label: translations.navigation.inventory,
       icon: Package,
       color: "from-blue-600 to-cyan-600",
     },
@@ -83,25 +86,25 @@ export default function Layout({
     // },
     {
       id: "sales",
-      label: "Iibka",
+      label: translations.navigation.sales,
       icon: ShoppingCart,
       color: "from-emerald-600 to-teal-600",
     },
     {
       id: "returns",
-      label: "Soo Celinta",
+      label: translations.navigation.returns,
       icon: RotateCcw,
       color: "from-rose-600 to-red-600",
     },
     {
       id: "search",
-      label: "Raadi Alaabta",
+      label: translations.navigation.search,
       icon: Search,
       color: "from-violet-600 to-purple-600",
     },
     {
       id: "customer-credit",
-      label: "Deynta Macaamiisha",
+      label: translations.navigation.customerCredit,
       icon: CreditCard,
       color: "from-teal-600 to-cyan-600",
     },
@@ -110,37 +113,37 @@ export default function Layout({
   const adminTabs = [
     {
       id: "orders",
-      label: "Dalabyada",
+      label: translations.navigation.orders,
       icon: ClipboardList,
       color: "from-orange-600 to-amber-600",
     },
     {
       id: "financial-dashboard",
-      label: "Guddi Maaliyadeed",
+      label: translations.navigation.financialDashboard,
       icon: LayoutDashboard,
       color: "from-cyan-600 to-blue-600",
     },
     {
       id: "expenses",
-      label: "Kharashyada",
+      label: translations.navigation.expenses,
       icon: DollarSign,
       color: "from-red-600 to-rose-600",
     },
     {
       id: "investments",
-      label: "Maalgelinta Hore",
+      label: translations.navigation.investments,
       icon: PiggyBank,
       color: "from-green-600 to-emerald-600",
     },
     {
       id: "debts",
-      label: "Deymaha",
+      label: translations.navigation.debts,
       icon: Banknote,
       color: "from-amber-600 to-yellow-600",
     },
     {
       id: "reports",
-      label: "Warbixinnada",
+      label: translations.navigation.reports,
       icon: FileText,
       color: "from-indigo-600 to-blue-600",
     },
@@ -165,9 +168,7 @@ export default function Layout({
   };
 
   const handleLogout = async () => {
-    if (
-      confirm("Ma hubtaa inaad ka baxayso? - Are you sure you want to log out?")
-    ) {
+    if (confirm(translations.auth.confirmLogout)) {
       await signOut();
     }
   };
@@ -222,20 +223,47 @@ export default function Layout({
           <div className="p-6 border-b border-white/10">
             {!isDesktopSidebarCollapsed ? (
               <>
-                <div className="hidden lg:flex items-center space-x-3 mb-4">
+                <div className="hidden lg:flex items-center justify-between space-x-3 mb-4">
                   <div className="relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative bg-gradient-to-br from-purple-600 to-pink-600 p-3 rounded-2xl shadow-xl">
                       <Package className="w-6 h-6 text-white" />
                     </div>
                   </div>
-                  <div>
-                    <h1 className="text-lg font-black text-white">
-                      LENZRO LUXE
-                    </h1>
-                    <p className="text-xs text-purple-300 font-medium">
-                      Fashion & Luxury
-                    </p>
+                  <div className="flex-1 flex items-center justify-between gap-3">
+                    <div>
+                      <h1 className="text-lg font-black text-white">
+                        LENZRO LUXE
+                      </h1>
+                      <p className="text-xs text-purple-300 font-medium">
+                        Fashion & Luxury
+                      </p>
+                    </div>
+                    {/* Language Selector */}
+                    <div className="inline-flex items-center gap-1 bg-white/10 border border-white/20 rounded-full px-1 py-0.5 text-[10px] font-semibold text-slate-100">
+                      <button
+                        type="button"
+                        onClick={() => setLanguage("en")}
+                        className={`px-2 py-0.5 rounded-full transition-all ${
+                          language === "en"
+                            ? "bg-white text-slate-900 shadow"
+                            : "text-slate-200 hover:bg-white/10"
+                        }`}
+                      >
+                        EN
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setLanguage("so")}
+                        className={`px-2 py-0.5 rounded-full transition-all ${
+                          language === "so"
+                            ? "bg-white text-slate-900 shadow"
+                            : "text-slate-200 hover:bg-white/10"
+                        }`}
+                      >
+                        SO
+                      </button>
+                    </div>
                   </div>
                 </div>
 
@@ -547,11 +575,11 @@ export default function Layout({
             <div className="px-3 sm:px-4 lg:px-6 max-w-[1600px] mx-auto">
               <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 text-xs sm:text-sm text-slate-300">
                 <p className="text-center sm:text-left">
-                  © {new Date().getFullYear()} Lenzro Luxe. All rights reserved.
+                  {translations.footer.allRightsReserved}
                 </p>
                 <div className="flex items-center gap-2">
                   <span className="text-slate-400">
-                    Designed & Developed by
+                    {translations.footer.designedBy}
                   </span>
                   <a
                     href="https://lenzro.com"

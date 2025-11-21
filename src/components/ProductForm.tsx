@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { X, Upload } from "lucide-react";
 import { supabase } from "../lib/supabase";
 import type { Product } from "../types";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface ProductFormProps {
   product: Product | null;
@@ -10,43 +11,48 @@ interface ProductFormProps {
 }
 
 const categories = [
-  "Books",
-  "Backpacks",
-  "Bottles",
-  "Electronics",
-  "Pens",
-  "Notebooks",
-  "Pencils",
-  "Erasers",
-  "Markers",
-  "Quran",
-  "Print pepa",
-  "Office fell",
-  "Lunch box",
+  "T-Shirts",
+  "Shirts",
+  "Hoodies",
+  "Sweaters",
+  "Jackets",
+  "Coats",
+  "Jeans",
+  "Pants",
+  "Shorts",
+  "Skirts",
+  "Dresses",
+  "Suits",
+  "Blazers",
+  "Activewear",
+  "Sportswear",
+  "Underwear",
+  "Socks",
+  "Shoes",
+  "Sneakers",
+  "Boots",
+  "Sandals",
   "Bags",
-  "Sabuurad",
-  "Ink",
-  "Water color",
-  "Crayons",
-  "Kutub elmi",
-  "Tarmus",
-  "Cup hot",
-  "Speaker",
-  "Locks/Qufulo",
-  "Malab/Honey",
+  "Belts",
+  "Hats",
+  "Scarves",
+  "Sunglasses",
+  "Jewelry",
+  "Watches",
+  "Accessories",
   "Other",
 ];
-
 
 export default function ProductForm({
   product,
   onClose,
   onSuccess,
 }: ProductFormProps) {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     product_id: "",
     name: "",
-    category: "Electronics",
+    category: "T-Shirts",
     image_url: "",
     buying_price: "",
     selling_price: "",
@@ -159,7 +165,7 @@ export default function ProductForm({
         <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-xl shadow-xl max-w-2xl w-full h-fit my-4 max-h-[90vh] overflow-y-auto border border-white/20">
           <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/20 sticky top-0 bg-white/5 backdrop-blur-xl z-10">
             <h3 className="text-lg sm:text-xl font-bold text-white">
-              {product ? "Edit Product" : "Add New Product"}
+              {product ? t.inventory.editProduct : t.inventory.addProduct}
             </h3>
             <button
               onClick={onClose}
@@ -176,7 +182,7 @@ export default function ProductForm({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Product ID *
+                  {t.inventory.productId} *
                 </label>
                 <input
                   type="text"
@@ -192,7 +198,7 @@ export default function ProductForm({
 
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Product Name *
+                  {t.inventory.productName} *
                 </label>
                 <input
                   type="text"
@@ -208,7 +214,7 @@ export default function ProductForm({
 
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Category *
+                  {t.inventory.category} *
                 </label>
                 <select
                   required
@@ -232,7 +238,7 @@ export default function ProductForm({
 
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Product Image
+                  {t.inventory.productImage}
                 </label>
                 <div className="space-y-2">
                   <input
@@ -242,7 +248,7 @@ export default function ProductForm({
                       setFormData({ ...formData, image_url: e.target.value })
                     }
                     className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-slate-400"
-                    placeholder="Or paste image URL: https://example.com/image.jpg"
+                    placeholder={t.inventory.orPasteUrl}
                   />
                   <div className="text-center text-slate-400">OR</div>
                   <div className="flex items-center justify-center w-full">
@@ -250,11 +256,10 @@ export default function ProductForm({
                       <div className="flex flex-col items-center justify-center pt-5 pb-6">
                         <Upload className="w-8 h-8 mb-4 text-slate-400" />
                         <p className="mb-2 text-sm text-slate-300">
-                          <span className="font-semibold">Click to upload</span>{" "}
-                          product image
+                          {t.inventory.uploadImage}
                         </p>
                         <p className="text-xs text-slate-400">
-                          PNG, JPG or WEBP (MAX. 5MB)
+                          {t.inventory.imageFormats}
                         </p>
                       </div>
                       <input
@@ -274,12 +279,12 @@ export default function ProductForm({
                   </div>
                   {imageFile && (
                     <p className="text-sm text-green-400">
-                      Selected: {imageFile.name}
+                      {t.inventory.selectedFile}: {imageFile.name}
                     </p>
                   )}
                   {uploading && (
                     <p className="text-sm text-purple-400">
-                      Uploading image...
+                      {t.inventory.uploadingImage}
                     </p>
                   )}
                 </div>
@@ -287,7 +292,7 @@ export default function ProductForm({
 
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Qiimaha Iibsiga - Buying Price (KES) *
+                  {t.inventory.buyingPrice}
                 </label>
                 <input
                   type="number"
@@ -305,7 +310,7 @@ export default function ProductForm({
 
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Qiimaha Iibka - Selling Price (KES) *
+                  {t.inventory.sellingPrice}
                 </label>
                 <input
                   type="number"
@@ -323,7 +328,7 @@ export default function ProductForm({
 
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Quantity in Stock *
+                  {t.inventory.quantityInStock} *
                 </label>
                 <input
                   type="number"
@@ -343,7 +348,7 @@ export default function ProductForm({
 
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-2">
-                  Reorder Level *
+                  {t.inventory.reorderLevel} *
                 </label>
                 <input
                   type="number"
@@ -362,7 +367,7 @@ export default function ProductForm({
             {/* Full-width Product Description Field */}
             <div className="space-y-2">
               <label className="block text-sm font-medium text-slate-300 mb-2">
-                Product Description
+                {t.inventory.description}
               </label>
               <textarea
                 value={formData.description}
@@ -371,11 +376,10 @@ export default function ProductForm({
                 }
                 rows={3}
                 className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none text-white placeholder-slate-400"
-                placeholder="e.g., Sold in packets of 10, Bulk item, Premium quality, etc."
+                placeholder={t.inventory.descriptionPlaceholder}
               />
               <p className="text-xs text-slate-400">
-                Add details like package size, special features, or
-                clarifications for customers
+                {t.inventory.descriptionPlaceholder}
               </p>
             </div>
 
@@ -385,7 +389,7 @@ export default function ProductForm({
                 onClick={onClose}
                 className="w-full sm:w-auto px-6 py-2 border border-white/20 text-white rounded-lg hover:bg-white/5 transition-colors"
               >
-                Cancel
+                {t.common.cancel}
               </button>
               <button
                 type="submit"
@@ -393,12 +397,12 @@ export default function ProductForm({
                 className="w-full sm:w-auto px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg disabled:opacity-50"
               >
                 {submitting
-                  ? "Saving..."
+                  ? t.inventory.saving
                   : uploading
-                  ? "Uploading..."
+                  ? t.inventory.uploading
                   : product
-                  ? "Update Product"
-                  : "Add Product"}
+                  ? t.inventory.updatingProduct
+                  : t.inventory.addingProduct}
               </button>
             </div>
           </form>

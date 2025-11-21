@@ -4,8 +4,10 @@ import { supabase } from "../lib/supabase";
 import SaleForm from "./SaleForm";
 import { formatDate } from "../utils/dateFormatter";
 import { useProducts, useSales } from "../hooks/useSupabaseQuery";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Sales() {
+  const { t } = useLanguage();
   // ✅ Use cached hooks instead of direct queries - saves egress!
   const { data: sales = [], refetch: refetchSales } = useSales();
   const { data: products = [] } = useProducts();
@@ -44,7 +46,7 @@ export default function Sales() {
   }
 
   async function handleDeleteSale(saleId: string, productName: string) {
-    const deleteMessage = `Haqii inaad doonaysid inaad tirtirto iibkan?\n\nDelete this sale record for "${productName}"?\n\nTani kama noqon karto - This cannot be undone!`;
+    const deleteMessage = `${t.messages.confirmDelete}\n\nDelete this sale record for "${productName}"?\n\n${t.messages.cannotUndo}`;
 
     if (!confirm(deleteMessage)) return;
 
@@ -79,10 +81,10 @@ export default function Sales() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <h2 className="text-lg sm:text-xl font-black text-white">
-            Sales Records
+            {t.sales.salesRecords}
           </h2>
           <p className="text-slate-300 mt-0.5 text-xs sm:text-sm">
-            Track all your bookstore sales
+            {t.sales.trackAllSales}
           </p>
         </div>
         <button
@@ -90,7 +92,7 @@ export default function Sales() {
           className="flex items-center justify-center space-x-2 bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 text-white px-4 py-2.5 rounded-xl hover:scale-105 transition-all duration-300 shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-500/40 w-full sm:w-auto font-bold text-sm"
         >
           <Plus className="w-4 h-4" />
-          <span>Record Sale</span>
+          <span>{t.sales.recordSale}</span>
         </button>
       </div>
 
@@ -100,28 +102,28 @@ export default function Sales() {
             <thead className="bg-white/5 border-b border-white/10">
               <tr>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  Date
+                  {t.sales.date}
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  Product
+                  {t.sales.product}
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  Quantity
+                  {t.sales.quantity}
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  Total Sale
+                  {t.sales.totalSale}
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  Profit
+                  {t.sales.profit}
                 </th>
                 <th className="px-6 py-4 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  Payment
+                  {t.sales.payment}
                 </th>
                 <th className="px-6 py-4 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  Sold By
+                  {t.sales.soldBy}
                 </th>
                 <th className="px-6 py-4 text-left text-xs font-semibold text-slate-300 uppercase tracking-wider">
-                  Actions
+                  {t.common.actions}
                 </th>
               </tr>
             </thead>
@@ -132,7 +134,7 @@ export default function Sales() {
                     colSpan={8}
                     className="px-6 py-12 text-center text-slate-400"
                   >
-                    No sales yet. Click "Record Sale" to get started.
+                    {t.sales.noSalesYet}
                   </td>
                 </tr>
               ) : (

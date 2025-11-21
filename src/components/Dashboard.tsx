@@ -4,6 +4,7 @@ import { useProducts, useSales } from "../hooks/useSupabaseQuery";
 import type { Product, Sale } from "../types";
 import { formatDate } from "../utils/dateFormatter";
 import OptimizedImage from "./OptimizedImage";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface DashboardStats {
   totalSales: number;
@@ -22,6 +23,7 @@ function formatCurrency(value: number) {
 }
 
 export default function Dashboard() {
+  const { t } = useLanguage();
   const [stats, setStats] = useState<DashboardStats>({
     totalSales: 0,
     totalProfit: 0,
@@ -148,13 +150,12 @@ export default function Dashboard() {
 
             <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-md border border-purple-400/30 rounded-full px-4 py-2">
               <span className="text-xs font-bold uppercase tracking-widest text-purple-300">
-                Fashion Command Center
+                {t.dashboard.fashionCommandCenter}
               </span>
             </div>
 
             <p className="text-sm md:text-base text-slate-300 font-medium max-w-3xl mx-auto leading-relaxed">
-              Manage your luxury fashion empire with real-time analytics,
-              inventory control, and sales insights
+              {t.dashboard.manageEmpire}
             </p>
 
             <div className="flex items-center justify-center space-x-6 pt-2">
@@ -164,14 +165,14 @@ export default function Dashboard() {
                   <div className="absolute inset-0 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></div>
                 </div>
                 <span className="text-xs font-bold text-emerald-300">
-                  Live Dashboard
+                  {t.dashboard.liveDashboard}
                 </span>
               </div>
               <div className="w-px h-4 bg-white/20"></div>
               <div className="flex items-center space-x-2">
                 <div className="w-2.5 h-2.5 bg-purple-400 rounded-full"></div>
                 <span className="text-xs font-bold text-purple-300">
-                  Synced Data
+                  {t.dashboard.syncedData}
                 </span>
               </div>
             </div>
@@ -186,16 +187,16 @@ export default function Dashboard() {
             <div className="w-1 h-6 bg-gradient-to-b from-purple-600 via-pink-600 to-rose-600 rounded-full shadow-lg shadow-purple-500/50"></div>
             <div>
               <h2 className="text-lg md:text-xl font-black text-white">
-                Performance Metrics
+                {t.dashboard.performanceMetrics}
               </h2>
               <p className="text-xs text-slate-400">
-                Real-time business intelligence
+                {t.dashboard.businessIntelligence}
               </p>
             </div>
           </div>
           <div className="hidden sm:block px-3 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full">
             <span className="text-xs font-bold text-slate-300">
-              Live Updates
+              {t.dashboard.liveUpdates}
             </span>
           </div>
         </div>
@@ -206,7 +207,7 @@ export default function Dashboard() {
             style={{ animationDelay: "0.1s" }}
           >
             <StatCard
-              title="Total Revenue"
+              title={t.dashboard.totalRevenue}
               value={formatCurrency(stats.totalSales)}
               icon={Banknote}
               color="blue"
@@ -217,7 +218,7 @@ export default function Dashboard() {
             style={{ animationDelay: "0.2s" }}
           >
             <StatCard
-              title="Total Profit"
+              title={t.dashboard.totalProfit}
               value={formatCurrency(stats.totalProfit)}
               icon={TrendingUp}
               color="green"
@@ -228,11 +229,13 @@ export default function Dashboard() {
             style={{ animationDelay: "0.3s" }}
           >
             <StatCard
-              title="Today's Sales"
+              title={t.dashboard.todaySales}
               value={formatCurrency(stats.dailySales)}
               icon={TrendingUp}
               color="orange"
-              subtitle={`Profit: ${formatCurrency(stats.dailyProfit)}`}
+              subtitle={`${t.dashboard.profit}: ${formatCurrency(
+                stats.dailyProfit
+              )}`}
             />
           </div>
           <div
@@ -240,7 +243,7 @@ export default function Dashboard() {
             style={{ animationDelay: "0.4s" }}
           >
             <StatCard
-              title="Total Products"
+              title={t.dashboard.totalProducts}
               value={stats.totalProducts.toString()}
               icon={Package}
               color="purple"
@@ -264,10 +267,10 @@ export default function Dashboard() {
                 </div>
                 <div>
                   <h3 className="text-base md:text-lg font-black text-white">
-                    Best Sellers
+                    {t.dashboard.bestSellers}
                   </h3>
                   <p className="text-xs text-slate-400">
-                    Top performing products
+                    {t.dashboard.topPerforming}
                   </p>
                 </div>
               </div>
@@ -284,10 +287,10 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <p className="text-base font-bold text-white mb-1">
-                    No sales data yet
+                    {t.dashboard.noSalesData}
                   </p>
                   <p className="text-sm text-slate-400">
-                    Start making sales to see analytics here
+                    {t.dashboard.startMakingSales}
                   </p>
                 </div>
               ) : (
@@ -340,7 +343,7 @@ export default function Dashboard() {
                           {formatCurrency(item.total)}
                         </p>
                         <p className="text-xs text-slate-400 font-medium mt-0.5">
-                          Revenue
+                          {t.dashboard.revenue}
                         </p>
                       </div>
                     </div>
@@ -364,10 +367,10 @@ export default function Dashboard() {
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-black text-white">
-                    Recent Transactions
+                    {t.dashboard.recentTransactions}
                   </h3>
                   <p className="text-xs text-slate-400">
-                    Latest sales activity
+                    {t.dashboard.latestSales}
                   </p>
                 </div>
               </div>
@@ -384,10 +387,10 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <p className="text-base font-bold text-white mb-1">
-                    No sales recorded yet
+                    {t.dashboard.noSalesRecorded}
                   </p>
                   <p className="text-sm text-slate-400">
-                    Transactions will appear here
+                    {t.dashboard.transactionsAppear}
                   </p>
                 </div>
               ) : (
@@ -406,7 +409,7 @@ export default function Dashboard() {
                         </div>
                         <div className="flex items-center space-x-2">
                           <span className="text-xs font-medium text-slate-400">
-                            Sold by:
+                            {t.dashboard.soldBy}:
                           </span>
                           <span className="text-xs font-semibold text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-400/20">
                             {sale.sold_by}
@@ -419,7 +422,7 @@ export default function Dashboard() {
                         </p>
                         <div className="flex items-center justify-end space-x-1">
                           <span className="text-[10px] text-slate-500">
-                            Profit:
+                            {t.dashboard.profit}:
                           </span>
                           <p className="text-xs text-emerald-400 font-bold">
                             +{formatCurrency(sale.profit)}

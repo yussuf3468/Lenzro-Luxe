@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Eye, EyeOff, ShoppingBag, Lock, User } from "lucide-react";
 import { supabase } from "../lib/supabase";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface LoginProps {
   onLogin: (user: any) => void;
 }
 
 export default function Login({ onLogin }: LoginProps) {
+  const { t } = useLanguage();
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
@@ -28,11 +30,9 @@ export default function Login({ onLogin }: LoginProps) {
 
       if (error) {
         if (error.message.includes("Invalid login credentials")) {
-          setError(
-            "Magaca isticmaalaha ama furaha sirta ah ayaa qaldan - Invalid email or password"
-          );
+          setError(t.auth.invalidCredentials);
         } else {
-          setError("Khalad ayaa dhacay - An error occurred: " + error.message);
+          setError(t.auth.networkError + ": " + error.message);
         }
         return;
       }
@@ -42,7 +42,7 @@ export default function Login({ onLogin }: LoginProps) {
       }
     } catch (error) {
       console.error("Login error:", error);
-      setError("Khalad ayaa dhacay - Network error occurred");
+      setError(t.auth.networkError);
     } finally {
       setLoading(false);
     }
@@ -84,7 +84,7 @@ export default function Login({ onLogin }: LoginProps) {
               LENZRO LUXE
             </h1>
             <p className="text-purple-300/80 font-medium mt-2">
-              Staff Login System
+              {t.auth.staffLogin}
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export default function Login({ onLogin }: LoginProps) {
             {/* Email Field */}
             <div className="space-y-2">
               <label className="block text-sm font-bold text-white">
-                📧 Email Address
+                📧 {t.auth.emailAddress}
               </label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-purple-300/60" />
@@ -122,7 +122,7 @@ export default function Login({ onLogin }: LoginProps) {
             {/* Password Field */}
             <div className="space-y-2">
               <label className="block text-sm font-bold text-white">
-                🔒 Password - Furaha Sirta ah
+                🔒 {t.auth.password}
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-purple-300/60" />
@@ -159,10 +159,10 @@ export default function Login({ onLogin }: LoginProps) {
               {loading ? (
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  <span>Ku soo galaya - Logging in...</span>
+                  <span>{t.messages.loggingIn}</span>
                 </div>
               ) : (
-                "Gal - Login"
+                t.auth.login
               )}
             </button>
           </form>
