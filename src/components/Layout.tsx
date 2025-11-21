@@ -547,8 +547,7 @@ export default function Layout({
             <div className="px-3 sm:px-4 lg:px-6 max-w-[1600px] mx-auto">
               <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 text-xs sm:text-sm text-slate-300">
                 <p className="text-center sm:text-left">
-                  © {new Date().getFullYear()} Lenzro Luxe. All rights
-                  reserved.
+                  © {new Date().getFullYear()} Lenzro Luxe. All rights reserved.
                 </p>
                 <div className="flex items-center gap-2">
                   <span className="text-slate-400">

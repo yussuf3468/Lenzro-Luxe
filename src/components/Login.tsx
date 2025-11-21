@@ -55,9 +55,9 @@ export default function Login({ onLogin }: LoginProps) {
   //   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-3 sm:p-4">
+    <div className="fixed inset-0 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-3 sm:p-4 overflow-auto">
       {/* Floating Background Elements - Hidden on mobile for performance */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="hidden sm:block absolute top-1/4 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float"></div>
         <div
           className="hidden sm:block absolute top-3/4 right-1/4 w-36 sm:w-72 h-36 sm:h-72 bg-pink-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float"
