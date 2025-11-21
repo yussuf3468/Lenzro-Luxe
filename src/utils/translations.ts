@@ -24,7 +24,7 @@ export const translations = {
 
   // Dashboard
   dashboard: {
-    title: "Dashboard / Guddi",
+    title: "Dashboard",
     fashionCommandCenter: "Fashion Command Center / Xarunta Fashion-ka",
     manageEmpire:
       "Manage your luxury fashion empire with real-time analytics, inventory control, and sales insights / Ku maamul dukaankaaga dharka si fudud oo xog leh",
@@ -56,7 +56,7 @@ export const translations = {
 
   // Products/Inventory
   inventory: {
-    title: "Inventory / Kaydka alaabta",
+    title: "Inventory",
     addProduct: "Add New Product / Ku dar alaab cusub",
     editProduct: "Edit Product / Wax ka beddel alaabta",
     productId: "Product ID / Lambarka alaabta",
@@ -118,7 +118,7 @@ export const translations = {
 
   // Sales
   sales: {
-    title: "Sales / Iibka",
+    title: "Sales",
     newSale: "New Sale / Iib cusub",
     selectProduct: "Select Product / Dooro alaab",
     quantity: "Quantity / Tirada",
@@ -162,7 +162,7 @@ export const translations = {
 
   // Layout/Navigation
   navigation: {
-    dashboard: "Dashboard / Guddi",
+    dashboard: "Dashboard",
     mySales: "My Sales / Iibkayga",
     inventory: "Inventory / Kaydka",
     sales: "Sales / Iibka",
@@ -191,8 +191,7 @@ export const translations = {
     cannotUndo: "This cannot be undone! / Tani dib looma celin karo!",
     deleteSuccess: "Deleted successfully / Si fiican ayaa loo tirtiray",
     saveSuccess: "Saved successfully / Si fiican ayaa loo keydiyay",
-    updateSuccess:
-      "Updated successfully / Si fiican ayaa loo cusboonaysiiyay",
+    updateSuccess: "Updated successfully / Si fiican ayaa loo cusboonaysiiyay",
     errorOccurred: "An error occurred / Khalad ayaa dhacay",
     noData: "No data available / Xog ma jiro",
     loadingData: "Loading data / Xog ayaa soo socota",
