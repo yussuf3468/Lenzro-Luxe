@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Eye, EyeOff, BookOpen, Lock, User } from "lucide-react";
+import { Eye, EyeOff, ShoppingBag, Lock, User } from "lucide-react";
 import { supabase } from "../lib/supabase";
 
 interface LoginProps {
@@ -77,7 +77,7 @@ export default function Login({ onLogin }: LoginProps) {
             <div className="relative mx-auto w-20 h-20 mb-4">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500 rounded-xl blur opacity-75"></div>
               <div className="relative bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 rounded-xl p-4 shadow-lg shadow-purple-500/50">
-                <BookOpen className="w-12 h-12 text-white mx-auto" />
+                <ShoppingBag className="w-12 h-12 text-white mx-auto" />
               </div>
             </div>
             <h1 className="text-3xl font-black bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
