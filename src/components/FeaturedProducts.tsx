@@ -181,15 +181,12 @@ const FeaturedProducts = memo(
               {/* Price & Stock Info */}
               <div className="flex items-center justify-between">
                 <div className="flex flex-col">
-                  <div className="text-lg sm:text-xl font-light text-white">
+                  <div className="text-xl sm:text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-rose-300 drop-shadow-sm">
                     KES {product.selling_price?.toLocaleString()}
                   </div>
-                  {product.buying_price &&
-                    product.buying_price < product.selling_price && (
-                      <div className="text-xs text-slate-400 line-through">
-                        KES {product.buying_price.toLocaleString()}
-                      </div>
-                    )}
+                  <div className="text-[10px] sm:text-xs text-purple-300/70 uppercase tracking-wider mt-0.5">
+                    Luxury Price
+                  </div>
                   <div className="text-xs text-slate-400 flex items-center mt-1">
                     <Package className="w-3 h-3 mr-1.5" />
                     {product.quantity_in_stock} in stock

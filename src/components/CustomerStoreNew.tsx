@@ -638,7 +638,7 @@ export default function CustomerStore({
                     href="tel:+254722979547"
                     className="hover:text-white transition-colors"
                   >
-                    +254 722 740 432
+                    +254 722 261 776
                   </a>
                 </p>
                 <p className="flex items-center space-x-2">
@@ -647,7 +647,7 @@ export default function CustomerStore({
                     href="mailto:Yussufh080@gmail.com"
                     className="hover:text-white transition-colors"
                   >
-                    galiyowabi@gmail.com
+                    yussufh080@gmail.com
                   </a>
                 </p>
                 <p className="flex items-center space-x-2">
