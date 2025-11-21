@@ -565,17 +565,17 @@ export default function Layout({
         }`}
       >
         <div className="min-h-screen flex flex-col">
-          <div className="flex-1 px-3 sm:px-4 lg:px-6 py-3 md:py-4 lg:py-6 max-w-[1600px] mx-auto w-full">
-            {/* Desktop Header Row with Language Selector */}
-            <div className="hidden lg:flex items-center justify-end mb-4">
-              <div className="inline-flex items-center gap-1 bg-white/10 border border-white/20 rounded-full px-2 py-0.5 text-[11px] font-semibold text-slate-100 backdrop-blur-xl">
+          <div className="flex-1 px-3 sm:px-4 lg:px-6 py-3 md:py-4 lg:py-6 max-w-[1600px] mx-auto w-full relative">
+            {/* Desktop Language Selector - subtle top right */}
+            <div className="hidden lg:flex items-center justify-end absolute top-0 right-0 z-10">
+              <div className="inline-flex items-center gap-0.5 bg-white/5 border border-white/10 rounded-full px-1.5 py-0.5 text-[10px] font-medium text-slate-300 backdrop-blur-sm hover:bg-white/10 transition-all">
                 <button
                   type="button"
                   onClick={() => setLanguage("en")}
-                  className={`px-3 py-0.5 rounded-full transition-all ${
+                  className={`px-2 py-0.5 rounded-full transition-all ${
                     language === "en"
-                      ? "bg-white text-slate-900 shadow"
-                      : "text-slate-200 hover:bg-white/10"
+                      ? "bg-white/20 text-white"
+                      : "text-slate-400 hover:text-slate-200"
                   }`}
                 >
                   EN
@@ -583,10 +583,10 @@ export default function Layout({
                 <button
                   type="button"
                   onClick={() => setLanguage("so")}
-                  className={`px-3 py-0.5 rounded-full transition-all ${
+                  className={`px-2 py-0.5 rounded-full transition-all ${
                     language === "so"
-                      ? "bg-white text-slate-900 shadow"
-                      : "text-slate-200 hover:bg-white/10"
+                      ? "bg-white/20 text-white"
+                      : "text-slate-400 hover:text-slate-200"
                   }`}
                 >
                   SO
