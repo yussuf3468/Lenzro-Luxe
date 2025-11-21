@@ -129,21 +129,24 @@ const HeroSection = memo(
                         src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
                         alt="Editorial fashion banner"
                         loading="lazy"
-                        className="w-full h-40 object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
+                        className="w-full h-56 sm:h-64 object-cover opacity-95 group-hover:scale-110 transition-transform duration-700 ease-out"
                       />
                       {/* Gradient overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                       {/* Text overlay */}
-                      <div className="absolute bottom-3 left-4 right-4">
-                        <p className="text-[11px] uppercase tracking-wider font-semibold text-purple-300 mb-1">Limited Capsule</p>
-                        <h3 className="text-white font-bold text-lg leading-snug">
+                      <div className="absolute bottom-4 left-5 right-5">
+                        <p className="text-[12px] sm:text-xs uppercase tracking-wider font-semibold text-purple-200 mb-1">
+                          Limited Capsule
+                        </p>
+                        <h3 className="text-white font-extrabold text-xl sm:text-2xl leading-snug drop-shadow-md">
                           Nightfall Luxury Drop
                         </h3>
                         <button
                           onClick={scrollToProducts}
-                          className="mt-2 inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all"
+                          className="mt-3 inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all shadow-lg shadow-purple-500/20"
                         >
-                          Explore Collection <ArrowRight className="w-3.5 h-3.5" />
+                          Explore Collection{" "}
+                          <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </div>
