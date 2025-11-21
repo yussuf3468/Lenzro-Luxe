@@ -223,47 +223,20 @@ export default function Layout({
           <div className="p-6 border-b border-white/10">
             {!isDesktopSidebarCollapsed ? (
               <>
-                <div className="hidden lg:flex items-center justify-between space-x-3 mb-4">
+                <div className="hidden lg:flex items-center justify-center mb-4">
                   <div className="relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative bg-gradient-to-br from-purple-600 to-pink-600 p-3 rounded-2xl shadow-xl">
                       <Package className="w-6 h-6 text-white" />
                     </div>
                   </div>
-                  <div className="flex-1 flex items-center justify-between gap-3">
-                    <div>
-                      <h1 className="text-lg font-black text-white">
-                        LENZRO LUXE
-                      </h1>
-                      <p className="text-xs text-purple-300 font-medium">
-                        Fashion & Luxury
-                      </p>
-                    </div>
-                    {/* Language Selector */}
-                    <div className="inline-flex items-center gap-1 bg-white/10 border border-white/20 rounded-full px-1 py-0.5 text-[10px] font-semibold text-slate-100">
-                      <button
-                        type="button"
-                        onClick={() => setLanguage("en")}
-                        className={`px-2 py-0.5 rounded-full transition-all ${
-                          language === "en"
-                            ? "bg-white text-slate-900 shadow"
-                            : "text-slate-200 hover:bg-white/10"
-                        }`}
-                      >
-                        EN
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setLanguage("so")}
-                        className={`px-2 py-0.5 rounded-full transition-all ${
-                          language === "so"
-                            ? "bg-white text-slate-900 shadow"
-                            : "text-slate-200 hover:bg-white/10"
-                        }`}
-                      >
-                        SO
-                      </button>
-                    </div>
+                  <div className="ml-3">
+                    <h1 className="text-lg font-black text-white">
+                      LENZRO LUXE
+                    </h1>
+                    <p className="text-xs text-purple-300 font-medium">
+                      Fashion & Luxury
+                    </p>
                   </div>
                 </div>
 
@@ -394,7 +367,7 @@ export default function Layout({
       </aside>
 
       {/* Mobile Top Navbar */}
-      <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/50">
+      <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/70">
         <div className="px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo & Brand */}
@@ -428,8 +401,34 @@ export default function Layout({
               </div>
             </div>
 
-            {/* User Section */}
+            {/* User Section + Mobile Language Selector */}
             <div className="flex items-center space-x-2">
+              {/* Mobile Language Toggle */}
+              <div className="inline-flex items-center gap-1 bg-slate-900/80 border border-white/30 rounded-full px-1.5 py-0.5 text-[10px] font-semibold text-slate-100 mr-1">
+                <button
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                  className={`px-2.5 py-0.5 rounded-full transition-all ${
+                    language === "en"
+                      ? "bg-white text-slate-900 shadow"
+                      : "text-slate-200 hover:bg-white/10"
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLanguage("so")}
+                  className={`px-2.5 py-0.5 rounded-full transition-all ${
+                    language === "so"
+                      ? "bg-white text-slate-900 shadow"
+                      : "text-slate-200 hover:bg-white/10"
+                  }`}
+                >
+                  SO
+                </button>
+              </div>
+
               {user && (
                 <>
                   {/* Order Notification Badge - Mobile Navbar */}
@@ -565,6 +564,34 @@ export default function Layout({
           isDesktopSidebarCollapsed ? "lg:ml-20" : "lg:ml-72 xl:ml-80"
         }`}
       >
+        {/* Desktop Language Selector - pinned top right */}
+        <div className="hidden lg:block fixed top-4 right-6 z-40">
+          <div className="inline-flex items-center gap-1 bg-slate-900/80 border border-white/30 rounded-full px-2 py-0.5 text-[11px] font-semibold text-slate-100 shadow-xl">
+            <button
+              type="button"
+              onClick={() => setLanguage("en")}
+              className={`px-3 py-0.5 rounded-full transition-all ${
+                language === "en"
+                  ? "bg-white text-slate-900 shadow"
+                  : "text-slate-200 hover:bg-white/10"
+              }`}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage("so")}
+              className={`px-3 py-0.5 rounded-full transition-all ${
+                language === "so"
+                  ? "bg-white text-slate-900 shadow"
+                  : "text-slate-200 hover:bg-white/10"
+              }`}
+            >
+              SO
+            </button>
+          </div>
+        </div>
+
         <div className="min-h-screen flex flex-col">
           <div className="flex-1 px-3 sm:px-4 lg:px-6 py-3 md:py-4 lg:py-6 max-w-[1600px] mx-auto w-full">
             {children}
