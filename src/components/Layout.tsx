@@ -370,7 +370,7 @@ export default function Layout({
       <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/70">
         <div className="px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
-            {/* Logo & Brand */}
+            {/* Logo, Brand & Mobile Language Selector */}
             <div className="flex items-center space-x-3">
               <button
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -399,12 +399,9 @@ export default function Layout({
                   </p>
                 </div>
               </div>
-            </div>
 
-            {/* User Section + Mobile Language Selector */}
-            <div className="flex items-center space-x-2">
-              {/* Mobile Language Toggle */}
-              <div className="inline-flex items-center gap-1 bg-slate-900/80 border border-white/30 rounded-full px-1.5 py-0.5 text-[10px] font-semibold text-slate-100 mr-1">
+              {/* Mobile Language Toggle - with navigation */}
+              <div className="inline-flex items-center gap-1 bg-slate-900/80 border border-white/30 rounded-full px-1.5 py-0.5 text-[10px] font-semibold text-slate-100 ml-1">
                 <button
                   type="button"
                   onClick={() => setLanguage("en")}
@@ -428,7 +425,10 @@ export default function Layout({
                   SO
                 </button>
               </div>
+            </div>
 
+            {/* User Section */}
+            <div className="flex items-center space-x-2">
               {user && (
                 <>
                   {/* Order Notification Badge - Mobile Navbar */}
@@ -564,36 +564,36 @@ export default function Layout({
           isDesktopSidebarCollapsed ? "lg:ml-20" : "lg:ml-72 xl:ml-80"
         }`}
       >
-        {/* Desktop Language Selector - pinned top right */}
-        <div className="hidden lg:block fixed top-4 right-6 z-40">
-          <div className="inline-flex items-center gap-1 bg-slate-900/80 border border-white/30 rounded-full px-2 py-0.5 text-[11px] font-semibold text-slate-100 shadow-xl">
-            <button
-              type="button"
-              onClick={() => setLanguage("en")}
-              className={`px-3 py-0.5 rounded-full transition-all ${
-                language === "en"
-                  ? "bg-white text-slate-900 shadow"
-                  : "text-slate-200 hover:bg-white/10"
-              }`}
-            >
-              EN
-            </button>
-            <button
-              type="button"
-              onClick={() => setLanguage("so")}
-              className={`px-3 py-0.5 rounded-full transition-all ${
-                language === "so"
-                  ? "bg-white text-slate-900 shadow"
-                  : "text-slate-200 hover:bg-white/10"
-              }`}
-            >
-              SO
-            </button>
-          </div>
-        </div>
-
         <div className="min-h-screen flex flex-col">
           <div className="flex-1 px-3 sm:px-4 lg:px-6 py-3 md:py-4 lg:py-6 max-w-[1600px] mx-auto w-full">
+            {/* Desktop Header Row with Language Selector */}
+            <div className="hidden lg:flex items-center justify-end mb-4">
+              <div className="inline-flex items-center gap-1 bg-white/10 border border-white/20 rounded-full px-2 py-0.5 text-[11px] font-semibold text-slate-100 backdrop-blur-xl">
+                <button
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                  className={`px-3 py-0.5 rounded-full transition-all ${
+                    language === "en"
+                      ? "bg-white text-slate-900 shadow"
+                      : "text-slate-200 hover:bg-white/10"
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLanguage("so")}
+                  className={`px-3 py-0.5 rounded-full transition-all ${
+                    language === "so"
+                      ? "bg-white text-slate-900 shadow"
+                      : "text-slate-200 hover:bg-white/10"
+                  }`}
+                >
+                  SO
+                </button>
+              </div>
+            </div>
+
             {children}
           </div>
 
