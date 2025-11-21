@@ -121,9 +121,9 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-6 md:space-y-8 animate-fadeIn">
+    <div className="-mx-3 sm:-mx-4 lg:-mx-6 space-y-6 md:space-y-8 animate-fadeIn">
       {/* Hero Section - Luxury Fashion Dashboard */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900/90 via-purple-950/80 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 md:p-10 shadow-2xl shadow-purple-500/20">
+      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900/90 via-purple-950/80 to-slate-900/90 backdrop-blur-2xl border-x-0 border-t-0 border-b border-white/20 rounded-none p-4 md:p-6 lg:p-8 shadow-2xl shadow-purple-500/20">
         {/* Animated Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-pink-600/10 to-rose-600/10 animate-pulse"></div>
 
@@ -132,16 +132,16 @@ export default function Dashboard() {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"></div>
 
         <div className="relative">
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-3">
             {/* Brand Logo with Sparkle Effect */}
-            <div className="inline-flex items-center justify-center space-x-3 mb-2">
+            <div className="inline-flex items-center justify-center space-x-2 mb-3">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 blur-lg opacity-50"></div>
-                <div className="relative w-12 h-12 bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/50 transform hover:rotate-12 transition-transform duration-300">
-                  <span className="text-2xl">👗</span>
+                <div className="relative w-10 h-10 bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/50 transform hover:rotate-12 transition-transform duration-300">
+                  <span className="text-xl">👗</span>
                 </div>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-pink-200 tracking-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-pink-200 tracking-tight">
                 LENZRO LUXE
               </h1>
             </div>
@@ -180,12 +180,12 @@ export default function Dashboard() {
       </div>
 
       {/* Stats Grid - Luxury Fashion Metrics */}
-      <div>
-        <div className="flex items-center justify-between mb-6">
+      <div className="px-3 sm:px-4 lg:px-6">
+        <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-3">
-            <div className="w-1 h-8 bg-gradient-to-b from-purple-600 via-pink-600 to-rose-600 rounded-full shadow-lg shadow-purple-500/50"></div>
+            <div className="w-1 h-6 bg-gradient-to-b from-purple-600 via-pink-600 to-rose-600 rounded-full shadow-lg shadow-purple-500/50"></div>
             <div>
-              <h2 className="text-xl md:text-2xl font-black text-white">
+              <h2 className="text-lg md:text-xl font-black text-white">
                 Performance Metrics
               </h2>
               <p className="text-xs text-slate-400">
@@ -200,7 +200,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           <div
             className="group animate-slideInLeft"
             style={{ animationDelay: "0.1s" }}
@@ -250,20 +250,20 @@ export default function Dashboard() {
       </div>
 
       {/* Content Grid - Analytics Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+      <div className="px-3 sm:px-4 lg:px-6 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
         {/* Top Products Card */}
-        <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl shadow-purple-500/10 hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+        <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-6 shadow-2xl shadow-purple-500/10 hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
           {/* Background Decoration */}
           <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl"></div>
 
           <div className="relative">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-3">
-                <div className="p-3 bg-gradient-to-br from-amber-500 via-orange-600 to-rose-600 rounded-2xl shadow-xl shadow-orange-500/50">
-                  <TrendingUp className="w-5 h-5 text-white" />
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center space-x-2">
+                <div className="p-2 bg-gradient-to-br from-amber-500 via-orange-600 to-rose-600 rounded-xl shadow-xl shadow-orange-500/50">
+                  <TrendingUp className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg md:text-xl font-black text-white">
+                  <h3 className="text-base md:text-lg font-black text-white">
                     Best Sellers
                   </h3>
                   <p className="text-xs text-slate-400">
@@ -271,16 +271,16 @@ export default function Dashboard() {
                   </p>
                 </div>
               </div>
-              <div className="w-10 h-10 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-xl flex items-center justify-center border border-amber-500/30">
-                <span className="text-lg">🏆</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-lg flex items-center justify-center border border-amber-500/30">
+                <span className="text-base">🏆</span>
               </div>
             </div>
             <div className="space-y-3">
               {topProducts.length === 0 ? (
                 <div className="text-center py-12">
-                  <div className="relative mx-auto mb-4">
-                    <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/20">
-                      <Package className="w-8 h-8 text-purple-300" />
+                  <div className="relative mx-auto mb-3">
+                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/20">
+                      <Package className="w-6 h-6 text-purple-300" />
                     </div>
                   </div>
                   <p className="text-base font-bold text-white mb-1">
@@ -294,12 +294,12 @@ export default function Dashboard() {
                 topProducts.map((item, index) => (
                   <div
                     key={item.product.id}
-                    className="group/item relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 backdrop-blur-xl border border-white/10 hover:border-purple-400/30 rounded-2xl p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/20"
+                    className="group/item relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 backdrop-blur-xl border border-white/10 hover:border-purple-400/30 rounded-xl p-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/20"
                   >
                     {/* Rank Badge with Premium Design */}
-                    <div className="absolute -top-2 -left-2 z-10">
+                    <div className="absolute -top-1.5 -left-1.5 z-10">
                       <div
-                        className={`w-8 h-8 rounded-xl flex items-center justify-center text-sm font-black text-white shadow-2xl transform -rotate-12 group-hover/item:rotate-0 transition-transform duration-300 ${
+                        className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black text-white shadow-2xl transform -rotate-12 group-hover/item:rotate-0 transition-transform duration-300 ${
                           index === 0
                             ? "bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-600 shadow-amber-500/50"
                             : index === 1
@@ -313,14 +313,14 @@ export default function Dashboard() {
                       </div>
                     </div>
 
-                    <div className="flex items-center space-x-4 pl-4">
+                    <div className="flex items-center space-x-3 pl-3">
                       {item.product.image_url && (
                         <div className="relative flex-shrink-0">
                           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur"></div>
                           <OptimizedImage
                             src={item.product.image_url}
                             alt={item.product.name}
-                            className="relative w-14 h-14 object-cover rounded-xl border-2 border-white/20 shadow-lg"
+                            className="relative w-12 h-12 object-cover rounded-lg border-2 border-white/20 shadow-lg"
                             preset="thumbnail"
                           />
                         </div>
@@ -352,15 +352,15 @@ export default function Dashboard() {
         </div>
 
         {/* Recent Sales Card */}
-        <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl shadow-emerald-500/10 hover:shadow-emerald-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+        <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-6 shadow-2xl shadow-emerald-500/10 hover:shadow-emerald-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
           {/* Background Decoration */}
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl"></div>
 
           <div className="relative">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center space-x-3">
-                <div className="p-3 bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 rounded-2xl shadow-xl shadow-emerald-500/50">
-                  <Receipt className="w-5 h-5 text-white" />
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center space-x-2">
+                <div className="p-2 bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 rounded-xl shadow-xl shadow-emerald-500/50">
+                  <Receipt className="w-4 h-4 text-white" />
                 </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-black text-white">
@@ -371,16 +371,16 @@ export default function Dashboard() {
                   </p>
                 </div>
               </div>
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-xl flex items-center justify-center border border-emerald-500/30">
-                <span className="text-lg">📊</span>
+              <div className="w-8 h-8 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-lg flex items-center justify-center border border-emerald-500/30">
+                <span className="text-base">📊</span>
               </div>
             </div>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {recentSales.length === 0 ? (
                 <div className="text-center py-12">
-                  <div className="relative mx-auto mb-4">
-                    <div className="w-16 h-16 mx-auto bg-gradient-to-br from-emerald-500/20 to-teal-500/20 backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/20">
-                      <Receipt className="w-8 h-8 text-emerald-300" />
+                  <div className="relative mx-auto mb-3">
+                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-emerald-500/20 to-teal-500/20 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/20">
+                      <Receipt className="w-6 h-6 text-emerald-300" />
                     </div>
                   </div>
                   <p className="text-base font-bold text-white mb-1">
@@ -394,7 +394,7 @@ export default function Dashboard() {
                 recentSales.map((sale) => (
                   <div
                     key={sale.id}
-                    className="group/item relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 backdrop-blur-xl border border-white/10 hover:border-emerald-400/30 rounded-2xl p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-emerald-500/20"
+                    className="group/item relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 backdrop-blur-xl border border-white/10 hover:border-emerald-400/30 rounded-xl p-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-emerald-500/20"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex-1 min-w-0 pr-4">
@@ -489,7 +489,7 @@ function StatCard({
   const colors = colorClasses[color];
 
   return (
-    <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-5 md:p-6 shadow-2xl hover:shadow-purple-500/40 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] cursor-pointer will-change-transform overflow-hidden">
+    <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-xl p-4 md:p-5 shadow-2xl hover:shadow-purple-500/40 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer will-change-transform overflow-hidden">
       {/* Animated gradient background on hover */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
@@ -501,12 +501,12 @@ function StatCard({
       ></div>
 
       <div className="relative">
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex items-start justify-between mb-3">
           <div className="flex-shrink-0">
             <div
-              className={`bg-gradient-to-br ${colors.gradient} p-3 rounded-2xl shadow-2xl ${colors.glow} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
+              className={`bg-gradient-to-br ${colors.gradient} p-2 rounded-xl shadow-2xl ${colors.glow} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
             >
-              <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+              <Icon className="w-4 h-4 md:w-5 md:h-5 text-white" />
             </div>
           </div>
           <div
@@ -524,7 +524,7 @@ function StatCard({
           <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
             {title}
           </p>
-          <p className="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">
+          <p className="text-lg sm:text-xl md:text-2xl font-black text-white leading-tight">
             {value}
           </p>
           {subtitle && (
