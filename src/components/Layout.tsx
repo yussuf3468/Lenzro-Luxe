@@ -14,7 +14,7 @@ import {
   PiggyBank,
   Banknote,
   ChevronRight,
-  Monitor,
+  // Monitor,
   ChevronLeft,
   CreditCard,
   TrendingUp,
@@ -75,12 +75,12 @@ export default function Layout({
       icon: Package,
       color: "from-blue-600 to-cyan-600",
     },
-    {
-      id: "cyber-services",
-      label: "Adeegyada Cyber-ka",
-      icon: Monitor,
-      color: "from-cyan-600 to-blue-600",
-    },
+    // {
+    //   id: "cyber-services",
+    //   label: "Adeegyada Cyber-ka",
+    //   icon: Monitor,
+    //   color: "from-cyan-600 to-blue-600",
+    // },
     {
       id: "sales",
       label: "Iibka",
@@ -159,7 +159,7 @@ export default function Layout({
 
   const getStaffName = (email: string) => {
     if (email.includes("galiyowabi") || email.includes("admin"))
-      return "Mohamed Mohamud (Admin)";
+      return "Yussuf Muse (Admin)";
     if (email.includes("khaled")) return "Khaled";
     return email.split("@")[0];
   };
@@ -231,10 +231,10 @@ export default function Layout({
                   </div>
                   <div>
                     <h1 className="text-lg font-black text-white">
-                      AL-KALAM BOOKS
+                      LENZRO LUXE
                     </h1>
                     <p className="text-xs text-purple-300 font-medium">
-                      Bookshop & Cyber
+                      Fashion & Luxury
                     </p>
                   </div>
                 </div>
@@ -391,10 +391,10 @@ export default function Layout({
                 </div>
                 <div className="hidden sm:block min-w-0">
                   <h1 className="text-sm font-black text-white truncate max-w-[160px]">
-                    AL-KALAM BOOKS
+                    LENZRO LUXE
                   </h1>
                   <p className="text-xs text-purple-300 font-medium">
-                    ERP System
+                    Fashion System
                   </p>
                 </div>
               </div>
@@ -547,7 +547,7 @@ export default function Layout({
             <div className="px-3 sm:px-4 lg:px-6 max-w-[1600px] mx-auto">
               <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 text-xs sm:text-sm text-slate-300">
                 <p className="text-center sm:text-left">
-                  © {new Date().getFullYear()} Al-Qalam Bookshop. All rights
+                  © {new Date().getFullYear()} Lenzro Luxe. All rights
                   reserved.
                 </p>
                 <div className="flex items-center gap-2">
