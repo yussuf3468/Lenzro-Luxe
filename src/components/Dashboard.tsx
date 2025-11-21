@@ -121,46 +121,92 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="space-y-4 md:space-y-6 animate-fadeIn">
-      {/* Hero Section - Premium */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-4 md:p-6 shadow-2xl">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10"></div>
+    <div className="space-y-6 md:space-y-8 animate-fadeIn">
+      {/* Hero Section - Luxury Fashion Dashboard */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900/90 via-purple-950/80 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 md:p-10 shadow-2xl shadow-purple-500/20">
+        {/* Animated Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-pink-600/10 to-rose-600/10 animate-pulse"></div>
+
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"></div>
+
         <div className="relative">
-          <div className="text-center space-y-2">
-            <div className="inline-block">
-              <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-pink-200">
+          <div className="text-center space-y-4">
+            {/* Brand Logo with Sparkle Effect */}
+            <div className="inline-flex items-center justify-center space-x-3 mb-2">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 blur-lg opacity-50"></div>
+                <div className="relative w-12 h-12 bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/50 transform hover:rotate-12 transition-transform duration-300">
+                  <span className="text-2xl">👗</span>
+                </div>
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-pink-200 tracking-tight">
                 LENZRO LUXE
               </h1>
             </div>
-            <p className="text-xs md:text-sm text-slate-200 font-medium max-w-3xl mx-auto">
-              ✨ Welcome to LENZRO LUXE Dashboard — Manage your fashion
-              inventory, sales, and staff with real-time data insights!
+
+            <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-md border border-purple-400/30 rounded-full px-4 py-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-purple-300">
+                Fashion Command Center
+              </span>
+            </div>
+
+            <p className="text-sm md:text-base text-slate-300 font-medium max-w-3xl mx-auto leading-relaxed">
+              Manage your luxury fashion empire with real-time analytics,
+              inventory control, and sales insights
             </p>
 
-            <div className="flex items-center justify-center space-x-2 text-emerald-400">
-              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-              <span className="text-xs font-semibold">Live System Active</span>
+            <div className="flex items-center justify-center space-x-6 pt-2">
+              <div className="flex items-center space-x-2">
+                <div className="relative">
+                  <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse"></div>
+                  <div className="absolute inset-0 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></div>
+                </div>
+                <span className="text-xs font-bold text-emerald-300">
+                  Live Dashboard
+                </span>
+              </div>
+              <div className="w-px h-4 bg-white/20"></div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2.5 h-2.5 bg-purple-400 rounded-full"></div>
+                <span className="text-xs font-bold text-purple-300">
+                  Synced Data
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Stats Grid - Premium with High Contrast */}
+      {/* Stats Grid - Luxury Fashion Metrics */}
       <div>
-        <div className="flex items-center space-x-3 mb-4">
-          <div className="w-1 h-6 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full"></div>
-          <h2 className="text-lg md:text-xl font-bold text-white">
-            Business Overview
-          </h2>
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center space-x-3">
+            <div className="w-1 h-8 bg-gradient-to-b from-purple-600 via-pink-600 to-rose-600 rounded-full shadow-lg shadow-purple-500/50"></div>
+            <div>
+              <h2 className="text-xl md:text-2xl font-black text-white">
+                Performance Metrics
+              </h2>
+              <p className="text-xs text-slate-400">
+                Real-time business intelligence
+              </p>
+            </div>
+          </div>
+          <div className="hidden sm:block px-3 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-full">
+            <span className="text-xs font-bold text-slate-300">
+              Live Updates
+            </span>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           <div
             className="group animate-slideInLeft"
             style={{ animationDelay: "0.1s" }}
           >
             <StatCard
-              title="Iibka Guud - Total Sales"
+              title="Total Revenue"
               value={formatCurrency(stats.totalSales)}
               icon={Banknote}
               color="blue"
@@ -171,7 +217,7 @@ export default function Dashboard() {
             style={{ animationDelay: "0.2s" }}
           >
             <StatCard
-              title="Faa'iidada - Total Profit"
+              title="Total Profit"
               value={formatCurrency(stats.totalProfit)}
               icon={TrendingUp}
               color="green"
@@ -179,10 +225,10 @@ export default function Dashboard() {
           </div>
           <div
             className="group animate-slideInLeft"
-            style={{ animationDelay: "0.4s" }}
+            style={{ animationDelay: "0.3s" }}
           >
             <StatCard
-              title="Iibka Maanta - Today's Sales"
+              title="Today's Sales"
               value={formatCurrency(stats.dailySales)}
               icon={TrendingUp}
               color="orange"
@@ -191,10 +237,10 @@ export default function Dashboard() {
           </div>
           <div
             className="group animate-slideInLeft"
-            style={{ animationDelay: "0.3s" }}
+            style={{ animationDelay: "0.4s" }}
           >
             <StatCard
-              title="Alaabta Guud - Total Products"
+              title="Total Products"
               value={stats.totalProducts.toString()}
               icon={Package}
               color="purple"
@@ -203,129 +249,188 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Content Grid - Premium Cards */}
+      {/* Content Grid - Analytics Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         {/* Top Products Card */}
-        <div className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-1">
-          <div className="flex items-center space-x-3 mb-6">
-            <div className="p-2.5 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl shadow-xl">
-              <TrendingUp className="w-5 h-5 text-white" />
-            </div>
-            <h3 className="text-base md:text-lg font-bold text-white">
-              🏆 Top Products
-            </h3>
-          </div>
-          <div className="space-y-3">
-            {topProducts.length === 0 ? (
-              <div className="text-center py-8">
-                <div className="w-12 h-12 mx-auto mb-3 bg-white/10 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/20">
-                  <Package className="w-6 h-6 text-slate-400" />
+        <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl shadow-purple-500/10 hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+          {/* Background Decoration */}
+          <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl"></div>
+
+          <div className="relative">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center space-x-3">
+                <div className="p-3 bg-gradient-to-br from-amber-500 via-orange-600 to-rose-600 rounded-2xl shadow-xl shadow-orange-500/50">
+                  <TrendingUp className="w-5 h-5 text-white" />
                 </div>
-                <p className="text-sm font-bold text-white">
-                  No sales data yet
-                </p>
-                <p className="text-xs text-slate-400 mt-1">
-                  Start making sales to see analytics here
-                </p>
+                <div>
+                  <h3 className="text-lg md:text-xl font-black text-white">
+                    Best Sellers
+                  </h3>
+                  <p className="text-xs text-slate-400">
+                    Top performing products
+                  </p>
+                </div>
               </div>
-            ) : (
-              topProducts.map((item, index) => (
-                <div
-                  key={item.product.id}
-                  className="group/item bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/10 hover:border-white/20 rounded-xl p-3 transition-all duration-300 hover:scale-[1.01]"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white shadow-lg ${
-                        index === 0
-                          ? "bg-gradient-to-br from-yellow-500 to-orange-600"
-                          : index === 1
-                          ? "bg-gradient-to-br from-slate-500 to-slate-700"
-                          : index === 2
-                          ? "bg-gradient-to-br from-amber-600 to-orange-700"
-                          : "bg-gradient-to-br from-blue-500 to-cyan-600"
-                      }`}
-                    >
-                      {index === 0
-                        ? "🥇"
-                        : index === 1
-                        ? "🥈"
-                        : index === 2
-                        ? "🥉"
-                        : index + 1}
-                    </div>
-                    {item.product.image_url && (
-                      <OptimizedImage
-                        src={item.product.image_url}
-                        alt={item.product.name}
-                        className="w-10 h-10 object-cover rounded-lg border border-white/20"
-                        preset="thumbnail"
-                      />
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <p className="font-bold text-white truncate text-sm">
-                        {item.product.name}
-                      </p>
-                      <p className="text-xs text-slate-400 font-medium">
-                        {item.product.category}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-black text-white text-sm md:text-base">
-                        {formatCurrency(item.total)}
-                      </p>
+              <div className="w-10 h-10 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-xl flex items-center justify-center border border-amber-500/30">
+                <span className="text-lg">🏆</span>
+              </div>
+            </div>
+            <div className="space-y-3">
+              {topProducts.length === 0 ? (
+                <div className="text-center py-12">
+                  <div className="relative mx-auto mb-4">
+                    <div className="w-16 h-16 mx-auto bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/20">
+                      <Package className="w-8 h-8 text-purple-300" />
                     </div>
                   </div>
+                  <p className="text-base font-bold text-white mb-1">
+                    No sales data yet
+                  </p>
+                  <p className="text-sm text-slate-400">
+                    Start making sales to see analytics here
+                  </p>
                 </div>
-              ))
-            )}
+              ) : (
+                topProducts.map((item, index) => (
+                  <div
+                    key={item.product.id}
+                    className="group/item relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 backdrop-blur-xl border border-white/10 hover:border-purple-400/30 rounded-2xl p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/20"
+                  >
+                    {/* Rank Badge with Premium Design */}
+                    <div className="absolute -top-2 -left-2 z-10">
+                      <div
+                        className={`w-8 h-8 rounded-xl flex items-center justify-center text-sm font-black text-white shadow-2xl transform -rotate-12 group-hover/item:rotate-0 transition-transform duration-300 ${
+                          index === 0
+                            ? "bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-600 shadow-amber-500/50"
+                            : index === 1
+                            ? "bg-gradient-to-br from-slate-400 via-slate-500 to-slate-600 shadow-slate-500/50"
+                            : index === 2
+                            ? "bg-gradient-to-br from-amber-600 via-orange-600 to-rose-600 shadow-orange-500/50"
+                            : "bg-gradient-to-br from-purple-500 to-pink-600 shadow-purple-500/50"
+                        }`}
+                      >
+                        {index + 1}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center space-x-4 pl-4">
+                      {item.product.image_url && (
+                        <div className="relative flex-shrink-0">
+                          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur"></div>
+                          <OptimizedImage
+                            src={item.product.image_url}
+                            alt={item.product.name}
+                            className="relative w-14 h-14 object-cover rounded-xl border-2 border-white/20 shadow-lg"
+                            preset="thumbnail"
+                          />
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <p className="font-bold text-white truncate text-sm md:text-base mb-1">
+                          {item.product.name}
+                        </p>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-xs font-semibold text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-400/20">
+                            {item.product.category}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="text-right flex-shrink-0">
+                        <p className="font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-rose-300 text-base md:text-lg">
+                          {formatCurrency(item.total)}
+                        </p>
+                        <p className="text-xs text-slate-400 font-medium mt-0.5">
+                          Revenue
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
 
         {/* Recent Sales Card */}
-        <div className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl hover:shadow-emerald-500/20 transition-all duration-500 hover:-translate-y-1">
-          <div className="flex items-center space-x-3 mb-6">
-            <div className="p-2.5 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl shadow-xl">
-              <Receipt className="w-5 h-5 text-white" />
-            </div>
-            <h3 className="text-base md:text-lg font-bold text-white">
-              📊 Recent Sales
-            </h3>
-          </div>
-          <div className="space-y-3">
-            {recentSales.length === 0 ? (
-              <div className="text-center py-8">
-                <p className="text-sm font-bold text-white">
-                  No sales recorded yet
-                </p>
+        <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl shadow-emerald-500/10 hover:shadow-emerald-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+          {/* Background Decoration */}
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl"></div>
+
+          <div className="relative">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center space-x-3">
+                <div className="p-3 bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-600 rounded-2xl shadow-xl shadow-emerald-500/50">
+                  <Receipt className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-black text-white">
+                    Recent Transactions
+                  </h3>
+                  <p className="text-xs text-slate-400">
+                    Latest sales activity
+                  </p>
+                </div>
               </div>
-            ) : (
-              recentSales.map((sale) => (
-                <div
-                  key={sale.id}
-                  className="bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/10 hover:border-white/20 rounded-xl p-3 transition-all duration-300 hover:scale-[1.01]"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex-1 min-w-0">
-                      <p className="font-bold text-white text-xs md:text-sm">
-                        {formatDate(sale.created_at)}
-                      </p>
-                      <p className="text-xs text-slate-400 font-medium truncate">
-                        {sale.sold_by}
-                      </p>
-                    </div>
-                    <div className="text-right flex-shrink-0 ml-4">
-                      <p className="font-black text-white text-sm md:text-base">
-                        {formatCurrency(sale.total_sale)}
-                      </p>
-                      <p className="text-xs text-emerald-400 font-bold">
-                        +{formatCurrency(sale.profit)}
-                      </p>
+              <div className="w-10 h-10 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-xl flex items-center justify-center border border-emerald-500/30">
+                <span className="text-lg">📊</span>
+              </div>
+            </div>
+            <div className="space-y-3">
+              {recentSales.length === 0 ? (
+                <div className="text-center py-12">
+                  <div className="relative mx-auto mb-4">
+                    <div className="w-16 h-16 mx-auto bg-gradient-to-br from-emerald-500/20 to-teal-500/20 backdrop-blur-xl rounded-2xl flex items-center justify-center border border-white/20">
+                      <Receipt className="w-8 h-8 text-emerald-300" />
                     </div>
                   </div>
+                  <p className="text-base font-bold text-white mb-1">
+                    No sales recorded yet
+                  </p>
+                  <p className="text-sm text-slate-400">
+                    Transactions will appear here
+                  </p>
                 </div>
-              ))
-            )}
+              ) : (
+                recentSales.map((sale) => (
+                  <div
+                    key={sale.id}
+                    className="group/item relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 backdrop-blur-xl border border-white/10 hover:border-emerald-400/30 rounded-2xl p-4 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-emerald-500/20"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex-1 min-w-0 pr-4">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                          <p className="font-bold text-white text-sm md:text-base">
+                            {formatDate(sale.created_at)}
+                          </p>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <span className="text-xs font-medium text-slate-400">
+                            Sold by:
+                          </span>
+                          <span className="text-xs font-semibold text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-400/20">
+                            {sale.sold_by}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="text-right flex-shrink-0">
+                        <p className="font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 text-base md:text-lg mb-1">
+                          {formatCurrency(sale.total_sale)}
+                        </p>
+                        <div className="flex items-center justify-end space-x-1">
+                          <span className="text-[10px] text-slate-500">
+                            Profit:
+                          </span>
+                          <p className="text-xs text-emerald-400 font-bold">
+                            +{formatCurrency(sale.profit)}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -350,63 +455,84 @@ function StatCard({
 }: StatCardProps) {
   const colorClasses = {
     blue: {
-      gradient: "from-blue-600 to-cyan-600",
+      gradient: "from-blue-600 via-cyan-600 to-teal-600",
       glow: "shadow-blue-500/50",
-      text: "text-blue-400",
+      text: "text-blue-300",
+      bg: "from-blue-500/10 to-cyan-500/5",
     },
     green: {
-      gradient: "from-green-600 to-emerald-600",
+      gradient: "from-emerald-600 via-green-600 to-teal-600",
       glow: "shadow-emerald-500/50",
-      text: "text-emerald-400",
+      text: "text-emerald-300",
+      bg: "from-emerald-500/10 to-green-500/5",
     },
     purple: {
-      gradient: "from-purple-600 to-pink-600",
+      gradient: "from-purple-600 via-pink-600 to-rose-600",
       glow: "shadow-purple-500/50",
-      text: "text-purple-400",
+      text: "text-purple-300",
+      bg: "from-purple-500/10 to-pink-500/5",
     },
     orange: {
-      gradient: "from-orange-600 to-amber-600",
+      gradient: "from-orange-600 via-amber-600 to-yellow-600",
       glow: "shadow-orange-500/50",
-      text: "text-orange-400",
+      text: "text-orange-300",
+      bg: "from-orange-500/10 to-amber-500/5",
     },
     red: {
-      gradient: "from-red-600 to-rose-600",
+      gradient: "from-red-600 via-rose-600 to-pink-600",
       glow: "shadow-rose-500/50",
-      text: "text-rose-400",
+      text: "text-rose-300",
+      bg: "from-red-500/10 to-rose-500/5",
     },
   };
 
   const colors = colorClasses[color];
 
   return (
-    <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-5 shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer will-change-transform overflow-hidden">
+    <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-5 md:p-6 shadow-2xl hover:shadow-purple-500/40 transition-all duration-500 hover:-translate-y-3 hover:scale-[1.03] cursor-pointer will-change-transform overflow-hidden">
       {/* Animated gradient background on hover */}
       <div
-        className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`}
+        className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
       ></div>
 
-      <div className="relative flex items-center justify-between">
-        <div className="flex-1 min-w-0 pr-2">
-          <p
-            className={`text-xs font-bold uppercase tracking-wider mb-1.5 ${colors.text}`}
+      {/* Decorative corner accent */}
+      <div
+        className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${colors.bg} rounded-full blur-2xl opacity-50`}
+      ></div>
+
+      <div className="relative">
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex-shrink-0">
+            <div
+              className={`bg-gradient-to-br ${colors.gradient} p-3 rounded-2xl shadow-2xl ${colors.glow} group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}
+            >
+              <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            </div>
+          </div>
+          <div
+            className={`px-2 py-1 bg-gradient-to-r ${colors.bg} backdrop-blur-md rounded-lg border border-white/10`}
           >
+            <span
+              className={`text-[10px] font-bold uppercase tracking-wider ${colors.text}`}
+            >
+              Live
+            </span>
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
             {title}
           </p>
-          <p className="text-base sm:text-lg font-black text-white leading-tight whitespace-nowrap">
+          <p className="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">
             {value}
           </p>
           {subtitle && (
-            <p className="text-xs text-slate-400 mt-0.5 font-medium whitespace-nowrap">
-              {subtitle}
-            </p>
+            <div className="flex items-center space-x-2 pt-1">
+              <div className="w-1 h-3 bg-gradient-to-b from-emerald-500 to-emerald-600 rounded-full"></div>
+              <p className="text-xs text-slate-400 font-semibold">{subtitle}</p>
+            </div>
           )}
-        </div>
-        <div className="flex-shrink-0">
-          <div
-            className={`bg-gradient-to-br ${colors.gradient} p-2 md:p-2.5 rounded-2xl shadow-2xl ${colors.glow} group-hover:scale-110 transition-transform duration-300`}
-          >
-            <Icon className="w-4 h-4 md:w-5 md:h-5 text-white" />
-          </div>
         </div>
       </div>
     </div>
