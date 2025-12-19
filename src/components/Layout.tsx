@@ -562,7 +562,11 @@ export default function Layout({
         }`}
       >
         {/* Desktop Top Navbar (fixed on scroll) */}
-        <div className="hidden lg:block fixed top-0 left-0 right-0 z-40 w-full bg-slate-900/80 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/70">
+        <div
+          className={`hidden lg:block fixed top-0 right-0 z-40 transition-all duration-300 bg-slate-900/80 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/70 ${
+            isDesktopSidebarCollapsed ? "left-20" : "left-72 xl:left-80"
+          }`}
+        >
           <div className="flex items-center justify-between px-8 h-16">
             <div className="flex items-center gap-3">
               <div className="relative">
