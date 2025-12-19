@@ -579,9 +579,9 @@ export default function SaleForm({
             </div>
           )}
 
-          {/* Summary */}
-          {saleItems.length > 0 && (
-            <div className="bg-gradient-to-br from-amber-500/20 to-rose-500/20 border border-amber-500/30 rounded-xl p-6">
+          {/* Summary - Always Visible */}
+          <div className="bg-gradient-to-br from-amber-500/20 to-rose-500/20 border border-amber-500/30 rounded-xl p-6">
+            {saleItems.length > 0 ? (
               <div className="space-y-3">
                 <div className="flex justify-between text-slate-300">
                   <span>Subtotal:</span>
@@ -604,7 +604,7 @@ export default function SaleForm({
                       </span>
                     </div>
                   )}
-                <div className="border-t border-white/20 pt-3 flex justify-between items-center">
+                <div className="border-t border-white/20 pt-3 flex flex-col sm:flex-row justify-between items-center gap-4">
                   <div>
                     <p className="text-slate-300 text-sm">Total Amount</p>
                     <p className="text-3xl font-bold text-white">
@@ -617,14 +617,25 @@ export default function SaleForm({
                   <button
                     type="submit"
                     disabled={submitting || saleItems.length === 0}
-                    className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-emerald-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-emerald-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {submitting ? "Processing..." : "Complete Sale"}
                   </button>
                 </div>
               </div>
-            </div>
-          )}
+            ) : (
+              <div className="text-center py-6">
+                <p className="text-slate-400 mb-4">No items added yet</p>
+                <button
+                  type="submit"
+                  disabled
+                  className="w-full sm:w-auto bg-gradient-to-r from-slate-600 to-slate-700 text-white px-8 py-4 rounded-xl font-bold text-lg opacity-50 cursor-not-allowed"
+                >
+                  Complete Sale
+                </button>
+              </div>
+            )}
+          </div>
         </form>
       </div>
     </div>
