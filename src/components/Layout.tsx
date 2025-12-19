@@ -556,60 +556,8 @@ export default function Layout({
       <main
         className={`relative transition-all duration-300 ${
           isDesktopSidebarCollapsed ? "lg:ml-20" : "lg:ml-72 xl:ml-80"
-        } ${
-          // Mobile-first top padding (4rem on mobile, 5rem on md+)
-          "pt-16 md:pt-20"
         }`}
       >
-        {/* Desktop Top Navbar (fixed on scroll) */}
-        <div
-          className={`hidden lg:block fixed top-0 right-0 z-40 transition-all duration-300 bg-slate-900/80 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/70 ${
-            isDesktopSidebarCollapsed ? "left-20" : "left-72 xl:left-80"
-          }`}
-        >
-          <div className="flex items-center justify-between px-8 h-16">
-            <div className="flex items-center gap-3">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-600 to-rose-600 rounded-xl blur opacity-75"></div>
-                <div className="relative bg-gradient-to-br from-amber-600 to-rose-600 p-2 rounded-xl shadow-xl">
-                  <Package className="w-5 h-5 text-white" />
-                </div>
-              </div>
-              <h1 className="text-lg font-black text-white tracking-wide">
-                LENZRO LUXE
-              </h1>
-              <span className="text-xs text-amber-300 font-medium ml-2">
-                Fashion & Luxury
-              </span>
-            </div>
-            {/* Desktop Language Selector - subtle */}
-            <div className="inline-flex items-center gap-0.5 bg-white/5 border border-white/10 rounded-full px-1.5 py-0.5 text-[10px] font-medium text-slate-300 backdrop-blur-sm hover:bg-white/10 transition-all">
-              <button
-                type="button"
-                onClick={() => setLanguage("en")}
-                className={`px-2 py-0.5 rounded-full transition-all ${
-                  language === "en"
-                    ? "bg-white/20 text-white"
-                    : "text-slate-400 hover:text-slate-200"
-                }`}
-              >
-                EN
-              </button>
-              <button
-                type="button"
-                onClick={() => setLanguage("so")}
-                className={`px-2 py-0.5 rounded-full transition-all ${
-                  language === "so"
-                    ? "bg-white/20 text-white"
-                    : "text-slate-400 hover:text-slate-200"
-                }`}
-              >
-                SO
-              </button>
-            </div>
-          </div>
-        </div>
-
         <div className="min-h-screen flex flex-col">
           <div className="flex-1 px-3 sm:px-4 lg:px-6 py-3 md:py-4 lg:py-6 max-w-[1600px] mx-auto w-full">
             {/* Desktop Top Bar with Language Selector */}
