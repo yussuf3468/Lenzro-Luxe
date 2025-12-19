@@ -556,7 +556,7 @@ export default function Layout({
       <main
         className={`relative transition-all duration-300 ${
           isDesktopSidebarCollapsed ? "lg:ml-20" : "lg:ml-72 xl:ml-80"
-        }`}
+        } pt-20 lg:pt-0`}
       >
         <div className="min-h-screen flex flex-col">
           <div className="flex-1 px-3 sm:px-4 lg:px-6 py-3 md:py-4 lg:py-6 max-w-[1600px] mx-auto w-full">
