@@ -66,7 +66,7 @@ const paymentMethods = [
   "Card",
   "Bank Transfer",
 ];
-const staffMembers = ["Mohamed", "Najib", "Isse", "Timo", "Samira"];
+const staffMembers = ["Yussuf"];
 
 export default function SaleForm({
   products,
