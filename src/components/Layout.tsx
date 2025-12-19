@@ -217,7 +217,7 @@ export default function Layout({
           <div className="p-6 border-b border-white/10">
             {!isDesktopSidebarCollapsed ? (
               <>
-                <div className="hidden lg:flex items-center justify-center mb-4">
+                <div className="hidden lg:flex items-center mb-4">
                   <div className="relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-amber-600 to-rose-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative bg-gradient-to-br from-amber-600 to-rose-600 p-3 rounded-2xl shadow-xl">
@@ -225,10 +225,10 @@ export default function Layout({
                     </div>
                   </div>
                   <div className="ml-3">
-                    <h1 className="text-lg font-black text-white">
+                    <h1 className="text-lg font-black text-white leading-tight">
                       LENZRO LUXE
                     </h1>
-                    <p className="text-xs text-amber-300 font-medium">
+                    <p className="text-xs text-amber-300 font-medium leading-tight">
                       Fashion & Luxury
                     </p>
                   </div>
