@@ -5,21 +5,48 @@
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <rect width="32" height="32" rx="8" fill="url(#gradient)" />
-  <path d="M10 8H14V18H20V22H10V8Z" fill="white" />
-  <circle cx="23" cy="9" r="2" fill="#FCD34D" />
+  <!-- Luxury gradient background -->
+  <rect width="32" height="32" rx="7" fill="url(#luxGradient)" />
+  
+  <!-- Shimmer overlay -->
+  <rect width="32" height="32" rx="7" fill="url(#shimmer)" opacity="0.12" />
+  
+  <!-- L letter with gold accent -->
+  <path
+    d="M8.5 7H13.5V19H20V24H8.5V7Z"
+    fill="white"
+    stroke="url(#goldStroke)"
+    stroke-width="0.5"
+  />
+  
+  <!-- Crown/diamond accent -->
+  <g transform="translate(23, 6.5)">
+    <path d="M2.5 0L3.5 2.5L2.5 5L1.5 2.5Z" fill="url(#diamond)" />
+    <circle cx="2.5" cy="2.5" r="1.8" fill="#FDE68A" opacity="0.5" />
+  </g>
+  
+  <!-- Mini sparkles -->
+  <circle cx="7" cy="9" r="0.5" fill="#FCD34D" opacity="0.8" />
+  <circle cx="23.5" cy="20" r="0.6" fill="#FDE68A" opacity="0.8" />
+  
   <defs>
-    <linearGradient
-      id="gradient"
-      x1="0"
-      y1="0"
-      x2="32"
-      y2="32"
-      gradientUnits="userSpaceOnUse"
-    >
-      <stop stop-color="#7C3AED" />
-      <stop offset="0.5" stop-color="#EC4899" />
-      <stop offset="1" stop-color="#F43F5E" />
+    <linearGradient id="luxGradient" x1="0" y1="0" x2="32" y2="32">
+      <stop offset="0%" stop-color="#B45309" />
+      <stop offset="35%" stop-color="#D97706" />
+      <stop offset="70%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FB923C" />
+    </linearGradient>
+    <radialGradient id="shimmer" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#FCD34D" />
+    </linearGradient>
+    <linearGradient id="diamond" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#FCD34D" />
     </linearGradient>
   </defs>
 </svg>

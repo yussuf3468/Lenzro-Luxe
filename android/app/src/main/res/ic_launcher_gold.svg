@@ -1,0 +1,79 @@
+<svg
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Luxury gold gradient background -->
+  <rect width="512" height="512" rx="115" fill="url(#luxGradient)" />
+  
+  <!-- Shimmer overlay for premium effect -->
+  <rect width="512" height="512" rx="115" fill="url(#shimmer)" opacity="0.15" />
+  
+  <!-- Large L letter with premium gold stroke -->
+  <path
+    d="M140 120H220V330H350V410H140V120Z"
+    fill="white"
+    stroke="url(#goldStroke)"
+    stroke-width="8"
+  />
+  
+  <!-- Diamond/crown accent at top right -->
+  <g transform="translate(405, 115)">
+    <path d="M25 0L35 25L25 50L15 25Z" fill="url(#diamond)" />
+    <circle cx="25" cy="25" r="20" fill="#FDE68A" opacity="0.4" />
+  </g>
+  
+  <!-- Decorative sparkles -->
+  <circle cx="115" cy="150" r="8" fill="#FCD34D" opacity="0.9" />
+  <circle cx="420" cy="340" r="10" fill="#FDE68A" opacity="0.85" />
+  <circle cx="160" cy="380" r="7" fill="#FEF3C7" opacity="0.8" />
+  <circle cx="385" cy="220" r="9" fill="#FBBF24" opacity="0.75" />
+  
+  <!-- Bottom shine effect for depth -->
+  <ellipse
+    cx="256"
+    cy="480"
+    rx="180"
+    ry="25"
+    fill="url(#bottomShine)"
+    opacity="0.3"
+  />
+  
+  <defs>
+    <!-- Main luxury gradient -->
+    <linearGradient id="luxGradient" x1="0" y1="0" x2="512" y2="512">
+      <stop offset="0%" stop-color="#B45309" />
+      <stop offset="35%" stop-color="#D97706" />
+      <stop offset="70%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FB923C" />
+    </linearGradient>
+    
+    <!-- Shimmer overlay -->
+    <radialGradient id="shimmer" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0" />
+    </radialGradient>
+    
+    <!-- Gold stroke for L letter -->
+    <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="50%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#FBBF24" />
+    </linearGradient>
+    
+    <!-- Diamond accent gradient -->
+    <linearGradient id="diamond" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FEF3C7" />
+      <stop offset="50%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#FCD34D" />
+    </linearGradient>
+    
+    <!-- Bottom shine -->
+    <radialGradient id="bottomShine" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>

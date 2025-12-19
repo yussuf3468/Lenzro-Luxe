@@ -12,7 +12,7 @@
     "android:bundle": "npm run build && npx cap copy android && cd android && .\\gradlew.bat bundleRelease",
     "android:clean": "cd android && .\\gradlew.bat clean",
     "android:keystore:hint": "echo Use keytool to create keystore: keytool -genkeypair -v -keystore hassan-lenzro.keystore -alias lenzro -keyalg RSA -keysize 2048 -validity 10000",
-    "assets:generate": "npx capacitor-assets generate android --iconBackgroundColor=#0B0B14 --splashBackgroundColor=#0B0B14",
+    "assets:generate": "npx capacitor-assets generate --android --iconBackgroundColor=#D97706",
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.app.json"

@@ -1,0 +1,60 @@
+<!-- iOS App Icon (Rounded Square) - 180x180 -->
+<svg
+  width="180"
+  height="180"
+  viewBox="0 0 180 180"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background gradient -->
+  <rect width="180" height="180" rx="40" fill="url(#iosGradient)" />
+  
+  <!-- Pattern overlay -->
+  <rect
+    width="180"
+    height="180"
+    rx="40"
+    fill="url(#iosShimmer)"
+    opacity="0.12"
+  />
+  
+  <!-- L letter -->
+  <path
+    d="M50 42H77V120H120V147H50V42Z"
+    fill="white"
+    stroke="url(#iosGold)"
+    stroke-width="1.5"
+  />
+  
+  <!-- Crown accent -->
+  <g transform="translate(130, 35)">
+    <path d="M7 0L10.5 7L7 14L3.5 7Z" fill="url(#iosDiamond)" />
+    <circle cx="7" cy="7" r="5" fill="#FDE68A" opacity="0.5" />
+  </g>
+  
+  <!-- Sparkles -->
+  <circle cx="42" cy="52" r="1.5" fill="#FCD34D" opacity="0.8" />
+  <circle cx="133" cy="123" r="1.8" fill="#FDE68A" opacity="0.8" />
+  <circle cx="56" cy="133" r="1.2" fill="#FCD34D" opacity="0.8" />
+  
+  <defs>
+    <linearGradient id="iosGradient" x1="0" y1="0" x2="180" y2="180">
+      <stop offset="0%" stop-color="#B45309" />
+      <stop offset="35%" stop-color="#D97706" />
+      <stop offset="70%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FB923C" />
+    </linearGradient>
+    <radialGradient id="iosShimmer" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FBBF24" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="iosGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#FCD34D" />
+    </linearGradient>
+    <linearGradient id="iosDiamond" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#FCD34D" />
+    </linearGradient>
+  </defs>
+</svg>
