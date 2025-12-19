@@ -1,5 +1,13 @@
-import { useState } from "react";
-import { X, ShoppingCart, Printer, Trash2 } from "lucide-react";
+import { useState, useMemo } from "react";
+import {
+  X,
+  ShoppingCart,
+  Printer,
+  Trash2,
+  Search,
+  Plus,
+  Minus,
+} from "lucide-react";
 import { supabase } from "../lib/supabase";
 import type { Product } from "../types";
 
@@ -13,7 +21,10 @@ interface SaleItem {
   id: string;
   product: Product;
   quantity: number;
+  discount: number;
 }
+
+type DiscountType = "none" | "percentage" | "amount";
 
 export default function SaleForm({
   products,
@@ -21,18 +32,31 @@ export default function SaleForm({
   onSuccess,
 }: SaleFormProps) {
   const [saleItems, setSaleItems] = useState<SaleItem[]>([]);
-  const [selectedProductId, setSelectedProductId] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [paymentMethod, setPaymentMethod] = useState("Cash");
   const [soldBy, setSoldBy] = useState("Yussuf");
   const [submitting, setSubmitting] = useState(false);
   const [receipt, setReceipt] = useState<any>(null);
+  const [overallDiscountType, setOverallDiscountType] =
+    useState<DiscountType>("none");
+  const [overallDiscountValue, setOverallDiscountValue] = useState(0);
 
-  const addItem = () => {
-    if (!selectedProductId || quantity < 1) return;
+  // Filter products based on search
+  const filteredProducts = useMemo(() => {
+    if (!searchTerm) return [];
+    const term = searchTerm.toLowerCase();
+    return products
+      .filter(
+        (p) =>
+          p.name.toLowerCase().includes(term) ||
+          p.category?.toLowerCase().includes(term)
+      )
+      .slice(0, 10);
+  }, [searchTerm, products]);
 
-    const product = products.find((p) => p.id === selectedProductId);
-    if (!product) return;
+  const addItem = (product: Product) => {
+    if (!product || quantity < 1) return;
 
     if (product.quantity_in_stock < quantity) {
       alert(`Only ${product.quantity_in_stock} items available in stock`);
@@ -40,12 +64,12 @@ export default function SaleForm({
     }
 
     const existingItem = saleItems.find(
-      (item) => item.product.id === selectedProductId
+      (item) => item.product.id === product.id
     );
     if (existingItem) {
       setSaleItems(
         saleItems.map((item) =>
-          item.product.id === selectedProductId
+          item.product.id === product.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         )
@@ -57,11 +81,12 @@ export default function SaleForm({
           id: crypto.randomUUID(),
           product,
           quantity,
+          discount: 0,
         },
       ]);
     }
 
-    setSelectedProductId("");
+    setSearchTerm("");
     setQuantity(1);
   };
 
@@ -87,19 +112,46 @@ export default function SaleForm({
     );
   };
 
-  const calculateTotal = () => {
+  const updateItemDiscount = (id: string, discount: number) => {
+    if (discount < 0) return;
+    setSaleItems(
+      saleItems.map((item) =>
+        item.id === id ? { ...item, discount: Math.max(0, discount) } : item
+      )
+    );
+  };
+
+  const calculateSubtotal = () => {
     return saleItems.reduce((total, item) => {
-      return total + item.product.selling_price * item.quantity;
+      const itemTotal = item.product.selling_price * item.quantity;
+      return total + itemTotal - item.discount;
     }, 0);
   };
 
+  const calculateOverallDiscount = () => {
+    const subtotal = calculateSubtotal();
+    if (overallDiscountType === "percentage") {
+      return (subtotal * overallDiscountValue) / 100;
+    } else if (overallDiscountType === "amount") {
+      return Math.min(overallDiscountValue, subtotal);
+    }
+    return 0;
+  };
+
+  const calculateTotal = () => {
+    return calculateSubtotal() - calculateOverallDiscount();
+  };
+
   const calculateProfit = () => {
-    return saleItems.reduce((profit, item) => {
-      const itemProfit =
-        (item.product.selling_price - item.product.buying_price) *
-        item.quantity;
-      return profit + itemProfit;
-    }, 0);
+    return (
+      saleItems.reduce((profit, item) => {
+        const itemProfit =
+          (item.product.selling_price - item.product.buying_price) *
+            item.quantity -
+          item.discount;
+        return profit + itemProfit;
+      }, 0) - calculateOverallDiscount()
+    );
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -175,10 +227,12 @@ export default function SaleForm({
   const closeReceipt = () => {
     setReceipt(null);
     setSaleItems([]);
-    setSelectedProductId("");
+    setSearchTerm("");
     setQuantity(1);
     setPaymentMethod("Cash");
     setSoldBy("Yussuf");
+    setOverallDiscountType("none");
+    setOverallDiscountValue(0);
   };
 
   if (receipt) {
@@ -288,42 +342,82 @@ export default function SaleForm({
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
-          {/* Add Item Section */}
+          {/* Search & Add Item Section */}
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4">
-            <h3 className="text-white font-semibold mb-4">Add Item</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <select
-                value={selectedProductId}
-                onChange={(e) => setSelectedProductId(e.target.value)}
-                className="col-span-1 md:col-span-2 bg-slate-800/50 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              >
-                <option value="">Select Product</option>
-                {products.map((product) => (
-                  <option key={product.id} value={product.id}>
-                    {product.name} - KES{" "}
-                    {product.selling_price.toLocaleString()} (Stock:{" "}
-                    {product.quantity_in_stock})
-                  </option>
-                ))}
-              </select>
-
+            <h3 className="text-white font-semibold mb-4">Search Product</h3>
+            <div className="relative">
               <div className="flex gap-2">
-                <input
-                  type="number"
-                  min="1"
-                  value={quantity}
-                  onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
-                  placeholder="Qty"
-                  className="flex-1 bg-slate-800/50 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                />
-                <button
-                  type="button"
-                  onClick={addItem}
-                  className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all whitespace-nowrap"
-                >
-                  Add
-                </button>
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
+                  <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    placeholder="Search by product name or category..."
+                    className="w-full bg-slate-800/50 border border-white/20 text-white rounded-xl pl-10 pr-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    className="bg-slate-700 text-white p-3 rounded-xl hover:bg-slate-600 transition-all"
+                  >
+                    <Minus className="w-4 h-4" />
+                  </button>
+                  <input
+                    type="number"
+                    min="1"
+                    value={quantity}
+                    onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
+                    className="w-16 bg-slate-800/50 border border-white/20 text-white rounded-xl px-3 py-3 text-center focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setQuantity(quantity + 1)}
+                    className="bg-slate-700 text-white p-3 rounded-xl hover:bg-slate-600 transition-all"
+                  >
+                    <Plus className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
+
+              {/* Search Results Dropdown */}
+              {searchTerm && filteredProducts.length > 0 && (
+                <div className="absolute z-10 w-full mt-2 bg-slate-800 border border-white/20 rounded-xl shadow-2xl max-h-64 overflow-y-auto">
+                  {filteredProducts.map((product) => (
+                    <button
+                      key={product.id}
+                      type="button"
+                      onClick={() => {
+                        addItem(product);
+                      }}
+                      className="w-full text-left px-4 py-3 hover:bg-white/10 border-b border-white/10 last:border-0 transition-all"
+                    >
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <p className="text-white font-medium">
+                            {product.name}
+                          </p>
+                          <p className="text-xs text-slate-400">
+                            {product.category} • Stock:{" "}
+                            {product.quantity_in_stock}
+                          </p>
+                        </div>
+                        <p className="text-emerald-400 font-bold">
+                          KES {product.selling_price.toLocaleString()}
+                        </p>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {searchTerm && filteredProducts.length === 0 && (
+                <div className="absolute z-10 w-full mt-2 bg-slate-800 border border-white/20 rounded-xl shadow-2xl p-4 text-center">
+                  <p className="text-slate-400">No products found</p>
+                </div>
+              )}
             </div>
           </div>
 
@@ -331,104 +425,203 @@ export default function SaleForm({
           {saleItems.length > 0 && (
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4">
               <h3 className="text-white font-semibold mb-4">Sale Items</h3>
-              <div className="space-y-2">
-                {saleItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex items-center justify-between bg-slate-800/50 border border-white/10 rounded-xl p-3"
-                  >
-                    <div className="flex-1">
-                      <p className="text-white font-medium">
-                        {item.product.name}
-                      </p>
-                      <p className="text-sm text-slate-400">
-                        KES {item.product.selling_price.toLocaleString()} each
-                      </p>
+              <div className="space-y-3">
+                {saleItems.map((item) => {
+                  const itemTotal =
+                    item.product.selling_price * item.quantity - item.discount;
+                  return (
+                    <div
+                      key={item.id}
+                      className="bg-slate-800/50 border border-white/10 rounded-xl p-4"
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex-1">
+                          <p className="text-white font-medium text-lg">
+                            {item.product.name}
+                          </p>
+                          <p className="text-sm text-slate-400">
+                            KES {item.product.selling_price.toLocaleString()}{" "}
+                            each
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeItem(item.id)}
+                          className="text-red-400 hover:text-red-300 hover:bg-red-500/20 p-2 rounded-lg transition-all"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-3">
+                        <div>
+                          <label className="text-xs text-slate-400 block mb-1">
+                            Quantity
+                          </label>
+                          <input
+                            type="number"
+                            min="1"
+                            value={item.quantity}
+                            onChange={(e) =>
+                              updateQuantity(
+                                item.id,
+                                parseInt(e.target.value) || 1
+                              )
+                            }
+                            className="w-full bg-slate-700 border border-white/20 text-white rounded-lg px-3 py-2 text-center focus:outline-none focus:ring-2 focus:ring-amber-500"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="text-xs text-slate-400 block mb-1">
+                            Discount (KES)
+                          </label>
+                          <input
+                            type="number"
+                            min="0"
+                            value={item.discount}
+                            onChange={(e) =>
+                              updateItemDiscount(
+                                item.id,
+                                parseFloat(e.target.value) || 0
+                              )
+                            }
+                            className="w-full bg-slate-700 border border-white/20 text-white rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                          />
+                        </div>
+
+                        <div className="md:text-right">
+                          <label className="text-xs text-slate-400 block mb-1">
+                            Total
+                          </label>
+                          <p className="text-white font-bold text-lg">
+                            KES {itemTotal.toLocaleString()}
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <input
-                        type="number"
-                        min="1"
-                        value={item.quantity}
-                        onChange={(e) =>
-                          updateQuantity(item.id, parseInt(e.target.value) || 1)
-                        }
-                        className="w-20 bg-slate-700 border border-white/20 text-white rounded-lg px-3 py-2 text-center focus:outline-none focus:ring-2 focus:ring-amber-500"
-                      />
-                      <p className="text-white font-bold min-w-[100px] text-right">
-                        KES{" "}
-                        {(
-                          item.product.selling_price * item.quantity
-                        ).toLocaleString()}
-                      </p>
-                      <button
-                        type="button"
-                        onClick={() => removeItem(item.id)}
-                        className="text-red-400 hover:text-red-300 hover:bg-red-500/20 p-2 rounded-lg transition-all"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
 
-          {/* Sale Details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">
-                Payment Method
-              </label>
-              <select
-                value={paymentMethod}
-                onChange={(e) => setPaymentMethod(e.target.value)}
-                className="w-full bg-slate-800/50 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
-              >
-                <option value="Cash">Cash</option>
-                <option value="Mpesa">Mpesa</option>
-                <option value="Till Number">Till Number</option>
-                <option value="Card">Card</option>
-                <option value="Bank Transfer">Bank Transfer</option>
-              </select>
-            </div>
+          {/* Overall Discount & Payment Details */}
+          {saleItems.length > 0 && (
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4">
+              <h3 className="text-white font-semibold mb-4">Sale Details</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Overall Discount
+                  </label>
+                  <select
+                    value={overallDiscountType}
+                    onChange={(e) => {
+                      setOverallDiscountType(e.target.value as DiscountType);
+                      setOverallDiscountValue(0);
+                    }}
+                    className="w-full bg-slate-800/50 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500 mb-2"
+                  >
+                    <option value="none">No Discount</option>
+                    <option value="percentage">Percentage (%)</option>
+                    <option value="amount">Fixed Amount (KES)</option>
+                  </select>
+                  {overallDiscountType !== "none" && (
+                    <input
+                      type="number"
+                      min="0"
+                      value={overallDiscountValue}
+                      onChange={(e) =>
+                        setOverallDiscountValue(parseFloat(e.target.value) || 0)
+                      }
+                      placeholder={
+                        overallDiscountType === "percentage"
+                          ? "0-100%"
+                          : "Amount"
+                      }
+                      className="w-full bg-slate-800/50 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    />
+                  )}
+                </div>
 
-            <div>
-              <label className="block text-sm font-medium text-slate-300 mb-2">
-                Sold By
-              </label>
-              <input
-                type="text"
-                value={soldBy}
-                onChange={(e) => setSoldBy(e.target.value)}
-                placeholder="Staff name"
-                className="w-full bg-slate-800/50 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                required
-              />
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Payment Method
+                  </label>
+                  <select
+                    value={paymentMethod}
+                    onChange={(e) => setPaymentMethod(e.target.value)}
+                    className="w-full bg-slate-800/50 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  >
+                    <option value="Cash">Cash</option>
+                    <option value="Mpesa">Mpesa</option>
+                    <option value="Till Number">Till Number</option>
+                    <option value="Card">Card</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Sold By
+                  </label>
+                  <input
+                    type="text"
+                    value={soldBy}
+                    onChange={(e) => setSoldBy(e.target.value)}
+                    placeholder="Staff name"
+                    className="w-full bg-slate-800/50 border border-white/20 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    required
+                  />
+                </div>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Summary */}
           {saleItems.length > 0 && (
-            <div className="bg-gradient-to-br from-amber-500/20 to-rose-500/20 border border-amber-500/30 rounded-xl p-4">
-              <div className="flex justify-between items-center">
-                <div>
-                  <p className="text-slate-300 text-sm">Total Amount</p>
-                  <p className="text-3xl font-bold text-white">
-                    KES {calculateTotal().toLocaleString()}
-                  </p>
-                  <p className="text-sm text-emerald-300 mt-1">
-                    Profit: KES {calculateProfit().toLocaleString()}
-                  </p>
+            <div className="bg-gradient-to-br from-amber-500/20 to-rose-500/20 border border-amber-500/30 rounded-xl p-6">
+              <div className="space-y-3">
+                <div className="flex justify-between text-slate-300">
+                  <span>Subtotal:</span>
+                  <span className="font-semibold">
+                    KES {calculateSubtotal().toLocaleString()}
+                  </span>
                 </div>
-                <button
-                  type="submit"
-                  disabled={submitting || saleItems.length === 0}
-                  className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-emerald-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {submitting ? "Processing..." : "Complete Sale"}
-                </button>
+                {overallDiscountType !== "none" &&
+                  calculateOverallDiscount() > 0 && (
+                    <div className="flex justify-between text-rose-300">
+                      <span>
+                        Discount (
+                        {overallDiscountType === "percentage"
+                          ? `${overallDiscountValue}%`
+                          : "Fixed"}
+                        ):
+                      </span>
+                      <span className="font-semibold">
+                        - KES {calculateOverallDiscount().toLocaleString()}
+                      </span>
+                    </div>
+                  )}
+                <div className="border-t border-white/20 pt-3 flex justify-between items-center">
+                  <div>
+                    <p className="text-slate-300 text-sm">Total Amount</p>
+                    <p className="text-3xl font-bold text-white">
+                      KES {calculateTotal().toLocaleString()}
+                    </p>
+                    <p className="text-sm text-emerald-300 mt-1">
+                      Profit: KES {calculateProfit().toLocaleString()}
+                    </p>
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={submitting || saleItems.length === 0}
+                    className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-emerald-500/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? "Processing..." : "Complete Sale"}
+                  </button>
+                </div>
               </div>
             </div>
           )}
