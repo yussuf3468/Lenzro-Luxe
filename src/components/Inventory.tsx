@@ -168,7 +168,7 @@ export default function Inventory() {
           </button>
           <button
             onClick={() => setShowAudit(true)}
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-5 py-3 rounded-xl hover:from-purple-500 hover:to-indigo-500 transition-all shadow-xl hover:shadow-2xl hover:scale-105 font-semibold text-sm sm:text-base w-full sm:w-auto sm:flex-1"
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600 to-rose-600 text-white px-5 py-3 rounded-xl hover:from-amber-500 hover:to-rose-500 transition-all shadow-xl hover:shadow-2xl hover:scale-105 font-semibold text-sm sm:text-base w-full sm:w-auto sm:flex-1"
             title="View stock movement history"
           >
             <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -254,7 +254,7 @@ export default function Inventory() {
                           <div>
                             <button
                               onClick={() => handleView(product)}
-                              className="font-medium text-white hover:text-purple-400 transition-colors text-left"
+                              className="font-medium text-white hover:text-amber-400 transition-colors text-left"
                             >
                               {product.name}
                             </button>
@@ -367,7 +367,7 @@ export default function Inventory() {
                       <div>
                         <button
                           onClick={() => handleView(product)}
-                          className="font-semibold text-white hover:text-purple-400 transition-colors text-left"
+                          className="font-semibold text-white hover:text-amber-400 transition-colors text-left"
                         >
                           {product.name}
                         </button>
@@ -555,20 +555,20 @@ export default function Inventory() {
                     </div>
 
                     {/* Profit Margin */}
-                    <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-4 rounded-xl border border-purple-500/30">
+                    <div className="bg-gradient-to-br from-amber-500/20 to-rose-500/20 p-4 rounded-xl border border-amber-500/30">
                       <div className="flex items-center justify-between">
                         <div>
-                          <h4 className="font-semibold text-purple-300 mb-1">
+                          <h4 className="font-semibold text-amber-300 mb-1">
                             Profit Margin
                           </h4>
-                          <p className="text-2xl font-bold text-purple-400">
+                          <p className="text-2xl font-bold text-amber-400">
                             KES{" "}
                             {(
                               viewingProduct.selling_price -
                               viewingProduct.buying_price
                             ).toLocaleString()}
                           </p>
-                          <p className="text-sm text-purple-300">
+                          <p className="text-sm text-amber-300">
                             {(
                               ((viewingProduct.selling_price -
                                 viewingProduct.buying_price) /
@@ -579,7 +579,7 @@ export default function Inventory() {
                           </p>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm text-purple-300">
+                          <p className="text-sm text-amber-300">
                             Per unit profit
                           </p>
                         </div>

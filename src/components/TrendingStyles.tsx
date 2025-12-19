@@ -30,8 +30,8 @@ const TrendingStyles = memo(({ onExplore }: TrendingStylesProps) => {
       title: "Classic Elegance",
       subtitle: "Timeless & Sophisticated",
       description: "For special occasions",
-      gradient: "from-purple-500/20 to-pink-500/20",
-      borderColor: "border-purple-500/30",
+      gradient: "from-amber-500/20 to-rose-500/20",
+      borderColor: "border-amber-500/30",
       icon: "✨",
     },
     {
@@ -46,15 +46,15 @@ const TrendingStyles = memo(({ onExplore }: TrendingStylesProps) => {
   ];
 
   return (
-    <section className="relative py-16 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <section className="relative py-16 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 text-purple-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 text-amber-300 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <TrendingUp className="w-4 h-4" />
             <span>What's Hot</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text mb-4">
+          <h2 className="text-4xl sm:text-5xl font-black text-transparent bg-gradient-to-r from-white via-amber-200 to-rose-200 bg-clip-text mb-4">
             Trending Styles
           </h2>
           <p className="text-slate-300 max-w-2xl mx-auto">
@@ -82,13 +82,13 @@ const TrendingStyles = memo(({ onExplore }: TrendingStylesProps) => {
                 <h3 className="text-xl font-bold text-white mb-2">
                   {style.title}
                 </h3>
-                <p className="text-sm text-purple-300 font-semibold mb-2">
+                <p className="text-sm text-amber-300 font-semibold mb-2">
                   {style.subtitle}
                 </p>
                 <p className="text-xs text-slate-400">{style.description}</p>
 
                 {/* Hover indicator */}
-                <div className="mt-4 flex items-center text-sm text-purple-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="mt-4 flex items-center text-sm text-amber-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Sparkles className="w-4 h-4 mr-1" />
                   <span>Explore Now</span>
                 </div>
@@ -98,14 +98,14 @@ const TrendingStyles = memo(({ onExplore }: TrendingStylesProps) => {
         </div>
 
         {/* Featured Banner */}
-        <div className="relative bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-rose-600/20 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-purple-500/30 overflow-hidden">
+        <div className="relative bg-gradient-to-r from-amber-600/20 via-rose-600/20 to-rose-700/20 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-amber-500/30 overflow-hidden">
           {/* Animated background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 to-rose-500/10 animate-pulse"></div>
 
           <div className="relative z-10 text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <Star className="w-6 h-6 text-amber-400 fill-amber-400" />
-              <span className="text-sm font-semibold text-purple-300 uppercase tracking-wider">
+              <span className="text-sm font-semibold text-amber-300 uppercase tracking-wider">
                 Exclusive Offer
               </span>
               <Star className="w-6 h-6 text-amber-400 fill-amber-400" />
@@ -121,7 +121,7 @@ const TrendingStyles = memo(({ onExplore }: TrendingStylesProps) => {
 
             <button
               onClick={onExplore}
-              className="group relative bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white px-8 py-4 rounded-xl hover:from-purple-700 hover:via-pink-700 hover:to-rose-700 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 active:scale-95 overflow-hidden"
+              className="group relative bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 text-white px-8 py-4 rounded-xl hover:from-amber-700 hover:via-rose-700 hover:to-rose-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 active:scale-95 overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <span className="relative">Shop Now</span>

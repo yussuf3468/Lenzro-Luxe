@@ -43,7 +43,7 @@ const HeroSection = memo(
 
             {/* Elegant Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-transparent to-pink-900/30"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-900/30 via-transparent to-rose-900/30"></div>
           </div>
 
           {/* Main Content - Two Column Layout */}
@@ -64,7 +64,7 @@ const HeroSection = memo(
                   <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight">
                     Where Fashion
                     <br />
-                    <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-amber-400 via-rose-400 to-rose-500 bg-clip-text text-transparent">
                       Meets Elegance
                     </span>
                   </h1>
@@ -79,7 +79,7 @@ const HeroSection = memo(
                   <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
                     <button
                       onClick={handleShopNowClick}
-                      className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
+                      className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 text-white rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider shadow-2xl shadow-amber-500/50 hover:shadow-amber-500/70 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700"></div>
                       <div className="relative flex items-center justify-center gap-2 sm:gap-3">
@@ -114,8 +114,8 @@ const HeroSection = memo(
                       <span className="font-medium">100% Authentic</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-white/80">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500/30 to-pink-500/30 backdrop-blur-xl border border-purple-400/50 flex items-center justify-center">
-                        <Star className="w-5 h-5 text-purple-300" />
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/30 to-rose-500/30 backdrop-blur-xl border border-amber-400/50 flex items-center justify-center">
+                        <Star className="w-5 h-5 text-amber-300" />
                       </div>
                       <span className="font-medium">Premium Quality</span>
                     </div>
@@ -123,7 +123,7 @@ const HeroSection = memo(
 
                   {/* Mobile Showcase Banner (fills remaining space) */}
                   <div className="block lg:hidden pt-2">
-                    <div className="relative w-full rounded-2xl overflow-hidden group shadow-xl shadow-purple-500/20 border border-white/10 bg-gradient-to-br from-purple-900/40 via-pink-900/30 to-rose-900/40">
+                    <div className="relative w-full rounded-2xl overflow-hidden group shadow-xl shadow-amber-500/20 border border-white/10 bg-gradient-to-br from-amber-900/40 via-rose-900/30 to-rose-900/40">
                       {/* Decorative Image */}
                       <img
                         src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80"
@@ -135,7 +135,7 @@ const HeroSection = memo(
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                       {/* Text overlay */}
                       <div className="absolute bottom-4 left-5 right-5">
-                        <p className="text-[12px] sm:text-xs uppercase tracking-wider font-semibold text-purple-200 mb-1">
+                        <p className="text-[12px] sm:text-xs uppercase tracking-wider font-semibold text-amber-200 mb-1">
                           Limited Capsule
                         </p>
                         <h3 className="text-white font-extrabold text-xl sm:text-2xl leading-snug drop-shadow-md">
@@ -143,7 +143,7 @@ const HeroSection = memo(
                         </h3>
                         <button
                           onClick={scrollToProducts}
-                          className="mt-3 inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all shadow-lg shadow-purple-500/20"
+                          className="mt-3 inline-flex items-center gap-2 text-xs font-semibold px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all shadow-lg shadow-amber-500/20"
                         >
                           Explore Collection{" "}
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -158,7 +158,7 @@ const HeroSection = memo(
                   <div className="grid grid-cols-2 gap-4">
                     {/* Product Showcase Items */}
                     <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-rose-600/20"></div>
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
                       <img
                         src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=400&fit=crop"
@@ -194,7 +194,7 @@ const HeroSection = memo(
                     </div>
 
                     <div className="group relative aspect-square rounded-2xl overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/30 transition-all duration-300 hover:scale-105 cursor-pointer">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-rose-600/20"></div>
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
                       <img
                         src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=400&fit=crop"
@@ -240,7 +240,7 @@ const HeroSection = memo(
                   onClick={scrollToProducts}
                   className="group py-5 px-4 hover:bg-white/5 transition-all duration-300 text-center"
                 >
-                  <div className="text-sm font-semibold text-white mb-1 group-hover:text-purple-400 transition-colors">
+                  <div className="text-sm font-semibold text-white mb-1 group-hover:text-amber-400 transition-colors">
                     Men's
                   </div>
                   <div className="text-xs text-slate-400">Shop Collection</div>
@@ -291,7 +291,7 @@ const HeroSection = memo(
         {/* Featured Products Section */}
         <div
           id="products-section"
-          className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+          className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
         >
           <div className="py-16">
             <FeaturedProducts

@@ -162,7 +162,7 @@ export default function ProductForm({
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 overflow-y-auto">
       <div className="min-h-screen py-4 px-4 flex justify-center">
-        <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-xl shadow-xl max-w-2xl w-full h-fit my-4 max-h-[90vh] overflow-y-auto border border-white/20">
+        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl shadow-xl max-w-2xl w-full h-fit my-4 max-h-[90vh] overflow-y-auto border border-white/20">
           <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/20 sticky top-0 bg-white/5 backdrop-blur-xl z-10">
             <h3 className="text-lg sm:text-xl font-bold text-white">
               {product ? t.inventory.editProduct : t.inventory.addProduct}
@@ -191,7 +191,7 @@ export default function ProductForm({
                   onChange={(e) =>
                     setFormData({ ...formData, product_id: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-slate-400"
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white placeholder-slate-400"
                   placeholder="BOOK001"
                 />
               </div>
@@ -207,7 +207,7 @@ export default function ProductForm({
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-slate-400"
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white placeholder-slate-400"
                   placeholder="Enter product name"
                 />
               </div>
@@ -222,7 +222,7 @@ export default function ProductForm({
                   onChange={(e) =>
                     setFormData({ ...formData, category: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white"
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white"
                 >
                   {categories.map((cat) => (
                     <option
@@ -247,7 +247,7 @@ export default function ProductForm({
                     onChange={(e) =>
                       setFormData({ ...formData, image_url: e.target.value })
                     }
-                    className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-slate-400"
+                    className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white placeholder-slate-400"
                     placeholder={t.inventory.orPasteUrl}
                   />
                   <div className="text-center text-slate-400">OR</div>
@@ -283,7 +283,7 @@ export default function ProductForm({
                     </p>
                   )}
                   {uploading && (
-                    <p className="text-sm text-purple-400">
+                    <p className="text-sm text-amber-400">
                       {t.inventory.uploadingImage}
                     </p>
                   )}
@@ -303,7 +303,7 @@ export default function ProductForm({
                   onChange={(e) =>
                     setFormData({ ...formData, buying_price: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-slate-400"
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white placeholder-slate-400"
                   placeholder="0.00"
                 />
               </div>
@@ -321,7 +321,7 @@ export default function ProductForm({
                   onChange={(e) =>
                     setFormData({ ...formData, selling_price: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-slate-400"
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white placeholder-slate-400"
                   placeholder="0.00"
                 />
               </div>
@@ -341,7 +341,7 @@ export default function ProductForm({
                       quantity_in_stock: e.target.value,
                     })
                   }
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-slate-400"
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white placeholder-slate-400"
                   placeholder="0"
                 />
               </div>
@@ -358,7 +358,7 @@ export default function ProductForm({
                   onChange={(e) =>
                     setFormData({ ...formData, reorder_level: e.target.value })
                   }
-                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-slate-400"
+                  className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-white placeholder-slate-400"
                   placeholder="5"
                 />
               </div>
@@ -375,7 +375,7 @@ export default function ProductForm({
                   setFormData({ ...formData, description: e.target.value })
                 }
                 rows={3}
-                className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none text-white placeholder-slate-400"
+                className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-none text-white placeholder-slate-400"
                 placeholder={t.inventory.descriptionPlaceholder}
               />
               <p className="text-xs text-slate-400">
@@ -394,7 +394,7 @@ export default function ProductForm({
               <button
                 type="submit"
                 disabled={submitting || uploading}
-                className="w-full sm:w-auto px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg disabled:opacity-50"
+                className="w-full sm:w-auto px-6 py-2 bg-gradient-to-r from-amber-600 to-rose-600 text-white rounded-lg hover:from-amber-700 hover:to-rose-700 transition-all shadow-lg disabled:opacity-50"
               >
                 {submitting
                   ? t.inventory.saving

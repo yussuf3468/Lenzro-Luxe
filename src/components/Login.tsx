@@ -55,10 +55,10 @@ export default function Login({ onLogin }: LoginProps) {
   //   ];
 
   return (
-    <div className="fixed inset-0 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center p-3 sm:p-4 overflow-auto">
+    <div className="fixed inset-0 min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-3 sm:p-4 overflow-auto">
       {/* Floating Background Elements - Hidden on mobile for performance */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="hidden sm:block absolute top-1/4 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float"></div>
+        <div className="hidden sm:block absolute top-1/4 left-1/4 w-32 sm:w-64 h-32 sm:h-64 bg-amber-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float"></div>
         <div
           className="hidden sm:block absolute top-3/4 right-1/4 w-36 sm:w-72 h-36 sm:h-72 bg-pink-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float"
           style={{ animationDelay: "2s" }}
@@ -71,19 +71,19 @@ export default function Login({ onLogin }: LoginProps) {
 
       <div className="relative max-w-md w-full">
         {/* Main Login Card */}
-        <div className="bg-gradient-to-br from-slate-900/90 via-purple-950/80 to-slate-900/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 p-8 animate-scaleIn">
+        <div className="bg-gradient-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 p-8 animate-scaleIn">
           {/* Header */}
           <div className="text-center mb-8">
             <div className="relative mx-auto w-20 h-20 mb-4">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500 rounded-xl blur opacity-75"></div>
-              <div className="relative bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 rounded-xl p-4 shadow-lg shadow-purple-500/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500 via-rose-500 to-rose-600 rounded-xl blur opacity-75"></div>
+              <div className="relative bg-gradient-to-br from-amber-600 via-rose-600 to-rose-700 rounded-xl p-4 shadow-lg shadow-amber-500/50">
                 <ShoppingBag className="w-12 h-12 text-white mx-auto" />
               </div>
             </div>
-            <h1 className="text-3xl font-black bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-black bg-gradient-to-r from-white via-amber-200 to-rose-200 bg-clip-text text-transparent">
               LENZRO LUXE
             </h1>
-            <p className="text-purple-300/80 font-medium mt-2">
+            <p className="text-amber-300/80 font-medium mt-2">
               {t.auth.staffLogin}
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function Login({ onLogin }: LoginProps) {
                 📧 {t.auth.emailAddress}
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-purple-300/60" />
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-amber-300/60" />
                 <input
                   type="email"
                   required
@@ -113,7 +113,7 @@ export default function Login({ onLogin }: LoginProps) {
                   onChange={(e) =>
                     setCredentials({ ...credentials, email: e.target.value })
                   }
-                  className="w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all duration-300 text-white placeholder-purple-300/40"
+                  className="w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all duration-300 text-white placeholder-amber-300/40"
                   placeholder="Enter your email..."
                 />
               </div>
@@ -125,7 +125,7 @@ export default function Login({ onLogin }: LoginProps) {
                 🔒 {t.auth.password}
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-purple-300/60" />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-amber-300/60" />
                 <input
                   type={showPassword ? "text" : "password"}
                   required
@@ -133,13 +133,13 @@ export default function Login({ onLogin }: LoginProps) {
                   onChange={(e) =>
                     setCredentials({ ...credentials, password: e.target.value })
                   }
-                  className="w-full pl-12 pr-12 py-3 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all duration-300 text-white placeholder-purple-300/40"
+                  className="w-full pl-12 pr-12 py-3 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all duration-300 text-white placeholder-amber-300/40"
                   placeholder="Enter your password..."
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-purple-300/60 hover:text-white transition-colors"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-amber-300/60 hover:text-white transition-colors"
                 >
                   {showPassword ? (
                     <EyeOff className="w-5 h-5" />
@@ -154,7 +154,7 @@ export default function Login({ onLogin }: LoginProps) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white font-bold py-4 rounded-xl hover:from-purple-700 hover:via-pink-700 hover:to-rose-700 transition-all duration-300 shadow-lg shadow-purple-500/50 hover:shadow-xl hover:shadow-purple-500/50 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95"
+              className="w-full bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 text-white font-bold py-4 rounded-xl hover:from-amber-700 hover:via-rose-700 hover:to-rose-800 transition-all duration-300 shadow-lg shadow-amber-500/50 hover:shadow-xl hover:shadow-amber-500/50 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 active:scale-95"
             >
               {loading ? (
                 <div className="flex items-center justify-center space-x-2">
@@ -207,7 +207,7 @@ export default function Login({ onLogin }: LoginProps) {
               href="https://lenzro.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-purple-600/20 to-blue-600/20 hover:from-purple-600/30 hover:to-blue-600/30 border border-purple-500/30 hover:border-purple-500/50 rounded-md transition-all hover:scale-105 font-bold text-purple-700 hover:text-purple-600"
+              className="inline-flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-amber-600/20 to-rose-600/20 hover:from-amber-600/30 hover:to-rose-600/30 border border-amber-500/30 hover:border-amber-500/50 rounded-md transition-all hover:scale-105 font-bold text-amber-700 hover:text-amber-600"
             >
               <span>⚡</span>
               <span>Lenzro</span>

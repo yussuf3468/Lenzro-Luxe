@@ -195,7 +195,7 @@ const Orders = () => {
       case "confirmed":
         return "bg-blue-600/20 text-blue-400 border border-blue-500/30";
       case "processing":
-        return "bg-purple-600/20 text-purple-400 border border-purple-500/30";
+        return "bg-amber-600/20 text-amber-400 border border-amber-500/30";
       case "shipped":
         return "bg-indigo-600/20 text-indigo-400 border border-indigo-500/30";
       case "delivered":
@@ -355,7 +355,7 @@ const Orders = () => {
                 placeholder="Search orders..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
               />
             </div>
           </div>
@@ -364,7 +364,7 @@ const Orders = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="bg-white/10 border border-white/20 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+              className="bg-white/10 border border-white/20 rounded-xl px-3 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all"
             >
               <option value="all" className="bg-slate-800">
                 All Status
@@ -513,7 +513,7 @@ const Orders = () => {
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-slate-900/95 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden">
             {/* Modal Header */}
-            <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 text-white p-6">
+            <div className="bg-gradient-to-r from-blue-600 via-amber-600 to-rose-600 text-white p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className="text-xl font-black">Order Details</h2>

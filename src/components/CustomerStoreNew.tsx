@@ -65,11 +65,11 @@ const ProductCard = memo(
     return (
       <div
         data-product-id={product.id}
-        className="bg-gradient-to-br from-slate-900/90 via-purple-950/40 to-slate-900/90 backdrop-blur-xl rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-400 overflow-hidden group border border-white/20 ring-highlight-target"
+        className="bg-gradient-to-br from-slate-900/90 via-slate-800/40 to-slate-900/90 backdrop-blur-xl rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-400 overflow-hidden group border border-white/20 ring-highlight-target"
       >
         {/* Product Image */}
         <div
-          className="relative overflow-hidden cursor-pointer bg-gradient-to-br from-purple-950/20 to-pink-950/20"
+          className="relative overflow-hidden cursor-pointer bg-gradient-to-br from-amber-950/20 to-rose-950/20"
           onClick={handleQuickView}
         >
           <OptimizedImage
@@ -84,13 +84,13 @@ const ProductCard = memo(
           />
 
           {/* Elegant Quick View Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-purple-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-slate-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 handleQuickView();
               }}
-              className="bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white px-8 py-3 rounded-full font-semibold text-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-400 shadow-lg shadow-purple-500/50 hover:shadow-xl border border-white/20"
+              className="bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 text-white px-8 py-3 rounded-full font-semibold text-sm transform translate-y-4 group-hover:translate-y-0 transition-all duration-400 shadow-lg shadow-amber-500/50 hover:shadow-xl border border-white/20"
             >
               Quick View
             </button>
@@ -128,13 +128,13 @@ const ProductCard = memo(
         <div className="p-5 sm:p-6">
           {/* Category Tag */}
           <div className="mb-3">
-            <span className="text-xs font-bold text-purple-300 uppercase tracking-wider bg-purple-950/30 px-3 py-1 rounded-full border border-purple-500/30">
+            <span className="text-xs font-bold text-amber-300 uppercase tracking-wider bg-amber-950/30 px-3 py-1 rounded-full border border-amber-500/30">
               {product.category}
             </span>
           </div>
 
           {/* Product Name */}
-          <h3 className="font-bold text-white text-lg sm:text-xl mb-3 line-clamp-2 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-300 group-hover:to-pink-300 transition-all duration-300">
+          <h3 className="font-bold text-white text-lg sm:text-xl mb-3 line-clamp-2 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-amber-300 group-hover:to-rose-300 transition-all duration-300">
             {product.name}
           </h3>
 
@@ -148,7 +148,7 @@ const ProductCard = memo(
           {/* Price & Stock Info */}
           <div className="flex items-center justify-between mb-5">
             <div className="flex flex-col">
-              <p className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-rose-300 mb-1">
+              <p className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-rose-300 to-rose-400 mb-1">
                 KES {product.selling_price.toLocaleString()}
               </p>
               <p className="text-xs text-slate-400 flex items-center">
@@ -167,7 +167,7 @@ const ProductCard = memo(
                 ? "bg-slate-700/50 text-slate-400 cursor-not-allowed border border-white/10"
                 : isAddingToCart
                 ? "bg-gradient-to-r from-emerald-500 to-green-600 text-white shadow-emerald-500/50 scale-105"
-                : "bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white hover:from-purple-700 hover:via-pink-700 hover:to-rose-700 hover:shadow-xl hover:shadow-purple-500/50 active:scale-95"
+                : "bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 text-white hover:from-amber-700 hover:via-rose-700 hover:to-rose-800 hover:shadow-xl hover:shadow-amber-500/50 active:scale-95"
             }`}
           >
             <ShoppingCart
@@ -360,7 +360,7 @@ export default function CustomerStore({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         {/* Navbar Skeleton */}
         <div className="bg-white/10 backdrop-blur-xl shadow-lg border-b border-white/20 sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -390,7 +390,7 @@ export default function CustomerStore({
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-x-hidden">
       {/* Navbar */}
       <Navbar
         searchTerm={searchTerm}
@@ -419,11 +419,11 @@ export default function CustomerStore({
       >
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 text-purple-300 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 text-amber-300 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
             <Package className="w-3 h-3 sm:w-4 sm:h-4" />
             <span>Premium Fashion Collection</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-transparent bg-gradient-to-r from-white via-amber-200 to-rose-200 bg-clip-text mb-3 sm:mb-4">
             Our Collections
           </h2>
           <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto px-4">
@@ -437,7 +437,7 @@ export default function CustomerStore({
           <div className="block lg:hidden">
             <div className="bg-white/10 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-lg border border-white/20 p-3 sm:p-4 mb-4 sm:mb-6">
               <div className="flex items-center mb-4">
-                <Filter className="w-5 h-5 text-purple-300 mr-2 flex-shrink-0" />
+                <Filter className="w-5 h-5 text-amber-300 mr-2 flex-shrink-0" />
                 <span className="text-lg font-bold text-white">
                   Filter by Category
                 </span>
@@ -450,7 +450,7 @@ export default function CustomerStore({
                       onClick={() => handleCategoryChange(category)}
                       className={`flex-shrink-0 px-4 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap ${
                         selectedCategory === category
-                          ? "bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white shadow-lg shadow-purple-500/50"
+                          ? "bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 text-white shadow-lg shadow-amber-500/50"
                           : "bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white border border-white/20"
                       }`}
                     >
@@ -467,7 +467,7 @@ export default function CustomerStore({
             <div className="overflow-x-auto scrollbar-hide pb-4">
               <div className="flex items-center justify-center space-x-3 min-w-max mx-auto">
                 <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-xl rounded-full p-1 shadow-lg border border-white/20">
-                  <Filter className="w-5 h-5 text-purple-300 ml-3 flex-shrink-0" />
+                  <Filter className="w-5 h-5 text-amber-300 ml-3 flex-shrink-0" />
                   <div className="flex space-x-1 pr-3">
                     {categories.map((category) => (
                       <button
@@ -475,7 +475,7 @@ export default function CustomerStore({
                         onClick={() => handleCategoryChange(category)}
                         className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all duration-300 ${
                           selectedCategory === category
-                            ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-xl transform scale-105"
+                            ? "bg-gradient-to-r from-amber-600 to-rose-600 text-white shadow-xl transform scale-105"
                             : "text-slate-300 hover:bg-white/10 hover:text-white hover:scale-105"
                         }`}
                       >
@@ -505,7 +505,7 @@ export default function CustomerStore({
                   setSearchTerm("");
                   handleCategoryChange("all");
                 }}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 font-semibold"
+                className="bg-gradient-to-r from-amber-600 to-rose-600 text-white px-6 py-3 rounded-xl hover:from-amber-700 hover:to-rose-700 transition-all duration-300 font-semibold"
               >
                 Show All Products
               </button>
@@ -577,7 +577,7 @@ export default function CustomerStore({
                       onClick={() => setCurrentPage(page)}
                       className={`flex-shrink-0 min-w-[44px] h-11 px-4 py-2 rounded-xl transition-all font-semibold shadow-md ${
                         page === currentPage
-                          ? "bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white shadow-lg shadow-purple-500/50 scale-110"
+                          ? "bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 text-white shadow-lg shadow-amber-500/50 scale-110"
                           : "bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white hover:scale-105"
                       }`}
                     >
@@ -684,13 +684,11 @@ export default function CustomerStore({
                   href="https://lenzro.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-purple-600/30 to-pink-600/30 hover:from-purple-600/40 hover:to-pink-600/40 border border-purple-500/40 hover:border-purple-400/60 rounded-lg transition-all hover:scale-105 font-bold text-purple-300 hover:text-purple-200 shadow-xl"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-amber-600/30 to-rose-600/30 hover:from-amber-600/40 hover:to-rose-600/40 border border-amber-500/40 hover:border-amber-400/60 rounded-lg transition-all hover:scale-105 font-bold text-amber-300 hover:text-amber-200 shadow-xl"
                 >
                   <span className="text-lg">⚡</span>
                   <span>Lenzro</span>
-                  <span className="text-xs text-purple-400">
-                    Digital Agency
-                  </span>
+                  <span className="text-xs text-amber-400">Digital Agency</span>
                 </a>
               </div>
             </div>
@@ -737,7 +735,7 @@ export default function CustomerStore({
         theme="light"
         className="!z-50"
         toastClassName="!rounded-lg !shadow-lg !min-h-12 !text-sm !p-2"
-        progressClassName="!bg-gradient-to-r !from-blue-500 !to-purple-500"
+        progressClassName="!bg-gradient-to-r !from-amber-500 !to-rose-500"
         style={{
           fontSize: "14px",
         }}

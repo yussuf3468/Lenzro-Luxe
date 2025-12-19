@@ -211,7 +211,7 @@ export default function StaffDashboard() {
               title="Transactions"
               value={metrics.todayTransactions.toString()}
               icon={ShoppingBag}
-              color="purple"
+              color="amber"
               subtitle="total sales"
             />
           </div>
@@ -259,9 +259,9 @@ export default function StaffDashboard() {
         </div>
 
         {/* This Month Card */}
-        <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500">
+        <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 shadow-2xl hover:shadow-amber-500/20 transition-all duration-500">
           <div className="flex items-center space-x-3 mb-4">
-            <div className="p-2.5 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl shadow-xl">
+            <div className="p-2.5 bg-gradient-to-br from-amber-600 to-rose-600 rounded-xl shadow-xl">
               <Calendar className="w-5 h-5 text-white" />
             </div>
             <h3 className="text-base md:text-lg font-bold text-white">
@@ -359,7 +359,7 @@ export default function StaffDashboard() {
                           {sale.payment_method}
                         </span>
                         {product?.category && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30">
                             {product.category}
                           </span>
                         )}
@@ -380,7 +380,7 @@ interface MetricCardProps {
   title: string;
   value: string;
   icon: React.ElementType;
-  color: "blue" | "green" | "purple" | "orange";
+  color: "blue" | "green" | "amber" | "orange";
   subtitle?: string;
 }
 
@@ -402,10 +402,10 @@ function MetricCard({
       glow: "shadow-emerald-500/50",
       text: "text-emerald-400",
     },
-    purple: {
-      gradient: "from-purple-600 to-pink-600",
-      glow: "shadow-purple-500/50",
-      text: "text-purple-400",
+    amber: {
+      gradient: "from-amber-600 to-rose-600",
+      glow: "shadow-amber-500/50",
+      text: "text-amber-400",
     },
     orange: {
       gradient: "from-orange-600 to-amber-600",
@@ -417,7 +417,7 @@ function MetricCard({
   const colors = colorClasses[color];
 
   return (
-    <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-5 shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer will-change-transform overflow-hidden">
+    <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-5 shadow-2xl hover:shadow-amber-500/30 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer will-change-transform overflow-hidden">
       <div
         className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`}
       ></div>

@@ -4,19 +4,13 @@ import {
   Package,
   ShoppingCart,
   ClipboardList,
-  Search,
   FileText,
   LogOut,
   User,
   Menu,
   X,
-  DollarSign,
-  PiggyBank,
-  Banknote,
   ChevronRight,
-  // Monitor,
   ChevronLeft,
-  CreditCard,
   TrendingUp,
   RotateCcw,
 } from "lucide-react";
@@ -58,7 +52,7 @@ export default function Layout({
             id: "dashboard",
             label: translations.navigation.dashboard,
             icon: LayoutDashboard,
-            color: "from-purple-600 to-pink-600",
+            color: "from-amber-600 to-rose-600",
           },
         ]
       : []),
@@ -96,51 +90,51 @@ export default function Layout({
       icon: RotateCcw,
       color: "from-rose-600 to-red-600",
     },
-    {
-      id: "search",
-      label: translations.navigation.search,
-      icon: Search,
-      color: "from-violet-600 to-purple-600",
-    },
-    {
-      id: "customer-credit",
-      label: translations.navigation.customerCredit,
-      icon: CreditCard,
-      color: "from-teal-600 to-cyan-600",
-    },
+    // {
+    //   id: "search",
+    //   label: translations.navigation.search,
+    //   icon: Search,
+    //   color: "from-amber-600 to-rose-600",
+    // },
+    // {
+    //   id: "customer-credit",
+    //   label: translations.navigation.customerCredit,
+    //   icon: CreditCard,
+    //   color: "from-teal-600 to-cyan-600",
+    // },
   ];
 
   const adminTabs = [
-    {
-      id: "orders",
-      label: translations.navigation.orders,
-      icon: ClipboardList,
-      color: "from-orange-600 to-amber-600",
-    },
-    {
-      id: "financial-dashboard",
-      label: translations.navigation.financialDashboard,
-      icon: LayoutDashboard,
-      color: "from-cyan-600 to-blue-600",
-    },
-    {
-      id: "expenses",
-      label: translations.navigation.expenses,
-      icon: DollarSign,
-      color: "from-red-600 to-rose-600",
-    },
-    {
-      id: "investments",
-      label: translations.navigation.investments,
-      icon: PiggyBank,
-      color: "from-green-600 to-emerald-600",
-    },
-    {
-      id: "debts",
-      label: translations.navigation.debts,
-      icon: Banknote,
-      color: "from-amber-600 to-yellow-600",
-    },
+    // {
+    //   id: "orders",
+    //   label: translations.navigation.orders,
+    //   icon: ClipboardList,
+    //   color: "from-orange-600 to-amber-600",
+    // },
+    // {
+    //   id: "financial-dashboard",
+    //   label: translations.navigation.financialDashboard,
+    //   icon: LayoutDashboard,
+    //   color: "from-cyan-600 to-blue-600",
+    // },
+    // {
+    //   id: "expenses",
+    //   label: translations.navigation.expenses,
+    //   icon: DollarSign,
+    //   color: "from-red-600 to-rose-600",
+    // },
+    // {
+    //   id: "investments",
+    //   label: translations.navigation.investments,
+    //   icon: PiggyBank,
+    //   color: "from-green-600 to-emerald-600",
+    // },
+    // {
+    //   id: "debts",
+    //   label: translations.navigation.debts,
+    //   icon: Banknote,
+    //   color: "from-amber-600 to-yellow-600",
+    // },
     {
       id: "reports",
       label: translations.navigation.reports,
@@ -174,16 +168,16 @@ export default function Layout({
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Animated Background Elements - Luxury */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-amber-500/30 to-rose-500/30 rounded-full blur-3xl animate-pulse"></div>
         <div
           className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-amber-500/20 to-rose-500/20 rounded-full blur-3xl"
           style={{ animation: "pulse 8s ease-in-out infinite" }}
         ></div>
       </div>
@@ -194,13 +188,13 @@ export default function Layout({
           isDesktopSidebarCollapsed ? "w-20" : "w-72 xl:w-80"
         }`}
       >
-        <div className="h-full bg-gradient-to-b from-slate-900/95 via-purple-900/95 to-slate-900/95 backdrop-blur-2xl border-r border-white/20 shadow-2xl overflow-y-auto scrollbar-hide relative">
+        <div className="h-full bg-gradient-to-b from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-2xl border-r border-white/20 shadow-2xl overflow-y-auto scrollbar-hide relative">
           {/* Collapse Toggle Button - Enhanced Visibility */}
           <button
             onClick={() =>
               setIsDesktopSidebarCollapsed(!isDesktopSidebarCollapsed)
             }
-            className="fixed bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 p-2 rounded-full shadow-2xl shadow-purple-500/50 hover:shadow-purple-400/70 hover:scale-125 transition-all duration-200 z-50 ring-2 ring-white/30 hover:ring-white/50"
+            className="fixed bg-gradient-to-br from-amber-500 to-rose-500 hover:from-amber-400 hover:to-rose-400 p-2 rounded-full shadow-2xl shadow-amber-500/50 hover:shadow-amber-400/70 hover:scale-125 transition-all duration-200 z-50 ring-2 ring-white/30 hover:ring-white/50"
             style={{
               top: isDesktopSidebarCollapsed ? "50%" : "24px",
               left: isDesktopSidebarCollapsed ? "68px" : "calc(18rem - 12px)",
@@ -225,8 +219,8 @@ export default function Layout({
               <>
                 <div className="hidden lg:flex items-center justify-center mb-4">
                   <div className="relative group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative bg-gradient-to-br from-purple-600 to-pink-600 p-3 rounded-2xl shadow-xl">
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-600 to-rose-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="relative bg-gradient-to-br from-amber-600 to-rose-600 p-3 rounded-2xl shadow-xl">
                       <Package className="w-6 h-6 text-white" />
                     </div>
                   </div>
@@ -234,7 +228,7 @@ export default function Layout({
                     <h1 className="text-lg font-black text-white">
                       LENZRO LUXE
                     </h1>
-                    <p className="text-xs text-purple-300 font-medium">
+                    <p className="text-xs text-amber-300 font-medium">
                       Fashion & Luxury
                     </p>
                   </div>
@@ -254,7 +248,7 @@ export default function Layout({
                         <p className="text-sm font-bold text-white truncate">
                           {getStaffName(user.email || "")}
                         </p>
-                        <p className="text-xs text-purple-300">
+                        <p className="text-xs text-amber-300">
                           {isAdmin ? "Administrator" : "Staff"}
                         </p>
                       </div>
@@ -264,7 +258,7 @@ export default function Layout({
               </>
             ) : (
               <div className="flex justify-center">
-                <div className="relative bg-gradient-to-br from-purple-600 to-pink-600 p-3 rounded-2xl shadow-xl">
+                <div className="relative bg-gradient-to-br from-amber-600 to-rose-600 p-3 rounded-2xl shadow-xl">
                   <Package className="w-6 h-6 text-white" />
                 </div>
               </div>
@@ -366,7 +360,7 @@ export default function Layout({
         </div>
       </aside>
 
-      {/* Mobile Top Navbar */}
+      {/* Mobile Top Navbar (fixed on scroll) */}
       <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/70">
         <div className="px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
@@ -385,8 +379,8 @@ export default function Layout({
 
               <div className="flex items-center space-x-2 min-w-0">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl blur opacity-75"></div>
-                  <div className="relative bg-gradient-to-br from-purple-600 to-pink-600 p-2 rounded-xl shadow-xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-600 to-rose-600 rounded-xl blur opacity-75"></div>
+                  <div className="relative bg-gradient-to-br from-amber-600 to-rose-600 p-2 rounded-xl shadow-xl">
                     <Package className="w-4 h-4 text-white" />
                   </div>
                 </div>
@@ -394,7 +388,7 @@ export default function Layout({
                   <h1 className="text-sm font-black text-white truncate max-w-[160px]">
                     LENZRO LUXE
                   </h1>
-                  <p className="text-xs text-purple-300 font-medium">
+                  <p className="text-xs text-amber-300 font-medium">
                     Fashion System
                   </p>
                 </div>
@@ -482,7 +476,7 @@ export default function Layout({
         )}
 
         {/* Sidebar Content */}
-        <div className="relative h-full bg-gradient-to-b from-slate-900/95 via-purple-900/95 to-slate-900/95 backdrop-blur-2xl border-r border-white/20 shadow-2xl overflow-y-auto scrollbar-hide">
+        <div className="relative h-full bg-gradient-to-b from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-2xl border-r border-white/20 shadow-2xl overflow-y-auto scrollbar-hide">
           <div className="p-6 space-y-6">
             {/* User Info in Sidebar */}
             {user && (
@@ -498,7 +492,7 @@ export default function Layout({
                     <p className="text-sm font-bold text-white">
                       {getStaffName(user.email || "")}
                     </p>
-                    <p className="text-xs text-purple-300">
+                    <p className="text-xs text-amber-300">
                       {isAdmin ? "Administrator" : "Staff"}
                     </p>
                   </div>
@@ -560,10 +554,58 @@ export default function Layout({
 
       {/* Main Content Area */}
       <main
-        className={`relative pt-16 lg:pt-0 transition-all duration-300 ${
+        className={`relative transition-all duration-300 ${
           isDesktopSidebarCollapsed ? "lg:ml-20" : "lg:ml-72 xl:ml-80"
+        } ${
+          // Mobile-first top padding (4rem on mobile, 5rem on md+)
+          "pt-16 md:pt-20"
         }`}
       >
+        {/* Desktop Top Navbar (fixed on scroll) */}
+        <div className="hidden lg:block fixed top-0 left-0 right-0 z-40 w-full bg-slate-900/80 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/70">
+          <div className="flex items-center justify-between px-8 h-16">
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-600 to-rose-600 rounded-xl blur opacity-75"></div>
+                <div className="relative bg-gradient-to-br from-amber-600 to-rose-600 p-2 rounded-xl shadow-xl">
+                  <Package className="w-5 h-5 text-white" />
+                </div>
+              </div>
+              <h1 className="text-lg font-black text-white tracking-wide">
+                LENZRO LUXE
+              </h1>
+              <span className="text-xs text-amber-300 font-medium ml-2">
+                Fashion & Luxury
+              </span>
+            </div>
+            {/* Desktop Language Selector - subtle */}
+            <div className="inline-flex items-center gap-0.5 bg-white/5 border border-white/10 rounded-full px-1.5 py-0.5 text-[10px] font-medium text-slate-300 backdrop-blur-sm hover:bg-white/10 transition-all">
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                className={`px-2 py-0.5 rounded-full transition-all ${
+                  language === "en"
+                    ? "bg-white/20 text-white"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("so")}
+                className={`px-2 py-0.5 rounded-full transition-all ${
+                  language === "so"
+                    ? "bg-white/20 text-white"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                SO
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className="min-h-screen flex flex-col">
           <div className="flex-1 px-3 sm:px-4 lg:px-6 py-3 md:py-4 lg:py-6 max-w-[1600px] mx-auto w-full">
             {/* Desktop Top Bar with Language Selector */}
@@ -612,7 +654,7 @@ export default function Layout({
                     href="https://lenzro.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-purple-600/20 to-blue-600/20 hover:from-purple-600/30 hover:to-blue-600/30 border border-purple-500/30 hover:border-purple-500/50 rounded-lg transition-all hover:scale-105 font-semibold text-purple-300 hover:text-purple-200 shadow-lg"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-amber-600/20 to-rose-600/20 hover:from-amber-600/30 hover:to-rose-600/30 border border-amber-500/30 hover:border-amber-500/50 rounded-lg transition-all hover:scale-105 font-semibold text-amber-300 hover:text-amber-200 shadow-lg"
                   >
                     <span className="text-lg">⚡</span>
                     <span>Lenzro</span>

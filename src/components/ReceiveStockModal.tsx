@@ -150,7 +150,7 @@ export default function ReceiveStockModal({
             <div className="flex flex-col lg:grid lg:grid-cols-5 gap-4 sm:gap-6">
               {/* Left: Search Panel - Mobile First */}
               <div className="lg:col-span-2 order-1">
-                <div className="bg-gradient-to-br from-blue-500/15 to-purple-500/15 border-2 border-blue-400/40 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl lg:sticky lg:top-6 backdrop-blur-xl">
+                <div className="bg-gradient-to-br from-blue-500/15 to-amber-500/15 border-2 border-blue-400/40 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-xl lg:sticky lg:top-6 backdrop-blur-xl">
                   <label className="text-white font-bold text-sm sm:text-base mb-3 sm:mb-4 flex items-center gap-2">
                     <Search className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 drop-shadow" />
                     Raadi Alaabta - Search Products
@@ -186,7 +186,7 @@ export default function ReceiveStockModal({
                             });
                             setSearch("");
                           }}
-                          className="w-full text-left px-3 sm:px-4 py-3 sm:py-4 hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-purple-500/30 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4 transition-all border-2 border-transparent hover:border-blue-400/40 group backdrop-blur-xl shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
+                          className="w-full text-left px-3 sm:px-4 py-3 sm:py-4 hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-amber-500/30 rounded-xl sm:rounded-2xl flex items-center gap-3 sm:gap-4 transition-all border-2 border-transparent hover:border-blue-400/40 group backdrop-blur-xl shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
                         >
                           {p.image_url ? (
                             <OptimizedImage
@@ -234,7 +234,7 @@ export default function ReceiveStockModal({
               <div className="lg:col-span-3 order-2">
                 <div className="flex items-center justify-between mb-4">
                   <h4 className="text-white font-bold text-base sm:text-lg lg:text-xl flex items-center gap-2">
-                    <Package className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 drop-shadow" />
+                    <Package className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 drop-shadow" />
                     Alaabta La Doortay ({items.length})
                   </h4>
                 </div>
@@ -242,7 +242,7 @@ export default function ReceiveStockModal({
                 {items.length === 0 ? (
                   <div className="text-center py-16 sm:py-24 bg-gradient-to-br from-white/5 to-white/10 border-2 border-dashed border-white/30 rounded-2xl sm:rounded-3xl backdrop-blur-xl">
                     <div className="relative inline-block">
-                      <div className="absolute inset-0 bg-purple-500/20 blur-2xl rounded-full" />
+                      <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full" />
                       <Package className="relative w-16 h-16 sm:w-20 sm:h-20 text-slate-400 mx-auto mb-4 opacity-60 drop-shadow-lg" />
                     </div>
                     <p className="text-slate-200 font-bold text-base sm:text-lg mb-2 drop-shadow">
@@ -357,7 +357,7 @@ export default function ReceiveStockModal({
                 {items.length > 0 && (
                   <div className="space-y-4 pt-4 sm:pt-6 border-t-2 border-white/30 mt-4 sm:mt-6">
                     {/* Staff Selection */}
-                    <div className="bg-gradient-to-br from-blue-500/15 to-purple-500/15 border-2 border-blue-400/40 rounded-2xl sm:rounded-3xl p-4 sm:p-5 backdrop-blur-xl shadow-xl">
+                    <div className="bg-gradient-to-br from-blue-500/15 to-amber-500/15 border-2 border-blue-400/40 rounded-2xl sm:rounded-3xl p-4 sm:p-5 backdrop-blur-xl shadow-xl">
                       <label className="text-white font-bold text-sm sm:text-base mb-3 flex items-center gap-2">
                         <User className="w-4 h-4 sm:w-5 sm:h-5 text-blue-300 drop-shadow" />
                         Qofka Soo Qaaday - Received By *

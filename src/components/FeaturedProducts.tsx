@@ -84,7 +84,7 @@ const FeaturedProducts = memo(
         return (
           <div
             key={product.id}
-            className="group relative bg-gradient-to-br from-black/40 via-purple-950/20 to-black/40 backdrop-blur-2xl rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 overflow-hidden border border-white/10 hover:border-purple-400/30"
+            className="group relative bg-gradient-to-br from-black/40 via-slate-950/20 to-black/40 backdrop-blur-2xl rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-500 overflow-hidden border border-white/10 hover:border-amber-400/30"
           >
             {/* Premium Badge */}
             <div className="absolute top-4 left-4 z-10">
@@ -108,7 +108,7 @@ const FeaturedProducts = memo(
               className={`absolute top-4 right-4 z-20 w-12 h-12 rounded-full backdrop-blur-xl transition-all duration-300 flex items-center justify-center ${
                 isLiked
                   ? "bg-gradient-to-br from-rose-500 to-pink-600 text-white shadow-xl shadow-rose-500/50 scale-110"
-                  : "bg-white/5 text-purple-300 hover:bg-white/10 hover:text-rose-400 hover:shadow-lg border border-white/10 hover:border-rose-400/50"
+                  : "bg-white/5 text-amber-300 hover:bg-white/10 hover:text-rose-400 hover:shadow-lg border border-white/10 hover:border-rose-400/50"
               }`}
               aria-label="Add to wishlist"
             >
@@ -131,13 +131,13 @@ const FeaturedProducts = memo(
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               {/* Premium Quick View Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-purple-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-8">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-8">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     handleQuickViewClick();
                   }}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 backdrop-blur-xl text-white px-8 py-3 rounded-full font-semibold text-sm transform translate-y-8 group-hover:translate-y-0 transition-all duration-400 shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/80 border border-white/20 hover:scale-105"
+                  className="bg-gradient-to-r from-amber-600 to-rose-600 backdrop-blur-xl text-white px-8 py-3 rounded-full font-semibold text-sm transform translate-y-8 group-hover:translate-y-0 transition-all duration-400 shadow-2xl shadow-amber-500/50 hover:shadow-amber-500/80 border border-white/20 hover:scale-105"
                 >
                   Quick View
                 </button>
@@ -181,10 +181,10 @@ const FeaturedProducts = memo(
               {/* Price & Stock Info */}
               <div className="flex items-center justify-between">
                 <div className="flex flex-col">
-                  <div className="text-xl sm:text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-rose-300 drop-shadow-sm">
+                  <div className="text-xl sm:text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-rose-300 to-rose-400 drop-shadow-sm">
                     KES {product.selling_price?.toLocaleString()}
                   </div>
-                  <div className="text-[10px] sm:text-xs text-purple-300/70 uppercase tracking-wider mt-0.5">
+                  <div className="text-[10px] sm:text-xs text-amber-300/70 uppercase tracking-wider mt-0.5">
                     Luxury Price
                   </div>
                   <div className="text-xs text-slate-400 flex items-center mt-1">
@@ -201,7 +201,7 @@ const FeaturedProducts = memo(
                 className={`w-full font-semibold py-4 px-4 rounded-xl transition-all duration-300 flex items-center justify-center space-x-3 ${
                   isAddingToCart
                     ? "bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-xl shadow-emerald-500/50"
-                    : "bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white hover:from-purple-700 hover:via-pink-700 hover:to-rose-700 hover:shadow-2xl hover:shadow-purple-500/50 active:scale-95"
+                    : "bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 text-white hover:from-amber-700 hover:via-rose-700 hover:to-rose-800 hover:shadow-2xl hover:shadow-amber-500/50 active:scale-95"
                 }`}
               >
                 <ShoppingCart
@@ -244,42 +244,42 @@ const FeaturedProducts = memo(
 
     return (
       <div className="py-8 sm:py-12 md:py-16 lg:py-20">
-        <div className="bg-gradient-to-br from-black/40 via-purple-950/20 to-black/40 backdrop-blur-2xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/10 p-4 sm:p-6 md:p-8 lg:p-12">
+        <div className="bg-gradient-to-br from-black/40 via-slate-950/20 to-black/40 backdrop-blur-2xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/10 p-4 sm:p-6 md:p-8 lg:p-12">
           <div className="mb-6 sm:mb-8 lg:mb-12">
             <div className="block lg:hidden text-center">
               <div className="flex items-center justify-center space-x-3 mb-6">
-                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl p-3 rounded-full border border-purple-400/30">
-                  <Flame className="w-6 h-6 text-purple-400" />
+                <div className="bg-gradient-to-br from-amber-500/20 to-rose-500/20 backdrop-blur-xl p-3 rounded-full border border-amber-400/30">
+                  <Flame className="w-6 h-6 text-amber-400" />
                 </div>
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/30 to-pink-500/30 text-purple-200 px-4 py-2 rounded-full text-sm font-semibold border border-purple-400/40 shadow-lg shadow-purple-500/20">
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500/30 to-rose-500/30 text-amber-200 px-4 py-2 rounded-full text-sm font-semibold border border-amber-400/40 shadow-lg shadow-amber-500/20">
                   <TrendingUp className="w-4 h-4" />
                   <span>Hot Deals</span>
                 </div>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-black text-white mb-2 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
+              <h3 className="text-2xl sm:text-3xl font-black text-white mb-2 bg-gradient-to-r from-white via-amber-200 to-rose-200 bg-clip-text text-transparent">
                 Curated Collections
               </h3>
-              <p className="text-sm text-purple-300/80">
+              <p className="text-sm text-amber-300/80">
                 Handpicked luxury • Limited editions • Exclusive designs
               </p>
             </div>
 
             <div className="hidden lg:flex items-center justify-between">
               <div className="flex items-center space-x-6">
-                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl p-4 rounded-2xl border border-purple-400/30 shadow-xl shadow-purple-500/10">
-                  <Flame className="w-8 h-8 text-purple-400" />
+                <div className="bg-gradient-to-br from-amber-500/20 to-rose-500/20 backdrop-blur-xl p-4 rounded-2xl border border-amber-400/30 shadow-xl shadow-amber-500/10">
+                  <Flame className="w-8 h-8 text-amber-400" />
                 </div>
                 <div>
-                  <h3 className="text-3xl lg:text-4xl font-black text-white mb-2 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
+                  <h3 className="text-3xl lg:text-4xl font-black text-white mb-2 bg-gradient-to-r from-white via-amber-200 to-rose-200 bg-clip-text text-transparent">
                     Curated Collections
                   </h3>
-                  <p className="text-sm text-purple-300/80">
+                  <p className="text-sm text-amber-300/80">
                     Handpicked luxury • Limited editions • Exclusive designs
                   </p>
                 </div>
               </div>
               <div>
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/30 to-pink-500/30 text-purple-200 px-6 py-3 rounded-full text-sm font-semibold border border-purple-400/40 shadow-lg shadow-purple-500/20">
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500/30 to-rose-500/30 text-amber-200 px-6 py-3 rounded-full text-sm font-semibold border border-amber-400/40 shadow-lg shadow-amber-500/20">
                   <TrendingUp className="w-5 h-5" />
                   <span>Hot Deals</span>
                 </div>
@@ -301,7 +301,7 @@ const FeaturedProducts = memo(
           <div className="mt-8 sm:mt-10 md:mt-12 text-center">
             <button
               onClick={handleViewAllProducts}
-              className="inline-flex items-center space-x-3 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white font-bold py-3 sm:py-4 px-8 sm:px-10 rounded-full hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 border border-white/20"
+              className="inline-flex items-center space-x-3 bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 text-white font-bold py-3 sm:py-4 px-8 sm:px-10 rounded-full hover:shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-105 border border-white/20"
             >
               <span className="text-xs sm:text-sm uppercase tracking-wider">
                 Explore All Collections

@@ -65,7 +65,7 @@ const ProductQuickView = memo(
 
     return (
       <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 backdrop-blur-2xl border border-white/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 backdrop-blur-2xl border border-white/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-white/20 bg-white/5 backdrop-blur-xl">
             <h2 className="text-2xl font-bold text-white">Quick View</h2>
@@ -117,7 +117,7 @@ const ProductQuickView = memo(
                 {[1, 2, 3].map((index) => (
                   <div
                     key={index}
-                    className="w-16 h-16 bg-white/10 rounded-lg border-2 border-white/20 hover:border-purple-500 cursor-pointer transition-colors"
+                    className="w-16 h-16 bg-white/10 rounded-lg border-2 border-white/20 hover:border-amber-500 cursor-pointer transition-colors"
                   >
                     <div className="w-full h-full bg-gradient-to-br from-white/5 to-white/10 rounded-md"></div>
                   </div>
@@ -128,7 +128,7 @@ const ProductQuickView = memo(
             {/* Product Details */}
             <div className="space-y-6">
               <div>
-                <span className="text-sm font-medium text-purple-300 bg-purple-500/20 border border-purple-500/30 px-2 py-1 rounded-full">
+                <span className="text-sm font-medium text-amber-300 bg-amber-500/20 border border-amber-500/30 px-2 py-1 rounded-full">
                   {product.category}
                 </span>
                 <h1 className="text-3xl font-bold text-white mt-3 mb-2">
@@ -137,7 +137,7 @@ const ProductQuickView = memo(
 
                 {/* Description */}
                 {product.description && (
-                  <p className="text-slate-300 text-sm leading-relaxed mb-4 bg-white/5 backdrop-blur-xl p-3 rounded-lg border-l-4 border-purple-500">
+                  <p className="text-slate-300 text-sm leading-relaxed mb-4 bg-white/5 backdrop-blur-xl p-3 rounded-lg border-l-4 border-amber-500">
                     {product.description}
                   </p>
                 )}
@@ -161,7 +161,7 @@ const ProductQuickView = memo(
               {/* Price */}
               <div className="space-y-2">
                 <div className="flex items-baseline space-x-3">
-                  <span className="text-3xl font-black text-transparent bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
+                  <span className="text-3xl font-black text-transparent bg-gradient-to-r from-amber-400 to-rose-400 bg-clip-text">
                     KES {product.selling_price.toLocaleString()}
                   </span>
                   <span className="text-lg text-slate-400 line-through">
@@ -234,7 +234,7 @@ const ProductQuickView = memo(
                 <button
                   onClick={handleAddToCart}
                   disabled={product.quantity_in_stock === 0}
-                  className="w-full bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 text-white py-4 px-6 rounded-xl hover:from-purple-700 hover:via-blue-700 hover:to-purple-700 transition-all duration-300 font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/25"
+                  className="w-full bg-gradient-to-r from-amber-600 via-rose-600 to-amber-600 text-white py-4 px-6 rounded-xl hover:from-amber-700 hover:via-rose-700 hover:to-amber-700 transition-all duration-300 font-bold text-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg shadow-amber-500/25"
                 >
                   <ShoppingCart className="w-5 h-5" />
                   <span>

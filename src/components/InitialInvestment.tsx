@@ -208,10 +208,10 @@ export default function InitialInvestment() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-6">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
-            <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <div className="w-16 h-16 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <p className="text-white">Loading investment records...</p>
           </div>
         </div>
@@ -220,7 +220,7 @@ export default function InitialInvestment() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-3 sm:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-3 sm:p-6">
       <div className="max-w-7xl mx-auto">
         <div className="bg-white/10 backdrop-blur-xl rounded-xl sm:rounded-3xl p-4 sm:p-8 shadow-xl border border-white/20 mb-4 sm:mb-8">
           <div className="flex flex-col gap-4 sm:gap-6">
@@ -276,8 +276,8 @@ export default function InitialInvestment() {
 
           <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-white/20">
             <div className="flex items-center space-x-4">
-              <div className="bg-purple-500/20 p-3 rounded-xl border border-purple-500/30">
-                <Calendar className="w-6 h-6 text-purple-400" />
+              <div className="bg-amber-500/20 p-3 rounded-xl border border-amber-500/30">
+                <Calendar className="w-6 h-6 text-amber-400" />
               </div>
               <div>
                 <p className="text-sm text-slate-300 mb-1">Sources</p>

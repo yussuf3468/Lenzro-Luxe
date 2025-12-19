@@ -127,7 +127,7 @@ const SearchSuggestions = memo(
                   <button
                     key={index}
                     onClick={() => handleSelectSearch(term)}
-                    className="px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-sm hover:bg-purple-500/30 transition-colors"
+                    className="px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-sm hover:bg-amber-500/30 transition-colors"
                   >
                     {term}
                   </button>
@@ -188,8 +188,8 @@ const SearchSuggestions = memo(
                 onClick={() => handleSelectSearch(searchTerm)}
                 className="w-full text-left px-3 py-2 hover:bg-white/10 rounded-lg transition-colors flex items-center space-x-2"
               >
-                <Search className="w-4 h-4 text-purple-400" />
-                <span className="text-purple-300 font-medium">
+                <Search className="w-4 h-4 text-amber-400" />
+                <span className="text-amber-300 font-medium">
                   Search for "{searchTerm}"
                 </span>
               </button>

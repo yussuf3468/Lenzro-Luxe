@@ -77,7 +77,7 @@ export default function DeliveryAddressSelector({
           className={`px-4 py-2 rounded-lg border transition-colors flex-1 ${
             !useCustom
               ? dark
-                ? "bg-purple-500/30 text-white border-purple-400"
+                ? "bg-amber-500/30 text-white border-amber-400"
                 : "bg-blue-500 text-white border-blue-500"
               : dark
               ? "bg-white/10 text-white border-white/30 hover:bg-white/15"
@@ -93,7 +93,7 @@ export default function DeliveryAddressSelector({
           className={`px-4 py-2 rounded-lg border transition-colors flex-1 ${
             useCustom
               ? dark
-                ? "bg-purple-500/30 text-white border-purple-400"
+                ? "bg-amber-500/30 text-white border-amber-400"
                 : "bg-blue-500 text-white border-blue-500"
               : dark
               ? "bg-white/10 text-white border-white/30 hover:bg-white/15"
@@ -122,7 +122,7 @@ export default function DeliveryAddressSelector({
                 disabled={disabled}
                 className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 appearance-none ${
                   dark
-                    ? "bg-white/10 text-white border border-white/30 focus:ring-purple-400 focus:border-purple-400/50"
+                    ? "bg-white/10 text-white border border-white/30 focus:ring-amber-400 focus:border-amber-400/50"
                     : "bg-white text-slate-900 border border-slate-300 focus:ring-blue-500 focus:border-transparent"
                 }`}
               >
@@ -169,7 +169,7 @@ export default function DeliveryAddressSelector({
                   disabled={disabled}
                   className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 appearance-none ${
                     dark
-                      ? "bg-white/10 text-white border border-white/30 focus:ring-purple-400 focus:border-purple-400/50"
+                      ? "bg-white/10 text-white border border-white/30 focus:ring-amber-400 focus:border-amber-400/50"
                       : "bg-white text-slate-900 border border-slate-300 focus:ring-blue-500 focus:border-transparent"
                   }`}
                 >
@@ -252,7 +252,7 @@ export default function DeliveryAddressSelector({
               placeholder="Enter your full delivery address with clear landmarks..."
               className={`w-full pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 resize-none ${
                 dark
-                  ? "bg-white/10 text-white border border-white/30 placeholder-slate-300 focus:ring-purple-400 focus:border-purple-400/50"
+                  ? "bg-white/10 text-white border border-white/30 placeholder-slate-300 focus:ring-amber-400 focus:border-amber-400/50"
                   : "bg-white text-slate-900 border border-slate-300 focus:ring-blue-500 focus:border-transparent"
               }`}
               rows={3}

@@ -35,12 +35,12 @@ const SizeGuide = memo(
       <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
         <div className="relative bg-slate-900/95 backdrop-blur-xl rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto border border-white/20 shadow-2xl">
           {/* Header */}
-          <div className="sticky top-0 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6 rounded-t-2xl flex items-center justify-between z-10">
+          <div className="sticky top-0 bg-gradient-to-r from-amber-600 to-rose-600 text-white p-6 rounded-t-2xl flex items-center justify-between z-10">
             <div className="flex items-center space-x-3">
               <Ruler className="w-6 h-6" />
               <div>
                 <h2 className="text-2xl font-bold">Size Guide</h2>
-                <p className="text-sm text-purple-100">Find your perfect fit</p>
+                <p className="text-sm text-amber-100">Find your perfect fit</p>
               </div>
             </div>
             <button
@@ -134,7 +134,7 @@ const SizeGuide = memo(
             </div>
 
             {/* Tips */}
-            <div className="mt-6 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl p-6 border border-purple-500/30">
+            <div className="mt-6 bg-gradient-to-r from-amber-500/20 to-rose-500/20 backdrop-blur-xl rounded-xl p-6 border border-amber-500/30">
               <h3 className="text-lg font-bold text-white mb-3">
                 💡 Fitting Tips
               </h3>

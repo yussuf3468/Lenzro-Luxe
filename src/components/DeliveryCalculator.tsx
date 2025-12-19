@@ -44,7 +44,7 @@ const DeliveryCalculator = memo(
     );
 
     return (
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200">
+      <div className="bg-gradient-to-r from-blue-50 to-amber-50 rounded-xl p-6 border border-blue-200">
         <div className="flex items-center space-x-2 mb-4">
           <Calculator className="w-5 h-5 text-blue-600" />
           <h3 className="text-lg font-bold text-slate-900">

@@ -135,21 +135,21 @@ export default function StockAuditTrail({ onClose }: { onClose: () => void }) {
       <div className="min-h-screen py-4 sm:py-8 px-3 sm:px-4 flex justify-center items-start sm:items-center">
         <div className="bg-gradient-to-br from-white/15 via-white/10 to-white/5 backdrop-blur-3xl rounded-3xl shadow-2xl max-w-7xl w-full border border-white/30 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
           {/* Stunning Header */}
-          <div className="relative bg-gradient-to-r from-purple-600/30 via-indigo-600/30 to-blue-600/30 border-b border-white/20 px-4 sm:px-6 py-4 sm:py-6 overflow-hidden">
+          <div className="relative bg-gradient-to-r from-amber-600/30 via-rose-600/30 to-rose-700/30 border-b border-white/20 px-4 sm:px-6 py-4 sm:py-6 overflow-hidden">
             {/* Animated Background Pattern */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(124,58,237,0.1),transparent)] pointer-events-none" />
             <div className="absolute inset-0 bg-grid-white/[0.02] pointer-events-none" />
 
             <div className="relative flex items-center justify-between">
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="p-2 sm:p-3 rounded-2xl bg-gradient-to-br from-purple-500/40 to-indigo-500/40 border-2 border-purple-400/50 shadow-lg shadow-purple-500/20 backdrop-blur-xl">
-                  <FileText className="w-6 h-6 sm:w-7 sm:h-7 text-purple-100 drop-shadow-lg" />
+                <div className="p-2 sm:p-3 rounded-2xl bg-gradient-to-br from-amber-500/40 to-rose-500/40 border-2 border-amber-400/50 shadow-lg shadow-amber-500/20 backdrop-blur-xl">
+                  <FileText className="w-6 h-6 sm:w-7 sm:h-7 text-amber-100 drop-shadow-lg" />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white drop-shadow-lg">
                     Taariikhda Alaabta - Stock Audit Trail
                   </h3>
-                  <p className="text-purple-100 text-xs sm:text-sm mt-0.5 sm:mt-1">
+                  <p className="text-amber-100 text-xs sm:text-sm mt-0.5 sm:mt-1">
                     Audit trail waa diiwaan muujinaya cidda wax beddeshay,
                     goorta ay beddeshay, iyo waxa la beddelay gudaha nidaamka -
                     Raadi dhammaan isbeddelada alaabta
@@ -177,7 +177,7 @@ export default function StockAuditTrail({ onClose }: { onClose: () => void }) {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     placeholder="Raadi magaca alaabta..."
-                    className="w-full bg-white/15 border-2 border-white/30 rounded-xl sm:rounded-2xl pl-12 pr-4 py-3 sm:py-4 text-white text-sm sm:text-base placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-purple-400/60 focus:border-purple-400/60 transition-all shadow-lg backdrop-blur-xl"
+                    className="w-full bg-white/15 border-2 border-white/30 rounded-xl sm:rounded-2xl pl-12 pr-4 py-3 sm:py-4 text-white text-sm sm:text-base placeholder:text-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-400/60 focus:border-amber-400/60 transition-all shadow-lg backdrop-blur-xl"
                   />
                 </div>
               </div>
@@ -192,7 +192,7 @@ export default function StockAuditTrail({ onClose }: { onClose: () => void }) {
                       onClick={() => setFilter(f)}
                       className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all backdrop-blur-xl shadow-lg border-2 ${
                         filter === f
-                          ? "bg-gradient-to-r from-purple-600/40 to-indigo-600/40 border-purple-400/50 text-white scale-105"
+                          ? "bg-gradient-to-r from-amber-600/40 to-rose-600/40 border-amber-400/50 text-white scale-105"
                           : "bg-white/10 border-white/20 text-slate-200 hover:border-white/40 hover:scale-105"
                       }`}
                     >
@@ -224,7 +224,7 @@ export default function StockAuditTrail({ onClose }: { onClose: () => void }) {
             {/* Loading State */}
             {loading && (
               <div className="text-center py-16 sm:py-24">
-                <RefreshCw className="w-12 h-12 sm:w-16 sm:h-16 text-purple-400 mx-auto mb-4 animate-spin" />
+                <RefreshCw className="w-12 h-12 sm:w-16 sm:h-16 text-amber-400 mx-auto mb-4 animate-spin" />
                 <p className="text-white font-bold text-base sm:text-lg">
                   Soo raraya...
                 </p>
@@ -235,7 +235,7 @@ export default function StockAuditTrail({ onClose }: { onClose: () => void }) {
             {!loading && filteredMovements.length === 0 && (
               <div className="text-center py-16 sm:py-24 bg-gradient-to-br from-white/5 to-white/10 border-2 border-dashed border-white/30 rounded-2xl sm:rounded-3xl backdrop-blur-xl">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-purple-500/20 blur-2xl rounded-full" />
+                  <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full" />
                   <FileText className="relative w-16 h-16 sm:w-20 sm:h-20 text-slate-400 mx-auto mb-4 opacity-60 drop-shadow-lg" />
                 </div>
                 <p className="text-slate-200 font-bold text-base sm:text-lg mb-2 drop-shadow">

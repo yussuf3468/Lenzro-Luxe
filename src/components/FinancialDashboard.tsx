@@ -684,7 +684,7 @@ export default function FinancialDashboard() {
     return (
       <div className="flex items-center justify-center h-64">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-white">Loading financial data...</p>
         </div>
       </div>
@@ -920,13 +920,13 @@ export default function FinancialDashboard() {
           </div>
 
           {/* Monthly Revenue Card */}
-          <div className="bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-purple-500/30">
+          <div className="bg-white/5 backdrop-blur-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-amber-500/30">
             <div className="flex items-center space-x-3 mb-3 sm:mb-4">
-              <div className="bg-purple-500/20 p-2 rounded-lg border border-purple-500/30">
-                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
+              <div className="bg-amber-500/20 p-2 rounded-lg border border-amber-500/30">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400" />
               </div>
               <div>
-                <p className="text-xs sm:text-sm font-medium text-purple-400">
+                <p className="text-xs sm:text-sm font-medium text-amber-400">
                   Monthly Revenue
                 </p>
                 <p className="text-lg sm:text-xl md:text-2xl font-bold text-white">
@@ -1273,7 +1273,7 @@ export default function FinancialDashboard() {
                   </div>
 
                   {/* Next Payout Information - Always Show */}
-                  <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-3 border border-blue-500/30 mt-2">
+                  <div className="bg-gradient-to-r from-blue-500/10 to-amber-500/10 rounded-lg p-3 border border-blue-500/30 mt-2">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-semibold text-blue-300">
@@ -1284,10 +1284,10 @@ export default function FinancialDashboard() {
                         </span>
                       </div>
                       <div className="flex items-center justify-between pt-2 border-t border-blue-500/20">
-                        <span className="text-xs font-semibold text-purple-300">
+                        <span className="text-xs font-semibold text-amber-300">
                           Estimated Dividend:
                         </span>
-                        <span className="text-sm font-bold text-purple-400">
+                        <span className="text-sm font-bold text-amber-400">
                           KES{" "}
                           {investor.dividend_per_cycle.toLocaleString(
                             undefined,
@@ -1352,14 +1352,14 @@ export default function FinancialDashboard() {
               </p>
             </div>
 
-            <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl p-4 border border-purple-500/30">
+            <div className="bg-gradient-to-r from-amber-500/20 to-rose-500/20 rounded-xl p-4 border border-amber-500/30">
               <div className="flex items-center space-x-2 mb-2">
-                <TrendingUp className="w-5 h-5 text-purple-400" />
+                <TrendingUp className="w-5 h-5 text-amber-400" />
                 <span className="text-sm font-semibold text-white">
                   Avg. Ownership
                 </span>
               </div>
-              <p className="text-xl sm:text-2xl font-black text-purple-400">
+              <p className="text-xl sm:text-2xl font-black text-amber-400">
                 {investorDividends.length > 0
                   ? (
                       investorDividends.reduce(
@@ -1447,7 +1447,7 @@ interface FinancialStatCardProps {
   title: string;
   value: string;
   icon: React.ElementType;
-  color: "blue" | "green" | "purple" | "orange" | "red";
+  color: "blue" | "green" | "amber" | "orange" | "red";
   subtitle?: string;
 }
 
@@ -1473,12 +1473,12 @@ function FinancialStatCard({
       iconBg: "bg-green-500/20 border-green-500/30",
       glow: "shadow-green-500/25",
     },
-    purple: {
-      gradient: "from-purple-500 to-purple-600",
-      border: "border-purple-500/30",
-      text: "text-purple-400",
-      iconBg: "bg-purple-500/20 border-purple-500/30",
-      glow: "shadow-purple-500/25",
+    amber: {
+      gradient: "from-amber-500 to-amber-600",
+      border: "border-amber-500/30",
+      text: "text-amber-400",
+      iconBg: "bg-amber-500/20 border-amber-500/30",
+      glow: "shadow-amber-500/25",
     },
     orange: {
       gradient: "from-orange-500 to-orange-600",

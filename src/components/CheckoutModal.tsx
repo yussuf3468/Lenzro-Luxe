@@ -182,9 +182,9 @@ const CheckoutModal = memo(
 
     return (
       <div className="fixed inset-0 bg-black/75 backdrop-blur-sm z-[60] flex items-center justify-center p-4">
-        <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden border border-white/20">
+        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden border border-white/20">
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-6">
+          <div className="bg-gradient-to-r from-amber-600 to-rose-600 text-white p-6">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <CreditCard className="w-6 h-6" />
@@ -198,7 +198,7 @@ const CheckoutModal = memo(
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <p className="text-purple-100 mt-2">Complete your order</p>
+            <p className="text-amber-100 mt-2">Complete your order</p>
           </div>
 
           <div className="overflow-y-auto max-h-[calc(90vh-120px)]">
@@ -238,7 +238,7 @@ const CheckoutModal = memo(
                 </div>
                 <div className="flex justify-between items-center text-lg font-bold pt-2 border-t border-white/20">
                   <span className="text-white">Total:</span>
-                  <span className="text-purple-400">
+                  <span className="text-amber-400">
                     KES {total.toLocaleString()}
                   </span>
                 </div>
@@ -267,7 +267,7 @@ const CheckoutModal = memo(
                       onChange={(e) =>
                         handleInputChange("customer_name", e.target.value)
                       }
-                      className="w-full px-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-purple-300/60"
+                      className="w-full px-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-300/60"
                       placeholder="Enter your full name"
                       required
                       disabled={isSubmitting}
@@ -285,7 +285,7 @@ const CheckoutModal = memo(
                         onChange={(e) =>
                           handleInputChange("phone_number", e.target.value)
                         }
-                        className="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-purple-300/60"
+                        className="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-300/60"
                         placeholder="+254 700 000 000"
                         required
                         disabled={isSubmitting}
@@ -305,7 +305,7 @@ const CheckoutModal = memo(
                       onChange={(e) =>
                         handleInputChange("email", e.target.value)
                       }
-                      className="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-purple-300/60"
+                      className="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-300/60"
                       placeholder="your@email.com"
                       disabled={isSubmitting}
                     />
@@ -362,7 +362,7 @@ const CheckoutModal = memo(
                       }
                       className={`p-3 border-2 rounded-lg text-center transition-all ${
                         paymentMethod === method.id
-                          ? "border-purple-300 bg-purple-500/30 text-white"
+                          ? "border-amber-300 bg-amber-500/30 text-white"
                           : "border-white/40 bg-white/15 text-white hover:bg-white/20"
                       }`}
                       disabled={isSubmitting}
@@ -384,7 +384,7 @@ const CheckoutModal = memo(
                   <textarea
                     value={formData.notes}
                     onChange={(e) => handleInputChange("notes", e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder-slate-200 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-purple-300/60 resize-none"
+                    className="w-full pl-10 pr-4 py-3 bg-white/20 border border-white/40 rounded-lg text-white placeholder-slate-200 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:border-amber-300/60 resize-none"
                     placeholder="Any special instructions or notes for your order..."
                     rows={3}
                     disabled={isSubmitting}
@@ -397,7 +397,7 @@ const CheckoutModal = memo(
                 <button
                   type="submit"
                   disabled={isSubmitting || cart.items.length === 0}
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg"
+                  className="w-full bg-gradient-to-r from-amber-600 to-rose-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:from-amber-700 hover:to-rose-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg"
                 >
                   {isSubmitting ? (
                     <>

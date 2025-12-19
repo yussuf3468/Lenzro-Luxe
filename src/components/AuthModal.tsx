@@ -105,7 +105,7 @@ const AuthModal = memo(({ isOpen, onClose }: AuthModalProps) => {
 
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto border border-white/20">
+      <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto border border-white/20">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-white/20 bg-white/5 backdrop-blur-xl">
           <div>
@@ -143,7 +143,7 @@ const AuthModal = memo(({ isOpen, onClose }: AuthModalProps) => {
                 type="text"
                 value={formData.fullName}
                 onChange={(e) => handleInputChange("fullName", e.target.value)}
-                className={`w-full px-3 py-3 bg-white/10 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-white placeholder-slate-400 ${
+                className={`w-full px-3 py-3 bg-white/10 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors text-white placeholder-slate-400 ${
                   errors.fullName ? "border-red-500" : "border-white/20"
                 }`}
                 placeholder="Enter your full name"
@@ -165,7 +165,7 @@ const AuthModal = memo(({ isOpen, onClose }: AuthModalProps) => {
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              className={`w-full px-3 py-3 bg-white/10 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-white placeholder-slate-400 ${
+              className={`w-full px-3 py-3 bg-white/10 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors text-white placeholder-slate-400 ${
                 errors.email ? "border-red-500" : "border-white/20"
               }`}
               placeholder="Enter your email"
@@ -187,7 +187,7 @@ const AuthModal = memo(({ isOpen, onClose }: AuthModalProps) => {
                 type={showPassword ? "text" : "password"}
                 value={formData.password}
                 onChange={(e) => handleInputChange("password", e.target.value)}
-                className={`w-full px-3 py-3 bg-white/10 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors pr-10 text-white placeholder-slate-400 ${
+                className={`w-full px-3 py-3 bg-white/10 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors pr-10 text-white placeholder-slate-400 ${
                   errors.password ? "border-red-500" : "border-white/20"
                 }`}
                 placeholder="Enter your password"
@@ -222,7 +222,7 @@ const AuthModal = memo(({ isOpen, onClose }: AuthModalProps) => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-4 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg"
+            className="w-full bg-gradient-to-r from-amber-600 to-rose-600 text-white py-3 px-4 rounded-lg hover:from-amber-700 hover:to-rose-700 transition-all font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 shadow-lg"
           >
             {loading ? (
               <>
@@ -245,7 +245,7 @@ const AuthModal = memo(({ isOpen, onClose }: AuthModalProps) => {
               <button
                 type="button"
                 onClick={switchMode}
-                className="text-purple-400 hover:text-purple-300 font-medium"
+                className="text-amber-400 hover:text-amber-300 font-medium"
                 disabled={loading}
               >
                 {mode === "signin" ? "Sign Up" : "Sign In"}

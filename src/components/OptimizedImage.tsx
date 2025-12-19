@@ -156,7 +156,7 @@ const OptimizedImage = memo(
     if (!src || hasError) {
       return (
         <div
-          className={`bg-gradient-to-br from-slate-100 via-blue-50 to-purple-100 flex items-center justify-center group-hover:from-blue-100 group-hover:to-purple-200 transition-all duration-500 ${fallbackClassName}`}
+          className={`bg-gradient-to-br from-slate-100 via-blue-50 to-amber-100 flex items-center justify-center group-hover:from-blue-100 group-hover:to-amber-200 transition-all duration-500 ${fallbackClassName}`}
           onClick={onClick}
         >
           <Package className="w-8 h-8 sm:w-12 sm:h-12 text-slate-400 group-hover:text-blue-500 transition-colors duration-300" />

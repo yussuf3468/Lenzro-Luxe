@@ -40,7 +40,7 @@ export function ProductSkeleton({ count = 8 }: ProductSkeletonProps) {
 
 export function HeroSkeleton() {
   return (
-    <div className="relative min-h-[80vh] bg-gradient-to-br from-blue-50 via-white to-purple-50 animate-pulse">
+    <div className="relative min-h-[80vh] bg-gradient-to-br from-blue-50 via-white to-amber-50 animate-pulse">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side skeleton */}

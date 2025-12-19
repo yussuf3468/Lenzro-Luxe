@@ -30,12 +30,12 @@ export const textVisibility = {
   label: "text-slate-300 font-medium",
 
   // Links
-  link: "text-purple-400 hover:text-purple-300",
+  link: "text-amber-400 hover:text-amber-300",
 };
 
 // Input styles that work with dark background
 export const inputStyles = {
-  base: "bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:bg-white/15 focus:border-purple-400/50",
+  base: "bg-white/10 border-white/20 text-white placeholder:text-slate-400 focus:bg-white/15 focus:border-amber-400/50",
   error: "bg-white/10 border-rose-400/50 text-white placeholder:text-slate-400",
 };
 

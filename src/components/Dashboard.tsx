@@ -125,12 +125,12 @@ export default function Dashboard() {
   return (
     <div className="-mx-3 sm:-mx-4 lg:-mx-6 space-y-6 md:space-y-8 animate-fadeIn">
       {/* Hero Section - Luxury Fashion Dashboard */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900/90 via-purple-950/80 to-slate-900/90 backdrop-blur-2xl border-x-0 border-t-0 border-b border-white/20 rounded-none p-4 md:p-6 lg:p-8 shadow-2xl shadow-purple-500/20">
+      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-2xl border-x-0 border-t-0 border-b border-white/20 rounded-none p-4 md:p-6 lg:p-8 shadow-2xl shadow-amber-500/20">
         {/* Animated Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-pink-600/10 to-rose-600/10 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-600/10 via-rose-600/10 to-rose-700/10 animate-pulse"></div>
 
         {/* Decorative Elements */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"></div>
 
         <div className="relative">
@@ -138,18 +138,18 @@ export default function Dashboard() {
             {/* Brand Logo with Sparkle Effect */}
             <div className="inline-flex items-center justify-center space-x-2 mb-3">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 blur-lg opacity-50"></div>
-                <div className="relative w-10 h-10 bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-purple-500/50 transform hover:rotate-12 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700 blur-lg opacity-50"></div>
+                <div className="relative w-10 h-10 bg-gradient-to-br from-amber-600 via-rose-600 to-rose-700 rounded-2xl flex items-center justify-center shadow-2xl shadow-amber-500/50 transform hover:rotate-12 transition-transform duration-300">
                   <span className="text-xl">👗</span>
                 </div>
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-pink-200 tracking-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-rose-200 tracking-tight">
                 LENZRO LUXE
               </h1>
             </div>
 
-            <div className="inline-flex items-center space-x-2 bg-purple-500/10 backdrop-blur-md border border-purple-400/30 rounded-full px-4 py-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-purple-300">
+            <div className="inline-flex items-center space-x-2 bg-amber-500/10 backdrop-blur-md border border-amber-400/30 rounded-full px-4 py-2">
+              <span className="text-xs font-bold uppercase tracking-widest text-amber-300">
                 {t.dashboard.fashionCommandCenter}
               </span>
             </div>
@@ -170,8 +170,8 @@ export default function Dashboard() {
               </div>
               <div className="w-px h-4 bg-white/20"></div>
               <div className="flex items-center space-x-2">
-                <div className="w-2.5 h-2.5 bg-purple-400 rounded-full"></div>
-                <span className="text-xs font-bold text-purple-300">
+                <div className="w-2.5 h-2.5 bg-amber-400 rounded-full"></div>
+                <span className="text-xs font-bold text-amber-300">
                   {t.dashboard.syncedData}
                 </span>
               </div>
@@ -184,7 +184,7 @@ export default function Dashboard() {
       <div className="px-3 sm:px-4 lg:px-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-3">
-            <div className="w-1 h-6 bg-gradient-to-b from-purple-600 via-pink-600 to-rose-600 rounded-full shadow-lg shadow-purple-500/50"></div>
+            <div className="w-1 h-6 bg-gradient-to-b from-amber-600 via-rose-600 to-rose-700 rounded-full shadow-lg shadow-amber-500/50"></div>
             <div>
               <h2 className="text-lg md:text-xl font-black text-white">
                 {t.dashboard.performanceMetrics}
@@ -246,7 +246,7 @@ export default function Dashboard() {
               title={t.dashboard.totalProducts}
               value={stats.totalProducts.toString()}
               icon={Package}
-              color="purple"
+              color="amber"
             />
           </div>
         </div>
@@ -255,9 +255,9 @@ export default function Dashboard() {
       {/* Content Grid - Analytics Cards */}
       <div className="px-3 sm:px-4 lg:px-6 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
         {/* Top Products Card */}
-        <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-6 shadow-2xl shadow-purple-500/10 hover:shadow-purple-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+        <div className="group relative bg-gradient-to-br from-slate-900/90 via-slate-800/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-6 shadow-2xl shadow-amber-500/10 hover:shadow-amber-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
           {/* Background Decoration */}
-          <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-48 h-48 bg-amber-500/5 rounded-full blur-3xl"></div>
 
           <div className="relative">
             <div className="flex items-center justify-between mb-4">
@@ -282,8 +282,8 @@ export default function Dashboard() {
               {topProducts.length === 0 ? (
                 <div className="text-center py-12">
                   <div className="relative mx-auto mb-3">
-                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/20">
-                      <Package className="w-6 h-6 text-purple-300" />
+                    <div className="w-12 h-12 mx-auto bg-gradient-to-br from-amber-500/20 to-rose-500/20 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/20">
+                      <Package className="w-6 h-6 text-amber-300" />
                     </div>
                   </div>
                   <p className="text-base font-bold text-white mb-1">
@@ -297,7 +297,7 @@ export default function Dashboard() {
                 topProducts.map((item, index) => (
                   <div
                     key={item.product.id}
-                    className="group/item relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 backdrop-blur-xl border border-white/10 hover:border-purple-400/30 rounded-xl p-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-purple-500/20"
+                    className="group/item relative bg-gradient-to-br from-white/5 to-white/[0.02] hover:from-white/10 hover:to-white/5 backdrop-blur-xl border border-white/10 hover:border-amber-400/30 rounded-xl p-3 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-amber-500/20"
                   >
                     {/* Rank Badge with Premium Design */}
                     <div className="absolute -top-1.5 -left-1.5 z-10">
@@ -309,7 +309,7 @@ export default function Dashboard() {
                             ? "bg-gradient-to-br from-slate-400 via-slate-500 to-slate-600 shadow-slate-500/50"
                             : index === 2
                             ? "bg-gradient-to-br from-amber-600 via-orange-600 to-rose-600 shadow-orange-500/50"
-                            : "bg-gradient-to-br from-purple-500 to-pink-600 shadow-purple-500/50"
+                            : "bg-gradient-to-br from-amber-500 to-rose-600 shadow-amber-500/50"
                         }`}
                       >
                         {index + 1}
@@ -319,7 +319,7 @@ export default function Dashboard() {
                     <div className="flex items-center space-x-3 pl-3">
                       {item.product.image_url && (
                         <div className="relative flex-shrink-0">
-                          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl blur"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 to-rose-500/20 rounded-xl blur"></div>
                           <OptimizedImage
                             src={item.product.image_url}
                             alt={item.product.name}
@@ -333,13 +333,13 @@ export default function Dashboard() {
                           {item.product.name}
                         </p>
                         <div className="flex items-center space-x-2">
-                          <span className="text-xs font-semibold text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-400/20">
+                          <span className="text-xs font-semibold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-400/20">
                             {item.product.category}
                           </span>
                         </div>
                       </div>
                       <div className="text-right flex-shrink-0">
-                        <p className="font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-300 to-rose-300 text-base md:text-lg">
+                        <p className="font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-rose-300 to-rose-400 text-base md:text-lg">
                           {formatCurrency(item.total)}
                         </p>
                         <p className="text-xs text-slate-400 font-medium mt-0.5">
@@ -355,7 +355,7 @@ export default function Dashboard() {
         </div>
 
         {/* Recent Sales Card */}
-        <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-6 shadow-2xl shadow-emerald-500/10 hover:shadow-emerald-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+        <div className="group relative bg-gradient-to-br from-slate-900/90 via-slate-800/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-6 shadow-2xl shadow-emerald-500/10 hover:shadow-emerald-500/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
           {/* Background Decoration */}
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl"></div>
 
@@ -411,7 +411,7 @@ export default function Dashboard() {
                           <span className="text-xs font-medium text-slate-400">
                             {t.dashboard.soldBy}:
                           </span>
-                          <span className="text-xs font-semibold text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded-full border border-purple-400/20">
+                          <span className="text-xs font-semibold text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded-full border border-amber-400/20">
                             {sale.sold_by}
                           </span>
                         </div>
@@ -445,7 +445,7 @@ interface StatCardProps {
   title: string;
   value: string;
   icon: React.ElementType;
-  color: "blue" | "green" | "purple" | "orange" | "red";
+  color: "blue" | "green" | "amber" | "orange" | "red";
   subtitle?: string;
 }
 
@@ -469,11 +469,11 @@ function StatCard({
       text: "text-emerald-300",
       bg: "from-emerald-500/10 to-green-500/5",
     },
-    purple: {
-      gradient: "from-purple-600 via-pink-600 to-rose-600",
-      glow: "shadow-purple-500/50",
-      text: "text-purple-300",
-      bg: "from-purple-500/10 to-pink-500/5",
+    amber: {
+      gradient: "from-amber-600 via-rose-600 to-rose-700",
+      glow: "shadow-amber-500/50",
+      text: "text-amber-300",
+      bg: "from-amber-500/10 to-rose-500/5",
     },
     orange: {
       gradient: "from-orange-600 via-amber-600 to-yellow-600",
@@ -492,7 +492,7 @@ function StatCard({
   const colors = colorClasses[color];
 
   return (
-    <div className="group relative bg-gradient-to-br from-slate-900/90 via-purple-950/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-xl p-4 md:p-5 shadow-2xl hover:shadow-purple-500/40 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer will-change-transform overflow-hidden">
+    <div className="group relative bg-gradient-to-br from-slate-900/90 via-slate-800/60 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-xl p-4 md:p-5 shadow-2xl hover:shadow-amber-500/40 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] cursor-pointer will-change-transform overflow-hidden">
       {/* Animated gradient background on hover */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${colors.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}

@@ -144,7 +144,7 @@ export default function Checkout({ onBack, onSuccess }: CheckoutProps) {
 
   if (orderPlaced) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-100 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-amber-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
           <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <Check className="w-8 h-8 text-white" />
@@ -210,7 +210,7 @@ export default function Checkout({ onBack, onSuccess }: CheckoutProps) {
               </div>
               {formData.email && (
                 <div className="flex items-start space-x-2">
-                  <span className="text-purple-600 flex-shrink-0 mt-0.5">
+                  <span className="text-amber-600 flex-shrink-0 mt-0.5">
                     📧
                   </span>
                   <p className="text-slate-700 font-medium">
@@ -252,7 +252,7 @@ export default function Checkout({ onBack, onSuccess }: CheckoutProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-amber-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="flex items-center mb-8">

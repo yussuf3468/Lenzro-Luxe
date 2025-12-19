@@ -69,8 +69,10 @@ const PAYMENT_METHODS = [
 
 export default function CustomerCredit() {
   const queryClient = useQueryClient();
-  const { data: rawCredits = [], isLoading: creditsLoading } = useCustomerCredits();
-  const { data: payments = [], isLoading: paymentsLoading } = useCreditPayments();
+  const { data: rawCredits = [], isLoading: creditsLoading } =
+    useCustomerCredits();
+  const { data: payments = [], isLoading: paymentsLoading } =
+    useCreditPayments();
   const loading = creditsLoading || paymentsLoading;
 
   // Calculate balance and amount_paid for each credit
@@ -92,9 +94,10 @@ export default function CustomerCredit() {
   const [searchTerm, setSearchTerm] = useState("");
   const filteredCredits = useMemo(() => {
     if (!searchTerm.trim()) return credits;
-    return credits.filter((c: any) =>
-      c.customer_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      c.customer_phone.toLowerCase().includes(searchTerm.toLowerCase())
+    return credits.filter(
+      (c: any) =>
+        c.customer_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        c.customer_phone.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [credits, searchTerm]);
 
@@ -386,7 +389,7 @@ export default function CustomerCredit() {
       <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 shadow-2xl">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-pink-200">
+            <h1 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-rose-200">
               💳 Deymaha Macaamiisha
             </h1>
             <p className="text-slate-300 mt-1">
@@ -433,13 +436,13 @@ export default function CustomerCredit() {
           <p className="text-xs text-slate-400 mt-1">Returned to customers</p>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-5 shadow-lg">
+        <div className="bg-gradient-to-br from-amber-500/20 to-rose-500/20 backdrop-blur-xl border border-amber-500/30 rounded-2xl p-5 shadow-lg">
           <div className="flex items-center justify-between mb-2">
-            <CreditCard className="w-8 h-8 text-purple-400" />
-            <Users className="w-5 h-5 text-purple-300" />
+            <CreditCard className="w-8 h-8 text-amber-400" />
+            <Users className="w-5 h-5 text-amber-300" />
           </div>
           <p className="text-slate-300 text-sm">Total Credit / Wadarta</p>
-          <p className="text-2xl font-bold text-purple-400 mt-1">
+          <p className="text-2xl font-bold text-amber-400 mt-1">
             KES {totalCreditGiven.toLocaleString()}
           </p>
           <p className="text-xs text-slate-400 mt-1">
@@ -469,14 +472,22 @@ export default function CustomerCredit() {
           className="bg-white/10 border border-white/20 rounded-xl px-4 py-2 text-white placeholder:text-slate-400 w-full sm:w-96"
           placeholder="Search customer by name or phone..."
           value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
         {searchTerm.trim() && filteredCredits.length > 0 && (
           <div className="text-slate-200 text-sm mt-2 sm:mt-0">
-            <strong>{filteredCredits[0].customer_name}</strong> owes you: <span className="font-bold text-emerald-400">KES {filteredCredits
-              .filter(c => c.customer_name.toLowerCase() === filteredCredits[0].customer_name.toLowerCase())
-              .reduce((sum, c) => sum + c.balance, 0)
-              .toLocaleString()}</span>
+            <strong>{filteredCredits[0].customer_name}</strong> owes you:{" "}
+            <span className="font-bold text-emerald-400">
+              KES{" "}
+              {filteredCredits
+                .filter(
+                  (c) =>
+                    c.customer_name.toLowerCase() ===
+                    filteredCredits[0].customer_name.toLowerCase()
+                )
+                .reduce((sum, c) => sum + c.balance, 0)
+                .toLocaleString()}
+            </span>
           </div>
         )}
       </div>
@@ -486,7 +497,7 @@ export default function CustomerCredit() {
           <span>Store Credits ({credits.length})</span>
         </h2>
 
-  {filteredCredits.length === 0 ? (
+        {filteredCredits.length === 0 ? (
           <div className="text-center py-12">
             <CreditCard className="w-16 h-16 text-slate-500 mx-auto mb-4" />
             <p className="text-slate-400">No store credits recorded yet.</p>
@@ -610,7 +621,7 @@ export default function CustomerCredit() {
                         </button>
                         <button
                           onClick={() => openEditForm(credit)}
-                          className="p-2 bg-purple-600/20 hover:bg-purple-600/30 text-purple-400 rounded-lg transition-colors"
+                          className="p-2 bg-amber-600/20 hover:bg-amber-600/30 text-amber-400 rounded-lg transition-colors"
                           title="Edit"
                         >
                           <Edit2 className="w-4 h-4" />

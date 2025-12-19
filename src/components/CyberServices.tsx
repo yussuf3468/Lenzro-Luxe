@@ -274,16 +274,16 @@ export default function CyberServices() {
         </div>
 
         {/* This Month */}
-        <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-2xl p-6 border border-purple-500/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+        <div className="bg-gradient-to-br from-amber-500/20 to-rose-500/20 backdrop-blur-xl rounded-2xl p-6 border border-amber-500/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
           <div className="flex items-center justify-between mb-4">
-            <div className="bg-purple-500/20 p-3 rounded-xl border border-purple-500/30">
-              <Calendar className="w-6 h-6 text-purple-400" />
+            <div className="bg-amber-500/20 p-3 rounded-xl border border-amber-500/30">
+              <Calendar className="w-6 h-6 text-amber-400" />
             </div>
-            <span className="text-xs font-semibold text-purple-400 uppercase tracking-wide">
+            <span className="text-xs font-semibold text-amber-400 uppercase tracking-wide">
               This Month
             </span>
           </div>
-          <p className="text-sm text-purple-300 mb-1">Monthly Income</p>
+          <p className="text-sm text-amber-300 mb-1">Monthly Income</p>
           <p className="text-2xl md:text-3xl font-black text-white">
             KES {thisMonthIncome.toLocaleString()}
           </p>

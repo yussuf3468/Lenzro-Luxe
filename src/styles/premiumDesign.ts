@@ -6,9 +6,9 @@
 export const premiumColors = {
   // Deep sophisticated background gradients
   bgGradient: {
-    primary: "bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900",
+    primary: "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900",
     secondary: "bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950",
-    accent: "bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950",
+    accent: "bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950",
     subtle:
       "bg-gradient-to-br from-slate-900/95 via-slate-800/95 to-slate-900/95",
   },
@@ -20,16 +20,16 @@ export const premiumColors = {
     dark: "bg-black/20 backdrop-blur-xl border border-white/10",
     card: "bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-white/20",
     hover:
-      "hover:bg-white/15 hover:border-white/30 hover:shadow-2xl hover:shadow-purple-500/20",
+      "hover:bg-white/15 hover:border-white/30 hover:shadow-2xl hover:shadow-amber-500/20",
   },
 
   // Accent gradients for CTAs and highlights
   accentGradient: {
-    purple: "bg-gradient-to-r from-purple-600 to-pink-600",
+    amber: "bg-gradient-to-r from-amber-600 to-rose-600",
     blue: "bg-gradient-to-r from-blue-600 to-cyan-600",
     teal: "bg-gradient-to-r from-teal-600 to-emerald-600",
     gold: "bg-gradient-to-r from-amber-500 to-orange-600",
-    premium: "bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600",
+    premium: "bg-gradient-to-r from-amber-600 via-rose-600 to-rose-700",
   },
 
   // Text colors with high contrast
@@ -37,25 +37,25 @@ export const premiumColors = {
     primary: "text-white",
     secondary: "text-slate-200",
     muted: "text-slate-400",
-    accent: "text-purple-400",
+    accent: "text-amber-400",
     success: "text-emerald-400",
     warning: "text-amber-400",
     error: "text-rose-400",
     highlight:
-      "text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400",
+      "text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-400",
   },
 };
 
 export const premiumShadows = {
   glow: {
-    purple: "shadow-2xl shadow-purple-500/50",
+    amber: "shadow-2xl shadow-amber-500/50",
     blue: "shadow-2xl shadow-blue-500/50",
     teal: "shadow-2xl shadow-teal-500/50",
     pink: "shadow-2xl shadow-pink-500/50",
     subtle: "shadow-xl shadow-black/50",
   },
   card: "shadow-xl shadow-black/20",
-  cardHover: "hover:shadow-2xl hover:shadow-purple-500/30",
+  cardHover: "hover:shadow-2xl hover:shadow-amber-500/30",
   subtle: "shadow-xl shadow-black/50",
 };
 
@@ -124,9 +124,9 @@ export const premiumButton = {
   primary: `
     ${premiumColors.accentGradient.premium}
     ${premiumBorderRadius.button}
-    ${premiumShadows.glow.purple}
+    ${premiumShadows.glow.amber}
     ${premiumAnimations.transition}
-    hover:shadow-purple-500/70 hover:scale-105
+    hover:shadow-amber-500/70 hover:scale-105
     active:scale-95
     text-white font-semibold
     px-6 py-3
@@ -154,7 +154,7 @@ export const premiumInput = `
   ${premiumColors.glass.light}
   ${premiumBorderRadius.input}
   ${premiumAnimations.transitionFast}
-  focus:bg-white/15 focus:border-purple-400/50 focus:outline-none focus:ring-2 focus:ring-purple-400/30
+  focus:bg-white/15 focus:border-amber-400/50 focus:outline-none focus:ring-2 focus:ring-amber-400/30
   ${premiumColors.text.primary}
   placeholder:text-slate-400
   px-4 py-3
@@ -225,7 +225,7 @@ export const premiumNavbar = {
   linkActive: `
     ${premiumColors.accentGradient.premium}
     ${premiumBorderRadius.subtle}
-    ${premiumShadows.glow.purple}
+    ${premiumShadows.glow.amber}
     px-4 py-2
     text-white
     font-semibold

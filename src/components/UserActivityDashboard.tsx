@@ -180,9 +180,9 @@ export default function UserActivityDashboard() {
   function getRoleColor(role: string) {
     switch (role) {
       case "admin":
-        return "bg-gradient-to-r from-purple-500 to-blue-600";
+        return "bg-gradient-to-r from-amber-500 to-rose-600";
       case "owner":
-        return "bg-gradient-to-r from-purple-500 to-blue-600";
+        return "bg-gradient-to-r from-amber-500 to-rose-600";
       case "staff":
         return "bg-gradient-to-r from-green-500 to-teal-600";
       default:
@@ -227,8 +227,8 @@ export default function UserActivityDashboard() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-xl blur opacity-75"></div>
-              <div className="relative bg-gradient-to-br from-blue-500 to-purple-600 p-3 rounded-xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-amber-600 rounded-xl blur opacity-75"></div>
+              <div className="relative bg-gradient-to-br from-blue-500 to-amber-600 p-3 rounded-xl">
                 <Activity className="w-8 h-8 text-white" />
               </div>
             </div>
@@ -289,7 +289,7 @@ export default function UserActivityDashboard() {
           </div>
         ) : loading ? (
           <div className="text-center py-8">
-            <div className="w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <div className="w-8 h-8 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <p className="text-white">Loading user activities...</p>
             <p className="text-xs text-slate-300 mt-2">
               This may take a few seconds...
@@ -333,7 +333,7 @@ export default function UserActivityDashboard() {
                       <span
                         className={`px-2 py-1 text-xs font-semibold rounded-full ${
                           activity.role === "admin"
-                            ? "bg-purple-100 text-purple-800"
+                            ? "bg-amber-100 text-amber-800"
                             : "bg-green-100 text-green-800"
                         }`}
                       >
@@ -404,8 +404,8 @@ export default function UserActivityDashboard() {
 
         <div className="bg-white/80 backdrop-blur-lg rounded-xl shadow-lg border border-white/20 p-4">
           <div className="flex items-center space-x-3">
-            <div className="bg-purple-100 p-2 rounded-lg">
-              <Activity className="w-6 h-6 text-purple-600" />
+            <div className="bg-amber-100 p-2 rounded-lg">
+              <Activity className="w-6 h-6 text-amber-600" />
             </div>
             <div>
               <p className="text-sm font-medium text-slate-600">Active Today</p>
