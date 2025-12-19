@@ -123,9 +123,9 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="-mx-3 sm:-mx-4 lg:-mx-6 space-y-6 md:space-y-8 animate-fadeIn">
+    <div className="space-y-6 md:space-y-8 animate-fadeIn">
       {/* Hero Section - Luxury Fashion Dashboard */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-2xl border-x-0 border-t-0 border-b border-white/20 rounded-none p-4 md:p-6 lg:p-8 shadow-2xl shadow-amber-500/20">
+      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 md:p-6 lg:p-8 shadow-2xl shadow-amber-500/20">
         {/* Animated Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-amber-600/10 via-rose-600/10 to-rose-700/10 animate-pulse"></div>
 
